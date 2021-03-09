@@ -1,0 +1,7 @@
+.SelectBus {
+  border: 1px solid red;
+  height: 2000px;
+}
+.SelectBus_mainContent {
+  border: 1px solid blue;
+}
