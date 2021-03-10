@@ -1,0 +1,239 @@
+.busBox {
+  width: 95%;
+  min-height: 180px;
+  height: auto;
+  border: 1px solid #ddd;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 10px 0 0;
+  color: #4a4a4a;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.busBox:hover {
+  box-shadow: 0 16px 30px 1px rgb(0 0 0 / 10%);
+  transition: 1s;
+}
+
+.busBox > * {
+  width: 100%;
+  /* border: 1px solid red; */
+}
+
+/* bus section 1 */
+.busBoxSection1 {
+  height: 40%;
+  margin-bottom: 1%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.busBoxSection1 * {
+  font-family: Montserrat, sans-serif;
+}
+
+.busBoxSection1 > div {
+  height: 100%;
+  /* border: 1px solid black; */
+}
+
+.busBoxSection11 {
+  width: 25%;
+}
+
+.busBoxSection11 > div:nth-child(1) {
+  color: #3e3e52;
+  line-height: 24px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.busBoxSection11 > div:nth-child(2) {
+  color: #7e7e8c;
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+.busBoxSection12 {
+  width: 10%;
+}
+
+.busBoxSection12 > div:nth-child(1) {
+  color: #3e3e52;
+  line-height: 24px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.busBoxSection12 > div:nth-child(2) {
+  color: #7e7e8c;
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+.busBoxSection13 {
+  width: 10%;
+}
+
+.busBoxSection13 > div {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.busBoxSection14 {
+  width: 14%;
+}
+
+.busBoxSection14 > div:nth-child(1) {
+  color: #3e3e52;
+  line-height: 24px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.busBoxSection14 > div:nth-child(2) {
+  color: #7e7e8c;
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+.busBoxSection15 {
+  width: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.busBoxSection15 > div {
+  width: 45px;
+  height: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.busBoxSection15 > :nth-child(1) {
+  background-color: #62c18b;
+  color: white;
+  font-weight: 100;
+  border-radius: 4px;
+  margin-bottom: 3px;
+}
+
+.busBoxSection15 > :nth-child(1) > :nth-child(1) {
+  font-size: 17px;
+}
+
+.busBoxSection15 > :nth-child(1) > :nth-child(2) {
+  font-size: 12px;
+}
+
+.busBoxSection15 > :nth-child(2) > :nth-child(1) {
+  font-size: 17px;
+  margin-left: 5px;
+}
+
+.busBoxSection15 > :nth-child(2) > :nth-child(2) {
+  font-size: 12px;
+}
+
+.busBoxSection16 {
+  width: 15%;
+}
+
+.busBoxSection16 > div:nth-child(1) {
+  width: 90%;
+  height: 17px;
+  color: #7e7e8c;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 15px;
+}
+
+.busBoxSection16 > div:nth-child(1) > div:nth-child(2) {
+  color: #3e3e52;
+  font-weight: 700;
+  margin-left: 7px;
+}
+
+.busBoxSection16 > div:nth-child(2) {
+  width: 90%;
+  color: #7e7e8c;
+  font-size: 12px;
+  margin-top: 7px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.busBoxSection16 > div:nth-child(2) > :nth-child(1) {
+  color: red;
+  font-size: 15px;
+}
+
+.busBoxSection16 > div:nth-child(2) > div:nth-child(2) {
+  margin-left: 7px;
+}
+
+.busBoxSection17 {
+  width: 15%;
+}
+
+.busBoxSection17 > div:nth-child(1) {
+  height: 4px;
+  width: 72px;
+  border-radius: 3px;
+  background-color: red;
+}
+
+.busBoxSection17 > div:nth-child(2),
+.busBoxSection17 > div:nth-child(3) {
+  margin-top: 7px;
+  display: flex;
+  color: #7b7b7b;
+}
+
+.busBoxSection17 > div:nth-child(2) > div:nth-child(1),
+.busBoxSection17 > div:nth-child(3) > div:nth-child(1) {
+  margin-right: 4px;
+  font-weight: 500;
+  color: black;
+}
+
+/* bus box section 2 */
+
+.busBoxSection2 {
+  height: 16%;
+  margin-bottom: 1%;
+  display: flex;
+}
+
+.busBoxSection21 {
+  width: 160px;
+  height: 100%;
+}
+
+.busBoxSection22 {
+  width: auto;
+  display: flex;
+}
+
+.busBoxSection22 > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 10px;
+  border-radius: 3px;
+  background-color: #f8f4f4;
+  padding: 2.5px 8px;
+  font-size: 10px;
+}
+
+/* Bus box section 3 */
+
+.busBoxSection3 {
+  min-height: 25%;
+  height: auto;
+}
