@@ -1,3 +1,32 @@
-.Header {
+.Left {
   border: 1px solid green;
+  padding: 20px;
+}
+
+.Left ul {
+  list-style: none;
+}
+.Left_filters {
+  margin-bottom: 25px;
+}
+.Left ul li {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0px;
+}
+.Left li i {
+  margin: 0 10px;
+}
+.Left ul li * {
+  display: inline-block;
+}
+.Left_filters__search {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+.Left_filters__search i {
+  color: rgb(126, 123, 123);
+}
+.Left_filters__search input {
+  border: none;
+  outline: none;
 }
