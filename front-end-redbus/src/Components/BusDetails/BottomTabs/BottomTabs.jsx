@@ -1,4 +1,5 @@
 import React from "react";
+import { ViewSeats } from "../ViewSeats/ViewSeats";
 import styles from "./BottomTabs.module.css";
 
 export const BottomTabs = () => {
@@ -43,7 +44,7 @@ export const BottomTabs = () => {
       {tabsState[3] && (
         <div className={styles.displayArea}>Booking Policies</div>
       )}
-      {tabsState[4] && <div className={styles.displayArea}>VIEW SEATS</div>}
+      {tabsState[4] && <ViewSeats />}
     </>
   );
 };
