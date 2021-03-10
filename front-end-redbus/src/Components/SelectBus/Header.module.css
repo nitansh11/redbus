@@ -1,3 +1,25 @@
 .Header {
-  border: 1px solid green;
+}
+.HeaderOne {
+  background-color: #f8f4f4;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+}
+.HeaderOne > p:nth-child(1) {
+  margin: 10px 0px;
+}
+.HeaderTwo {
+  padding: 10px 10px;
+}
+.HeaderTwo > * {
+  display: inline-block;
+  margin-right: 10px;
+}
+.HeaderTwo > button {
+  padding: 5px;
+  width: 100px;
+  background-color: #f8f4f4;
+  border: 1px solid black;
+  border-radius: 2px;
+  outline: none;
 }
