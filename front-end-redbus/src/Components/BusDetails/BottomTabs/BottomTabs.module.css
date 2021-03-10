@@ -1,0 +1,38 @@
+.mainBar {
+  width: 60%;
+  display: flex;
+  margin-left: 40%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainBar > div {
+  cursor: pointer;
+  color: #3e3e52;
+}
+
+.mainBar > div:hover {
+  color: red;
+}
+
+.mainBar > div:last-child {
+  border: 1px solid red;
+  display: inline-block;
+  padding: 6px 16px 7px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 400;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: 0.1s;
+  border: none;
+  text-align: center;
+  background-color: #d84e55;
+  color: #fff;
+}
+
+.displayArea {
+  width: 100%;
+  height: 100px;
+}
