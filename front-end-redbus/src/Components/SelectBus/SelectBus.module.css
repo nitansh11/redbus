@@ -4,4 +4,6 @@
 }
 .SelectBus_mainContent {
   border: 1px solid blue;
+  display: grid;
+  grid-template-columns: 20% 80%;
 }
