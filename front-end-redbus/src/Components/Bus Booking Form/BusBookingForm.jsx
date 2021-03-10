@@ -5,7 +5,23 @@ import {MdEmail} from "react-icons/md";
 import {FaWhatsapp } from "react-icons/fa";
 
 
+
+const initState = {
+    age : "",
+    name : "",
+    gender : "",
+    email : "",
+    phone : ""
+}
+
 const BusBookingForm = () => {
+    const [bookingDetails , setBookingDetails] = React.useState(initState)
+    const handleChange = (e) =>{
+        const {name, value} = e.target ;
+        setBookingDetails({...bookingDetails , [name] : value})
+    }
+    console.log(bookingDetails)
+    const {name , age , gender , email , phone} = bookingDetails
     return (
         <div>
             <form>
@@ -22,20 +38,20 @@ const BusBookingForm = () => {
                         <span>Seat L12</span>
                     </div>
                     <div className = {Styles.form_label}>Name</div>
-                    <input className = {Styles.form_input} placeholder = "Name" type = "text"/>
+                    <input className = {Styles.form_input} placeholder = "Name" type = "text" name = "name" value = {name} onChange = {handleChange}/>
                     <div style = {{display : "flex" , justifyContent : "space-between"}}>
                         <div style = {{display : "flex" , flexDirection : "column"}}>
                             <div className = {Styles.form_label}>Gender</div>
                             <div style = {{display : "flex" , justifyContent : "space-evenly", marginTop : "10px"}}>
-                                <input className = {Styles.radioButton} type = "radio"/>
+                                <input className = {Styles.radioButton} type = "radio" name = "gender" value = "Male" checked = {gender === "Male"} onChange = {handleChange}/>
                                 <div className = {Styles.form_radio_label}>Male</div>
-                                <input className = {Styles.radioButton} type = "radio"/>
+                                <input className = {Styles.radioButton} type = "radio" name = "gender" value = "Female" checked = {gender === "Female"} onChange = {handleChange}/>
                                 <div className = {Styles.form_radio_label}>Female</div>
                             </div>
                         </div>
                         <div style = {{display : "flex" , flexDirection : "column"}}>
                             <div className = {Styles.form_label}>Age</div>
-                            <input className = {Styles.form_input} placeholder = "Age" type = "text"/>
+                            <input className = {Styles.form_input} placeholder = "Age" type = "text" name = "age" value = {age} onChange = {handleChange}/>
                         </div>
                     </div>
                 </div>
@@ -48,11 +64,11 @@ const BusBookingForm = () => {
                     Your ticket will be sent to these details
                 </div>
                 <div className = {Styles.form_label}>Email</div>
-                <input className = {Styles.form_input} placeholder = "Email" type = "text"/>
+                <input className = {Styles.form_input} placeholder = "Email" type = "email" name = "email" value = {email} onChange = {handleChange}/>
                 <div className = {Styles.form_label}>Phone</div>
                 <div style = {{display : "flex" , justifyContent : "space-between"}}>
                     <input className = {Styles.form_input} placeholder = "+91" type = "text" style = {{width : "50px" , color : "#4f91d9"}}/>
-                    <input className = {Styles.form_input} placeholder = "Phone" type = "number"/>
+                    <input className = {Styles.form_input} placeholder = "Phone" type = "number" name = "phone" value = {phone} onChange = {handleChange}/>
                 </div>
                 <div style = {{display : "flex" , justifyContent : "flex-start" , marginTop : "20px"}}>
                     <input  type = "checkbox"/>
