@@ -2,6 +2,6 @@ const express = require("express");
 const router = express.Router();
 const routeController = require("../controllers/route");
 
-router.post("/routes/add-route", routeController.addRoute);
+router.get("/v1/api/routes", routeController.getAllRoutes);
 
 module.exports = router;

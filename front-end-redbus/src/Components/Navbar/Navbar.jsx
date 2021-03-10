@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Navbar.module.css";
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import {MdAccountCircle} from "react-icons/md";
-
+import { MdAccountCircle } from "react-icons/md";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [anchorEl2, setAnchorEl2] = React.useState(null);
@@ -24,7 +24,7 @@ const Navbar = () => {
   };
   return (
     <div className={styles.Navbar}>
-      <div className = {styles.leftSide_header}>
+      <div className={styles.leftSide_header}>
         <img
           src="https://www.redbus.in/i/59538b35953097248522a65b4b79650e.png"
           alt="logo"
@@ -37,7 +37,7 @@ const Navbar = () => {
           <li>BUS HIRE</li>
         </ul>
       </div>
-      
+
       <ul className={styles.Navbar__listTwo}>
         <div className = {styles.rightSide_header}>
         <li>Help</li>
@@ -81,7 +81,6 @@ const Navbar = () => {
         </div>
         </li>
         </div>
-        
       </ul>
     </div>
   );
