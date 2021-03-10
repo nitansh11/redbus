@@ -7,13 +7,20 @@ import {MdAccountCircle} from "react-icons/md";
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl2, setAnchorEl2] = React.useState(null);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
+  const handleClick2 = (event) => {
+    setAnchorEl2(event.currentTarget);
+  };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleClose2 = () => {
+    setAnchorEl2(null);
   };
   return (
     <div className={styles.Navbar}>
@@ -56,20 +63,20 @@ const Navbar = () => {
         <li><MdAccountCircle className = {styles.icons} style = {{fontSize : "30px"}}/></li>
         <li>
         <div>
-          <RiArrowDropDownLine className = {styles.icons} onClick={handleClick}/>
+          <RiArrowDropDownLine className = {styles.icons} onClick={handleClick2}/>
             <Menu
               id="simple-menu"
-              anchorEl={anchorEl}
+              anchorEl={anchorEl2}
               keepMounted
-              open={Boolean(anchorEl)}
-              onClose={handleClose}
+              open={Boolean(anchorEl2)}
+              onClose={handleClose2}
             >
-              <MenuItem onClick={handleClose}>My Trips</MenuItem>
-              <MenuItem onClick={handleClose}>Wallet/Cards</MenuItem>
-              <MenuItem onClick={handleClose}>My Profile</MenuItem>
-              <MenuItem onClick={handleClose}>Wallet</MenuItem>
-              <MenuItem onClick={handleClose}>SignOut</MenuItem>
-              <MenuItem onClick={handleClose}>SignOut from all devices</MenuItem>
+              <MenuItem onClick={handleClose2}>My Trips</MenuItem>
+              <MenuItem onClick={handleClose2}>Wallet/Cards</MenuItem>
+              <MenuItem onClick={handleClose2}>My Profile</MenuItem>
+              <MenuItem onClick={handleClose2}>Wallet</MenuItem>
+              <MenuItem onClick={handleClose2}>SignOut</MenuItem>
+              <MenuItem onClick={handleClose2}>SignOut from all devices</MenuItem>
             </Menu>
         </div>
         </li>
