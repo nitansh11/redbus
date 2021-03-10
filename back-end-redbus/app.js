@@ -1,6 +1,17 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+mongoose.pluralize(null);
+app.use(express.json());
+const busRoutes = require("./routes/bus");
+const bookingRoutes = require("./routes/booking");
+const customerRoutes = require("./routes/customer");
+const routeRoutes = require("./routes/route");
+
+app.use(busRoutes);
+app.use(bookingRoutes);
+app.use(customerRoutes);
+app.use(routeRoutes);
 
 const connect = () => {
   return mongoose.connect(
