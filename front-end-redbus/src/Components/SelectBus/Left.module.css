@@ -1,5 +1,4 @@
 .Left {
-  border: 1px solid green;
   padding: 20px;
 }
 
@@ -12,6 +11,7 @@
 .Left ul li {
   border-bottom: 1px solid #ddd;
   padding: 15px 0px;
+  cursor: pointer;
 }
 .Left li i {
   margin: 0 10px;
@@ -22,11 +22,15 @@
 .Left_filters__search {
   border: 1px solid #ddd;
   padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 .Left_filters__search i {
   color: rgb(126, 123, 123);
+  cursor: pointer;
 }
 .Left_filters__search input {
   border: none;
   outline: none;
+  margin-left: 5px;
 }

@@ -4,8 +4,6 @@ const Header = () => {
   let source = `Bangalore (Bengaluru)`;
   let destination = `Mumbai`;
   let date = `10 Mar (Wed)`;
-
-  let path2 = `${source} -> ${destination} < ${date}>`;
   return (
     <div className={styles.Header}>
       <div className={styles.HeaderOne}>
