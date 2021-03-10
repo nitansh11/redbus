@@ -1,0 +1,93 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+.passenger_mainTitle{
+    text-align: center;
+    font-size: 19px;
+    margin: 0;
+    padding-bottom: 2px;
+    color: #4a4a4a;
+}
+.passangerInfoTitle{
+    display: flex;
+    padding: .5em;
+    font-weight: 600;
+    color: #1c1c1c;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.ContentBlock{
+    margin : 20px 20px;
+    box-shadow: 0 0 4px 0 hsla(0,0%,64%,.5);
+    padding: 20px 40px 20px 40px;
+    background: #fff;
+   
+}
+.form_label{
+    margin-top: 20px;
+    display: inline-block;
+    font-size: .875em;
+    text-align: left;
+    color: rgba(74,74,74,.86);
+    width: 100%;
+}
+.form_input{
+    width: 100%;
+    background: #fff;
+    line-height: 1.2em;
+    padding: .5em;
+    border-radius: 3px;
+    border: 1px solid #bababa;
+    outline: none;
+    font-size: 14px;
+    margin: .8em 0 0;
+    color: rgba(74,74,74,.86) !important;
+}
+.form_radio_label{
+    padding: 0 .45em;
+    margin: 0 20px 0 0;
+    font-size: 14px;
+}
+.radioButton{
+    z-index: 1;
+     border-radius: 50%;
+     width: 20px;
+     height: 20px;
+     margin-right: 10px;
+     cursor: pointer;
+ }
+ .passengerContactMsg{
+    margin-bottom: 1.5em;
+    color: #333;
+    background-color: #fff181;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 3px 20px;
+    width: fit-content;
+ }
+ .insure_title{
+    margin: 1em;
+    padding: 10px;
+    background-color: #ffeab8;
+    font-weight: 600;
+    font-size: 12px;
+    color: #1c1c1c;
+ }
+ .proceed_to_button{
+    background-color: #e9555d !important;
+    font-size: 14px;
+    padding: 7px 15px;
+    cursor: pointer;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 400;
+    overflow: hidden;
+    text-decoration: none;
+    transition: .1s;
+    border: none;
+    text-align: center;
+    background-color: #d84e55;
+    color: #fff;  
+ }
