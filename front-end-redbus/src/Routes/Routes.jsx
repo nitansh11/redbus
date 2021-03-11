@@ -10,7 +10,7 @@ const Routes = () => {
     <>
       <Switch>
         <Route path="/" exact>
-          <h1>Homepage</h1>
+          <div>Home Page</div>
         </Route>
         <Route path="/select-bus" exact>
           <SelectBus />

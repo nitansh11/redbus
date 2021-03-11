@@ -10,15 +10,23 @@ import { FormDrawer } from "./FormDrawer";
 import { SubRoutes } from "../SelectSubRoutes/SubRoutes";
 
 const ViewSeats = () => {
-  var container2Changer = false;
-  var container3Changer = false;
-  var container4Changer = true;
+  const [selectedSeats, setSelectedSeats] = React.useState([]);
+  const alreadyBookedSeats = [1, 10, 13, 25, 35];
 
-  const [currViewSeatComp, setCurrViewSeatComp] = React.useState(
-    "miniContainer2"
-  );
+  const [boardAndDrop, setBoardAndDrop] = React.useState(false);
 
-  const handleDisplayViewSeatComponents = () => {};
+  const handleBoardAndDrop = () => {
+    setBoardAndDrop(!boardAndDrop);
+  };
+
+  const handleSelectedSeats = (seatNo) => {
+    if (selectedSeats.includes(seatNo)) {
+      const arr = selectedSeats.filter((item) => item !== seatNo);
+      setSelectedSeats(arr);
+    } else {
+      setSelectedSeats([...selectedSeats, seatNo]);
+    }
+  };
 
   return (
     <div className={styles.mainContainer}>
@@ -29,28 +37,60 @@ const ViewSeats = () => {
         <div className={styles.mainContainer1Right}>
           <div>
             {new Array(10).fill(0).map((item, index) => {
-              return <SmallSeat key={index} />;
+              return (
+                <SmallSeat
+                  key={index}
+                  seatNo={index + 1}
+                  alreadyBookedSeats={alreadyBookedSeats}
+                  handleSelectedSeats={handleSelectedSeats}
+                  selectedSeats={selectedSeats}
+                />
+              );
             })}
           </div>
           <div>
             {new Array(10).fill(0).map((item, index) => {
-              return <SmallSeat key={index} />;
+              return (
+                <SmallSeat
+                  key={index}
+                  seatNo={10 + index + 1}
+                  alreadyBookedSeats={alreadyBookedSeats}
+                  handleSelectedSeats={handleSelectedSeats}
+                  selectedSeats={selectedSeats}
+                />
+              );
             })}
           </div>
           <div></div>
           <div>
             {new Array(10).fill(0).map((item, index) => {
-              return <SmallSeat key={index} />;
+              return (
+                <SmallSeat
+                  key={index}
+                  seatNo={20 + index + 1}
+                  alreadyBookedSeats={alreadyBookedSeats}
+                  handleSelectedSeats={handleSelectedSeats}
+                  selectedSeats={selectedSeats}
+                />
+              );
             })}
           </div>
           <div>
             {new Array(10).fill(0).map((item, index) => {
-              return <SmallSeat key={index} />;
+              return (
+                <SmallSeat
+                  key={index}
+                  seatNo={30 + index + 1}
+                  alreadyBookedSeats={alreadyBookedSeats}
+                  handleSelectedSeats={handleSelectedSeats}
+                  selectedSeats={selectedSeats}
+                />
+              );
             })}
           </div>
         </div>
       </div>
-      {container2Changer && (
+      {selectedSeats.length === 0 && (
         <div className={styles.mainContainer2}>
           <div className={styles.mainContainer21}>
             <div style={{ fontWeight: "bold" }}>SEAT LEGEND</div>
@@ -90,9 +130,12 @@ const ViewSeats = () => {
           </div>
         </div>
       )}
-      {container3Changer && (
+      {boardAndDrop && (
         <div className={styles.mainContainer3}>
-          <div className={styles.mainContainer31}>Boarding and Droping</div>
+          <div className={styles.mainContainer31}>
+            <div>Boarding and Dropping</div>
+            <div onClick={handleBoardAndDrop}>CHANGE</div>
+          </div>
           <div className={styles.mainContainer32}>
             <div>
               <div>
@@ -155,7 +198,9 @@ const ViewSeats = () => {
           </div>
         </div>
       )}
-      {container4Changer && <SubRoutes />}
+      {!boardAndDrop && selectedSeats.length > 0 && (
+        <SubRoutes handleBoardAndDrop={handleBoardAndDrop} />
+      )}
     </div>
   );
 };

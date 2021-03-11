@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./SubRoutes.module.css";
 
-const SubRoutes = () => {
+const SubRoutes = ({ handleBoardAndDrop }) => {
   const [pointActive, setPointActive] = React.useState(false);
 
   const [boardPoint, setBoardPoint] = React.useState("");
@@ -137,7 +137,9 @@ const SubRoutes = () => {
           </div>
         )}
       </div>
-      <button className={styles.continueButton}>Continue</button>
+      <button className={styles.continueButton} onClick={handleBoardAndDrop}>
+        Continue
+      </button>
     </div>
   );
 };

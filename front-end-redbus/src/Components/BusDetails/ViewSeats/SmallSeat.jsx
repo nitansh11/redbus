@@ -3,15 +3,33 @@ import AirlineSeatReclineExtraIcon from "@material-ui/icons/AirlineSeatReclineEx
 import styles from "./SmallSeat.module.css";
 import Tooltip from "@material-ui/core/Tooltip";
 
-const SmallSeat = () => {
-  var seatnumber = "B1";
+const SmallSeat = ({
+  seatNo,
+  alreadyBookedSeats,
+  handleSelectedSeats,
+  selectedSeats,
+}) => {
+  var color;
 
-  var unavailableSeatColor = { color: "#EEEDED" };
-  var availableSeatColor = { color: "black" };
+  if (selectedSeats.includes(seatNo)) {
+    color = { color: "blue" };
+  } else {
+    color = { color: "black" };
+  }
+
+  if (alreadyBookedSeats.includes(seatNo)) {
+    color = { color: "#EEEDED" };
+  }
+
+  const handleSeatBooking = () => {
+    if (!alreadyBookedSeats.includes(seatNo)) {
+      handleSelectedSeats(seatNo);
+    }
+  };
 
   return (
     <div className={styles.mainContainer}>
-      <Tooltip title={seatnumber} arrow>
+      <Tooltip title={seatNo} arrow onClick={handleSeatBooking} style={color}>
         <AirlineSeatReclineExtraIcon />
       </Tooltip>
     </div>

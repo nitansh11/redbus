@@ -112,6 +112,16 @@
   font-size: 16px;
   font-weight: 700;
   color: #3e3e52;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mainContainer31 > div:nth-child(2) {
+  font-size: 14px;
+  font-weight: 700;
+  color: #5279d0;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 .mainContainer32,
