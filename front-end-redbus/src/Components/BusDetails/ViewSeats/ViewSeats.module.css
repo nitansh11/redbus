@@ -2,7 +2,7 @@
   width: 100%;
   min-height: 350px;
   height: auto;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -97,7 +97,7 @@
   width: 470px;
   height: 400px;
   padding: 20px 10px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin-top: 30px;
   margin-bottom: 30px;
   background-color: rgb(248, 248, 248);
