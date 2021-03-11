@@ -12,39 +12,77 @@ import GpsFixedIcon from "@material-ui/icons/GpsFixed";
 import RestoreIcon from "@material-ui/icons/Restore";
 import { BottomTabs } from "../BottomTabs/BottomTabs";
 
-const BusBox = () => {
+const BusBox = ({
+  _id,
+  rating,
+  operatorName,
+  busType,
+  departureTime,
+  images,
+  routes,
+  liveTracking,
+  reschedulable,
+  amenities,
+  filledSeats,
+  routeDetails,
+}) => {
+  var avgRating = 0;
+  var totalReviews = 0;
+  rating.forEach((item, index) => {
+    avgRating += (index + 1) * item;
+    totalReviews += item;
+  });
+
+  avgRating = (avgRating / totalReviews).toFixed(1);
+
+  var seatPrice = 0;
+  var busTypeName = "";
+  if (busType == 1) {
+    seatPrice = 50 * Math.floor(routeDetails["duration"] / 2);
+    busTypeName = "Seater";
+  } else if (busType == 2) {
+    seatPrice = 100 * Math.floor(routeDetails["duration"] / 2);
+    busTypeName = "Sleeper";
+  } else if (busType == 3) {
+    seatPrice = 125 * Math.floor(routeDetails["duration"] / 2);
+    busTypeName = "A/C Seater";
+  } else {
+    seatPrice = 75 * Math.floor(routeDetails["duration"] / 2);
+    busTypeName = "Non - A/C";
+  }
+
   return (
     <div className={styles.busBox}>
       <div className={styles.busBoxSection1}>
         <div className={styles.busBoxSection11}>
-          <div>Zee Travels</div>
-          <div>A/C Seater</div>
+          <div>{operatorName}</div>
+          <div>{busTypeName}</div>
         </div>
         <div className={styles.busBoxSection12}>
           <div>07:20</div>
-          <div>Naya More</div>
+          <div>{routeDetails["departureLocation"]["name"]}</div>
         </div>
         <div className={styles.busBoxSection13}>
-          <div>02h 10m</div>
+          <div>{routeDetails["duration"]}&nbsp;h</div>
         </div>
         <div className={styles.busBoxSection14}>
           <div>09:30</div>
-          <div>Sarkari Bus Stand</div>
+          <div>{routeDetails["arrivalLocation"]["name"]}</div>
         </div>
         <div className={styles.busBoxSection15}>
           <div>
             <StarsIcon />
-            <div>4.3</div>
+            <div>{avgRating}</div>
           </div>
           <div>
             <PeopleIcon />
-            <div>100</div>
+            <div>{totalReviews}</div>
           </div>
         </div>
         <div className={styles.busBoxSection16}>
           <div>
             <div>INR</div>
-            <div>231</div>
+            <div>{seatPrice}</div>
           </div>
           <div>
             <LocalOfferIcon />
@@ -54,11 +92,11 @@ const BusBox = () => {
         <div className={styles.busBoxSection17}>
           <div></div>
           <div>
-            <div>20</div>
+            <div>{40 - filledSeats.length}</div>
             <div>Seats Available</div>
           </div>
           <div>
-            <div>10</div>
+            <div>20</div>
             <div>Window</div>
           </div>
         </div>
@@ -122,7 +160,12 @@ const BusBox = () => {
         </div>
       </div>
       <div className={styles.busBoxSection3}>
-        <BottomTabs />
+        <BottomTabs
+          filledSeats={filledSeats}
+          seatPrice={seatPrice}
+          routeDetails={routeDetails}
+          busId={_id}
+        />
       </div>
     </div>
   );
