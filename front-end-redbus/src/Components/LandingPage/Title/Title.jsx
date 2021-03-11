@@ -9,6 +9,7 @@ const Title = () => {
   const [departure, setDeparture] = React.useState("");
   const [arrival, setArrival] = React.useState("");
   const [date, setDate] = React.useState("");
+
   return (
     <div className={styles.title}>
       <div className={styles.img}>
@@ -31,7 +32,7 @@ const Title = () => {
             }}
           />
         </div>
-        <div
+        {/* <div
           style={{
             borderRadius: "50%",
             border: "1px solid grey",
@@ -46,7 +47,7 @@ const Title = () => {
             color="disabled"
             style={{ position: "absolute" }}
           />
-        </div>
+        </div> */}
         <div className={styles.formDiv}>
           <p style={{ width: "10px" }}></p>
           <span>
