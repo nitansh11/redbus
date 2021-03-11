@@ -2,8 +2,9 @@ import React from "react";
 import styles from "./SubRoutes.module.css";
 
 const SubRoutes = ({ handleBoardAndDrop }) => {
-  const [pointActive, setPointActive] = React.useState(false);
+  const [pointActive, setPointActive] = React.useState(true);
 
+  //get boarding and destination point
   const [boardPoint, setBoardPoint] = React.useState("");
   const [destPoint, setDestPoint] = React.useState("");
 
@@ -49,8 +50,6 @@ const SubRoutes = ({ handleBoardAndDrop }) => {
   const handleDestChange = (e) => {
     setDestPoint(e.target.value);
   };
-
-  console.log(boardPoint, destPoint);
 
   return (
     <div className={styles.mainContainer}>
