@@ -10,6 +10,7 @@ const App = () => {
     <div>
       <Navbar />
       <Routes />
+     
     </div>
   );
 };
