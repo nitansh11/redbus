@@ -2,15 +2,19 @@ import React from 'react'
 import Styles from './BusHireForm.module.css'
 import { FaRegDotCircle } from "react-icons/fa";
 import { HiLocationMarker } from "react-icons/hi";
+import { FaLongArrowAltLeft } from "react-icons/fa";
 
-const BusHireForm = () => {
+const BusHireForm = ({handleClick}) => {
    
     return (
         <div>
             <div className = {Styles.BusHireFormcontainer}>
-                   <div className = {Styles.outstationHeading}>Outstation</div>
-                   <form>
-                        <div style = {{display : "flex" , flexDirection : "column", backgroundColor : " #e6f2ff",padding : "20px"}}>
+                <div className = {Styles.outstationHeading}>
+                <FaLongArrowAltLeft onClick ={handleClick}/>
+                    <div style = {{marginLeft : "20px"}}>Outstation</div>
+                </div>
+                <form>
+                    <div style = {{display : "flex" , flexDirection : "column", backgroundColor : " #e6f2ff",padding : "20px"}}>
                             <div className = {Styles.pickUpDestnationDiv}>
                                 <div className = {Styles.pickupDestiationHeading}>Pick up</div>
                                 <div className = {Styles.pickUpDestnationEachDiv}>

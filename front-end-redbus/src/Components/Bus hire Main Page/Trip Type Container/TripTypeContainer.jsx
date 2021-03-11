@@ -1,13 +1,13 @@
 import React from 'react'
 import Styles from './TripTypeContainer.module.css'
-const TripTypeContainer = () => {
+const TripTypeContainer = ({handleClick}) => {
     return (
         <div>
             <div className = {Styles.tripTypecontainer}>
                    <div className = {Styles.hireVehicleHeading}>Hire a Vehicle</div>
                    <div style = {{display : "flex" , flexDirection : "column", backgroundColor : " #e6f2ff",padding : "20px"}}>
                         <div style = {{color: "#3e3e52",fontWeight: "700",fontSize: "19px"}}>click on the journey type</div>
-                        <div className = {Styles.journeyTypeDiv}>
+                        <div className = {Styles.journeyTypeDiv} onClick = {handleClick}>
                            <div style = {{display : "flex" , flexDirection : "column"}}>
                                <div className = {Styles.journeyText}>Outstation</div>
                                <div className = {Styles.journeySubText}>Anywere outside</div>

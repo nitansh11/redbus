@@ -17,6 +17,8 @@ body{
     top : 6.5%;
 }
 .outstationHeading{
+    display: flex;
+    justify-content: flex-start;
     background-color: #d84e55;
     border-radius: 8px;
     padding: 20px;

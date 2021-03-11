@@ -5,6 +5,20 @@ import TripTypeContainer from './Trip Type Container/TripTypeContainer'
 
 const BusHire = () => {
     const [active , setActive] = React.useState("Type of trip")
+    const handleClick = () => {
+        if(active === "Type of trip"){
+            setActive("Bus Hire Form")
+        }
+        else{
+            setActive("Type of trip")
+        }
+        if(active === "Bus Hire Form"){
+            setActive("Type of trip")
+        }
+        else{
+            setActive("Bus Hire Form")
+        }
+    }
     return (
         <div>
             <div className = {Styles.baneer}>
@@ -184,8 +198,9 @@ const BusHire = () => {
                </div>
                <div></div>
                 {/* tripTypeContainer */}
-                {active === "Type of trip" && <TripTypeContainer/>}
-                {active === "Bus Hire Form" && <BusHireForm/>}
+                {active === "Type of trip" && <TripTypeContainer handleClick = {handleClick} active = {active}/>}
+                {/* busHireForm */}
+                {active === "Bus Hire Form" && <BusHireForm handleClick = {handleClick}/>}
                 
             </div>
         </div>
