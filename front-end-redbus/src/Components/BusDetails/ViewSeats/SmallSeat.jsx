@@ -18,7 +18,7 @@ const SmallSeat = ({
   }
 
   if (alreadyBookedSeats.includes(seatNo)) {
-    color = { color: "#EEEDED" };
+    color = { color: "red" };
   }
 
   const handleSeatBooking = () => {

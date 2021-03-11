@@ -1,7 +1,7 @@
 .mainContainer {
   width: 470px;
   height: 400px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 7px;
   background-color: rgb(248, 248, 248);
   margin-top: 30px;

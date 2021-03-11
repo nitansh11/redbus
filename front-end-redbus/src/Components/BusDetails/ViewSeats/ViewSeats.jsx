@@ -13,6 +13,8 @@ const ViewSeats = () => {
   const [selectedSeats, setSelectedSeats] = React.useState([]);
   const alreadyBookedSeats = [1, 10, 13, 25, 35];
 
+  const BusType = 1;
+
   const [boardAndDrop, setBoardAndDrop] = React.useState(false);
 
   const handleBoardAndDrop = () => {
@@ -109,7 +111,7 @@ const ViewSeats = () => {
               <div>
                 <CheckBoxOutlineBlankIcon
                   style={{
-                    backgroundColor: "#EEEDED",
+                    backgroundColor: "red",
                     borderRadius: "4px",
                     border: "0px",
                   }}
@@ -130,7 +132,7 @@ const ViewSeats = () => {
           </div>
         </div>
       )}
-      {boardAndDrop && (
+      {boardAndDrop && selectedSeats.length > 0 && (
         <div className={styles.mainContainer3}>
           <div className={styles.mainContainer31}>
             <div>Boarding and Dropping</div>
@@ -177,7 +179,7 @@ const ViewSeats = () => {
           <Divider />
           <div className={styles.mainContainer34}>
             <div>Seat No.</div>
-            <div>B14, B15, B16</div>
+            <div>{selectedSeats.join(", ")}</div>
           </div>
           <Divider />
           <div className={styles.mainContainer35}>Fare Details</div>
@@ -191,7 +193,16 @@ const ViewSeats = () => {
                 Taxes will be calculated during payment
               </span>
             </div>
-            <div>INR 231.52</div>
+            <div>
+              {/* BusType 1.seater  2.Sleeper 3.AC  4.Non-Ac */}
+              {BusType === 1
+                ? `INR. ${selectedSeats.length * 50}`
+                : BusType === 2
+                ? `INR. ${selectedSeats.length * 100}`
+                : BusType === 3
+                ? `INR. ${selectedSeats.length * 125}`
+                : `INR. ${selectedSeats.length * 75}`}
+            </div>
           </div>
           <div className={styles.mainContainer37}>
             <FormDrawer />
