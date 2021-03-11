@@ -9,7 +9,7 @@ import Title from "./Title/Title";
 const LandingPage = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <Title />
       <Coupon />
       <Safety />

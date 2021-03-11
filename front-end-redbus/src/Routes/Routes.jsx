@@ -5,12 +5,13 @@ import Error from "../Components/Error/Error";
 import Profile from "../Components/Profile Page/Profile";
 import Payment from "../Components/Payment Page/Payment";
 import BusBookingForm from "../Components/Bus Booking Form/BusBookingForm";
+import LandingPage from "../Components/LandingPage/LandingPage";
 const Routes = () => {
   return (
     <>
       <Switch>
         <Route path="/" exact>
-          <div>Home Page</div>
+          <LandingPage />
         </Route>
         <Route path="/select-bus" exact>
           <SelectBus />
