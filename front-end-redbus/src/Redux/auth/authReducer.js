@@ -26,6 +26,13 @@ const authReducer = (state = initState, action) => {
 
     case actionTypes.LOGOUT:
       return { ...state, isLoggedIn: false, currentCustomer: null };
+
+    case actionTypes.ADD_CUSTOMER_MONGO_REQUEST:
+      return { ...state, isLoading: true, error: false };
+    case actionTypes.ADD_CUSTOMER_MONGO_SUCCESS:
+      return { ...state, isLoading: false, error: false };
+    case actionTypes.ADD_CUSTOMER_MONGO_FAILURE:
+      return { ...state, isLoading: false, error: true };
     default:
       return state;
   }

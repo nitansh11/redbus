@@ -7,13 +7,17 @@ import { MdAccountCircle } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
 import { useSelector, useDispatch } from "react-redux";
-import { loginSuccess, loginFailure, logout } from "../../Redux/auth/actions";
+import {
+  loginSuccess,
+  loginFailure,
+  logout,
+  addCustomerMongo,
+} from "../../Redux/auth/actions";
 import { useHistory } from "react-router-dom";
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [anchorEl2, setAnchorEl2] = React.useState(null);
   const dispatch = useDispatch();
-
   const isLoggedIn = useSelector((state) => state.authReducer.isLoggedIn);
   const currentCustomer = useSelector(
     (state) => state.authReducer.currentCustomer
@@ -120,7 +124,7 @@ const Navbar = () => {
                       clientId="493530183469-naj3i844vuh8ru5usav057k5kuabc3iq.apps.googleusercontent.com"
                       onSuccess={(response) => {
                         dispatch(loginSuccess(response));
-                        console.log(response);
+                        dispatch(addCustomerMongo(response.profileObj));
                       }}
                       onFailure={(response) => {
                         dispatch(loginFailure(response));
