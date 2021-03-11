@@ -2,9 +2,13 @@ import React from 'react'
 import BusHireForm from './Bus hire Form/BusHireForm'
 import Styles from './BusHire.module.css'
 import TripTypeContainer from './Trip Type Container/TripTypeContainer'
+import { FaCheckCircle} from "react-icons/fa";
+import FAQ from './FAQ Section/FAQ';
+
 
 const BusHire = () => {
     const [active , setActive] = React.useState("Type of trip")
+   
     const handleClick = () => {
         if(active === "Type of trip"){
             setActive("Bus Hire Form")
@@ -19,6 +23,7 @@ const BusHire = () => {
             setActive("Bus Hire Form")
         }
     }
+    
     return (
         <div>
             <div className = {Styles.baneer}>
@@ -180,23 +185,45 @@ const BusHire = () => {
                 </div>
                 <div className = {Styles.whyBookWithBushire_secondFeature}>
                 <div className = {Styles.whyBookWithBushire_insideFeature}>
-                        <div className = {Styles.whyBookWithBushire_insideFeature_text}>
-                            <h3>Plan the perfect</h3>
-                            <h3>group trip.</h3>
-                            <p>Choose from</p>
-                            <div style = {{display : "flex" , justifyContent : "space-between",width : "250px"}}>
-                                <h3>Outstation</h3>
-                                <h3>Local</h3>
-                                <h3>Airport</h3>
+                        <div style = {{display : "flex",justifyContent : "flex-start"}}>
+                            <div><img src = "https://www.redbus.in/bushire/static/mwebv2/home/logo-safety-plus.svg" alt = ""/></div>
+                            <div style = {{display : "flex" , flexDirection : "column",marginLeft : "20px"}}>
+                            <p style = {{fontSize : "14px" , color : "#3e3e52"}}>Introducing</p>
+                            <h3 style = {{fontWeight : "700" , fontSize : "30px" , color : "#3e3e52"}}>Safety+</h3>
                             </div>
                         </div>
-                        
                         <img src = "https://www.redbus.in/bushire/static/mwebv2/home/thermal.svg" alt = ""/>
                     </div>
                 </div>
-                <div className = {Styles.whyBookWithBushire_thirdFeature}></div>
+                <div className = {Styles.whyBookWithBushire_thirdFeature}>
+                    <div style = {{display : "flex" , justifyContent : "flex-start", alignItems : "center"}}>
+                        <FaCheckCircle style = {{color : "green" , fontSize : "20px"}}/>
+                        <h3 style = {{fontWeight : "700" , fontSize : "24px" , color : "#3e3e52", marginLeft : "10px"}}>Bus Hire Stats</h3>
+                    </div>
+                    <div style = {{display : "flex" , justifyContent : "space-between",width : "350px",marginTop : "20px"}}>
+                        
+                    <div style = {{display : "flex" , flexDirection : "column" , height : "200px"}}>
+                        <div style = {{fontWeight : "700" , fontSize : "24px" , color : "#1347a0"}}>60,000+</div>
+                        <div>Trips Done</div>
+                    </div>
+                    <div style = {{display : "flex" , flexDirection : "column" , height : "200px"}}>
+                        <div style = {{fontWeight : "700" , fontSize : "24px" , color : "#1347a0"}}>4,000+</div>
+                        <div>Vehicles</div>
+                    </div>
+                    <div style = {{display : "flex" , flexDirection : "column" , height : "200px"}}>
+                        <div style = {{fontWeight : "700" , fontSize : "24px" , color : "#1347a0"}}>500+</div>
+                        <div>Operators</div>
+                    </div>
+                </div>
+                </div>
                </div>
-               <div></div>
+               {/* Bus hire operates in */}
+               <div className = {Styles.whyBookWithBushire}>
+                    <div className = {Styles.bookInEasySteps_heading}>Bus Hire Operates in</div>
+                    <div><img style = {{marginTop : "30px" , height : "300px"}} src = "https://www.redbus.in/bushire/static/mwebv2/home/city-list.svg" alt = "" /></div>
+               </div>
+                {/* FAQs */}
+                <FAQ/>
                 {/* tripTypeContainer */}
                 {active === "Type of trip" && <TripTypeContainer handleClick = {handleClick} active = {active}/>}
                 {/* busHireForm */}
