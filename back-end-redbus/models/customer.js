@@ -5,13 +5,17 @@ const customerSchema = new Schema({
     type: String,
     required: true,
   },
+  googleId: {
+    type: String,
+    required: false,
+  },
   age: {
     type: Number,
-    required: true,
+    required: false,
   },
   gender: {
     type: String,
-    required: true,
+    required: false,
   },
   email: {
     type: String,

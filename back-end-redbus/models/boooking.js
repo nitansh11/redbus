@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const bookingSchema = new Schema({
   customerId: {
-    type: [Schema.Types.ObjectId],
-    ref: "Bookings",
+    type: Schema.Types.ObjectId,
+    ref: "Customers",
     required: true,
   },
   passengerDetails: [
@@ -43,11 +43,13 @@ const bookingSchema = new Schema({
     required: true,
   },
   departureDetails: {
+    city: { type: String, required: true },
     location: { type: String, required: true },
-    time: { type: String, required: true },
+    time: { type: Number, required: true },
     date: { type: String, required: true },
   },
   arrivalDetails: {
+    city: { type: String, required: true },
     location: { type: String, required: true },
     time: { type: String, required: true },
     date: { type: String, required: true },

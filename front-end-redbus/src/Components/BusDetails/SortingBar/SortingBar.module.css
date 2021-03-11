@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  font-family: Montserrat, sans-serif;
+}
+
+.securityContainer {
+  width: 100%;
+  height: 40px;
+  padding-top: 10px;
+  display: flex;
+  text-align: center;
+}
+
+.securityContainer > div {
+  color: rgb(62, 62, 82);
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.mainContainer {
+  width: 100%;
+  height: 30px;
+  margin-top: 20px;
+  padding: 10px 0 0;
+  color: #4a4a4a;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mainContainer > div {
+  height: 100%;
+}
+
+.mainContainer1 {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 8px;
+}
+
+.mainContainer1 > div:nth-child(1) {
+  font-size: 14px;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+
+.mainContainer1 > div:nth-child(2) {
+  color: #3e3e52;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.mainContainer2 {
+  width: 10%;
+  color: #3e3e52;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.mainContainer3 {
+  width: 10%;
+  color: #3e3e52;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.mainContainer4 {
+  width: 14%;
+  color: #3e3e52;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.mainContainer5 {
+  width: 10%;
+  color: #3e3e52;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.mainContainer6 {
+  width: 15%;
+  color: #3e3e52;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.mainContainer7 {
+  width: 15%;
+  color: #3e3e52;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
