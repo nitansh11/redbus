@@ -17,21 +17,26 @@ const busSchema = new Schema({
     type: [Number],
     required: true,
   },
-  fare: {
-    type: Number,
-    required: true,
-  },
+  // fare is manual
   totalSeats: {
     type: Number,
-    required: true,
+    required: false,
   },
   routes: {
-    type: [Schema.Types.ObjectId],
+    type: Schema.Types.ObjectId,
     ref: "Routes",
     required: true,
   },
   images: {
     type: String,
+    required: true,
+  },
+  liveTracking: {
+    type: Number,
+    required: true,
+  },
+  reschedulable: {
+    type: Number,
     required: true,
   },
 });
