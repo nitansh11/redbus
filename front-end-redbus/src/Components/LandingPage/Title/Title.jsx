@@ -4,11 +4,36 @@ import ApartmentIcon from "@material-ui/icons/Apartment";
 import TodayIcon from "@material-ui/icons/Today";
 import SettingsEthernetIcon from "@material-ui/icons/SettingsEthernet";
 import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getRoutes } from "../../../Redux/routes/action";
 const Title = () => {
   const history = useHistory();
   const [departure, setDeparture] = React.useState("");
   const [arrival, setArrival] = React.useState("");
   const [date, setDate] = React.useState("");
+  const [
+    displayDepartureDropdown,
+    setDisplayDepartureDropdown,
+  ] = React.useState(false);
+  const [displayArrivalDropdown, setDisplayArrivalDropdown] = React.useState(
+    false
+  );
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(getRoutes());
+  }, []);
+
+  const routes = useSelector((state) => state.routesReducer.routes);
+  console.log("Routes are:", routes);
+
+  const onDepartureChange = (e) => {
+    setDeparture(e.target.value);
+  };
+
+  const onArrivalChange = (e) => {
+    setArrival(e.target.value);
+  };
 
   return (
     <div className={styles.title}>
@@ -27,27 +52,10 @@ const Title = () => {
             type="text"
             placeholder="Source"
             value={departure}
-            onChange={(e) => {
-              setDeparture(e.target.value);
-            }}
+            onChange={onDepartureChange}
           />
         </div>
-        {/* <div
-          style={{
-            borderRadius: "50%",
-            border: "1px solid grey",
-            height: "25px",
-            width: "25px",
-            position: "absolute",
-            left: "32%",
-            top: "15%",
-          }}
-        >
-          <SettingsEthernetIcon
-            color="disabled"
-            style={{ position: "absolute" }}
-          />
-        </div> */}
+
         <div className={styles.formDiv}>
           <p style={{ width: "10px" }}></p>
           <span>
@@ -57,9 +65,7 @@ const Title = () => {
             type="text"
             placeholder="Destination"
             value={arrival}
-            onChange={(e) => {
-              setArrival(e.target.value);
-            }}
+            onChange={onArrivalChange}
           />
         </div>
         <div className={styles.formDiv}>
@@ -92,3 +98,21 @@ const Title = () => {
 };
 
 export default Title;
+{
+  /* <div
+          style={{
+            borderRadius: "50%",
+            border: "1px solid grey",
+            height: "25px",
+            width: "25px",
+            position: "absolute",
+            left: "32%",
+            top: "15%",
+          }}
+        >
+          <SettingsEthernetIcon
+            color="disabled"
+            style={{ position: "absolute" }}
+          />
+        </div> */
+}
