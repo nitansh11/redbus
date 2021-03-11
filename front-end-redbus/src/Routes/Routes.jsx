@@ -6,6 +6,8 @@ import Profile from "../Components/Profile Page/Profile";
 import Payment from "../Components/Payment Page/Payment";
 import BusBookingForm from "../Components/Bus Booking Form/BusBookingForm";
 import LandingPage from "../Components/LandingPage/LandingPage";
+import BusHire from "../Components/Bus hire Main Page/BusHire";
+
 const Routes = () => {
   return (
     <>
@@ -24,6 +26,9 @@ const Routes = () => {
         </Route>
         <Route path="/booking-form" exact>
           <BusBookingForm />
+        </Route>
+        <Route path="/bus-hire" exact>
+          <BusHire />
         </Route>
         <Route>
           <Error></Error>
