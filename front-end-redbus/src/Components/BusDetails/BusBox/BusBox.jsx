@@ -3,7 +3,6 @@ import styles from "./BusBox.module.css";
 import StarsIcon from "@material-ui/icons/Stars";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import PeopleIcon from "@material-ui/icons/People";
-
 import PowerIcon from "@material-ui/icons/Power";
 import MovieFilterIcon from "@material-ui/icons/MovieFilter";
 import WbIncandescentIcon from "@material-ui/icons/WbIncandescent";
