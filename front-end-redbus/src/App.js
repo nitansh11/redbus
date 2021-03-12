@@ -14,8 +14,8 @@ const App = () => {
       <Routes />
 
       {/* <BusHire/> */}
-      <SubFooter/>
-      <BusHireFooter/>
+      <SubFooter />
+      <BusHireFooter />
     </div>
   );
 };

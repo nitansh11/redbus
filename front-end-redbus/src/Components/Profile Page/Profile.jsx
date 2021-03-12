@@ -5,14 +5,16 @@ import { FaWallet } from "react-icons/fa";
 import { AiOutlineSetting } from "react-icons/ai";
 import { BiPin } from "react-icons/bi";
 import MyTrips from "./MyTrips";
-import { useSelelector } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Profile = () => {
   const [selectedItem, setSelectedItem] = React.useState("trips");
   const handleListItemClick = (selected) => {
     console.log("Selected: ", selected);
     setSelectedItem(selected);
   };
-
+  const currentCustomer = useSelector(
+    (state) => state.authReducer.currentCustomer
+  );
   return (
     <div className={Styles.ProfilePannel}>
       <div className={Styles.leftPart}>
@@ -28,7 +30,9 @@ const Profile = () => {
                 justifyContent: "space-evenly",
               }}
             >
-              <div className={Styles.profileName}>Archana singh</div>
+              <div className={Styles.profileName}>
+                {currentCustomer ? currentCustomer.name : "Dashboard"}
+              </div>
               <div className={Styles.walletVerified}>Wallet Verified</div>
             </div>
           </li>

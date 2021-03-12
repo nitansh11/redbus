@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./SingleTrip.module.css";
-const SingleTrip = () => {
+
+const SingleTrip = ({ booking }) => {
+  console.log("Booking is : ", booking);
   return (
     <div className={styles.SingleTrip}>
       <div className={styles.SingleTrip__image}>

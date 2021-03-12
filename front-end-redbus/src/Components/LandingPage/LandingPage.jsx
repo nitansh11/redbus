@@ -187,7 +187,7 @@ const LandingPage = () => {
       <Safety />
       <BusTracker />
       <Services />
-      <Awards/>
+      <Awards />
     </div>
   );
 };
