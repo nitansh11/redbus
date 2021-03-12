@@ -21,7 +21,7 @@ const MyTrips = () => {
   }, [currentCustomer]);
 
   const renderTripBookings = () => {
-    if (allBookings.length == 0) {
+    if (allBookings.length === 0) {
       return <h1>No Bookings Found!</h1>;
     }
     return allBookings.map((booking) => (
