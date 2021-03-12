@@ -1,0 +1,13 @@
+.busHire_Footer{
+    background-color: #222;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+.busHireFooterTextSection{
+    width : 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
