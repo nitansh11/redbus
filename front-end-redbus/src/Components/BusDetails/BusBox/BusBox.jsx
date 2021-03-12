@@ -11,6 +11,8 @@ import DirectionsBusIcon from "@material-ui/icons/DirectionsBus";
 import GpsFixedIcon from "@material-ui/icons/GpsFixed";
 import RestoreIcon from "@material-ui/icons/Restore";
 import { BottomTabs } from "../BottomTabs/BottomTabs";
+import { useSelector, useDispatch } from "react-redux";
+import { updateBookingDetails } from "../../../Redux/BookBus/action";
 
 const BusBox = ({
   _id,
@@ -26,6 +28,23 @@ const BusBox = ({
   filledSeats,
   routeDetails,
 }) => {
+  // capturing duration in redux store
+  let dispatch = useDispatch();
+  React.useEffect(() => {
+    const payload1 = {
+      key: "duration",
+      value: routeDetails["duration"],
+    };
+
+    const payload2 = {
+      key: "operatorName",
+      value: operatorName,
+    };
+
+    dispatch(updateBookingDetails(payload1));
+    dispatch(updateBookingDetails(payload2));
+  }, []);
+
   var avgRating = 0;
   var totalReviews = 0;
   rating.forEach((item, index) => {
@@ -51,6 +70,9 @@ const BusBox = ({
     busTypeName = "Non - A/C";
   }
 
+  var busDepartureTime = departureTime;
+  var busArrivalTime =
+    (Number(departureTime) + Number(routeDetails["duration"])) % 24;
   return (
     <div className={styles.busBox}>
       <div className={styles.busBoxSection1}>
@@ -59,16 +81,14 @@ const BusBox = ({
           <div>{busTypeName}</div>
         </div>
         <div className={styles.busBoxSection12}>
-          <div>{departureTime}:00</div>
+          <div>{busDepartureTime}:00</div>
           <div>{routeDetails["departureLocation"]["name"]}</div>
         </div>
         <div className={styles.busBoxSection13}>
           <div>{routeDetails["duration"]}&nbsp;h</div>
         </div>
         <div className={styles.busBoxSection14}>
-          <div>
-            {(Number(departureTime) + Number(routeDetails["duration"])) % 24}:00
-          </div>
+          <div>{busArrivalTime}:00</div>
           <div>{routeDetails["arrivalLocation"]["name"]}</div>
         </div>
         <div className={styles.busBoxSection15}>
@@ -179,6 +199,8 @@ const BusBox = ({
           seatPrice={seatPrice}
           routeDetails={routeDetails}
           busId={_id}
+          busArrivalTime={busArrivalTime}
+          busDepartureTime={busDepartureTime}
         />
       </div>
     </div>
