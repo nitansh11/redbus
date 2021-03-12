@@ -4,6 +4,7 @@ import { authReducer } from "./auth/authReducer";
 import { busDetailsReducer } from "./BookBus/reducer";
 import { updateFilterDetailsReducer } from "./FilterAndSort/reducer";
 import { routesReducer } from "./routes/routesReducer";
+import {busServiceReducer} from './busService/busServicereducer'
 
 const rootReducer = combineReducers({
   authReducer,
