@@ -12,6 +12,7 @@ const Payment = () => {
   );
   console.log(currentCustomer);
   const currentBus = useSelector((state) => state.busServiceReducer.currentBus);
+  console.log("Current Bus: ", currentBus);
   return (
     <div>
       {/* <div className = {Styles.payment__main_header}>

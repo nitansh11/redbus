@@ -45,7 +45,9 @@ app.use(busRoutes);
 app.use(bookingRoutes);
 app.use(customerRoutes);
 app.use(routeRoutes);
+
 const busServiceRoutes = require("./routes/busservice");
+app.use(busServiceRoutes);
 
 const connect = () => {
   return mongoose.connect(

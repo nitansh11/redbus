@@ -12,9 +12,9 @@ const BusServiceCardPage = () => {
   const dispatch = useDispatch();
 
   const history = useHistory();
-  const handleClick = (id) => {
-    history.push(`/busPage/${id}`);
-  };
+  // const handleClick = (id) => {
+  //   history.push(`/busPage/${id}`);
+  // };
 
   React.useEffect(() => {
     dispatch(getBusData());
@@ -51,8 +51,10 @@ const BusServiceCardPage = () => {
                 </div>
                 <div className={design.footerCard}>
                   {/* <Link to={`/busdetails/:${item._id}`}>view details</Link> */}
-                  <Button onClick={() => handleClick(item._id)} color="primary">
-                    view details
+                  <Button color="primary">
+                    <Link to={`/bus-hire-details/${item._id}`}>
+                      View Details
+                    </Link>
                   </Button>
                 </div>
               </div>
