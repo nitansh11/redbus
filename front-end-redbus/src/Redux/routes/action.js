@@ -5,9 +5,10 @@ const getRoutesRequest = () => {
     type: actionTypes.GET_ROUTES_REQUEST,
   };
 };
-const getRoutesSuccess = () => {
+const getRoutesSuccess = (routes) => {
   return {
     type: actionTypes.GET_ROUTES_SUCCESS,
+    payload: routes,
   };
 };
 const getRoutesFailure = () => {
@@ -16,14 +17,14 @@ const getRoutesFailure = () => {
   };
 };
 const getRoutes = () => {
+  console.log("heloooo");
   return async (dispatch) => {
-    // dispatch(getRoutesRequest());
+    dispatch(getRoutesRequest());
     try {
       const res = await axios.get("http://localhost:8000/v1/api/routes");
-      console.log("in action: ", res);
-      //   dispatch(getRoutesSuccess(res));
+      dispatch(getRoutesSuccess(res.data));
     } catch (err) {
-      //   dispatch(getRoutesFailure());
+      dispatch(getRoutesFailure());
     }
   };
 };

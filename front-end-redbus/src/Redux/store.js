@@ -3,11 +3,13 @@ import thunk from "redux-thunk";
 import { authReducer } from "./auth/authReducer";
 import { busDetailsReducer } from "./BookBus/reducer";
 import { updateFilterDetailsReducer } from "./FilterAndSort/reducer";
+import { routesReducer } from "./routes/routesReducer";
 
 const rootReducer = combineReducers({
   authReducer,
   busDetailsReducer,
   updateFilterDetailsReducer,
+  routesReducer,
 });
 
 let composeEnhancers = compose;

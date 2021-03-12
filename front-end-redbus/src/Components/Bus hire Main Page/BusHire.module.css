@@ -199,6 +199,7 @@ body{
     background: url("https://www.redbus.in/bushire/static/mwebv2/home/group%20(2).svg");
     background-size: cover;
     margin : 20px 0px;
+    padding: 20px;
 }
 .whyBookWithBushire_insideFeature{
     display: flex;
@@ -221,4 +222,5 @@ body{
     font-weight: 700;
     color: white;
 }
+
 
