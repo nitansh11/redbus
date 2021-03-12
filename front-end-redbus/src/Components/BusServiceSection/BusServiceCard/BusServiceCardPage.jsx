@@ -4,7 +4,7 @@ import design from "./BusServiceCard.module.css";
 import { Link, useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import { useSelector, useDispatch } from "react-redux";
-import { getBusData } from "../../../Redux/busService/action";
+import { getBusData2 } from "../../../Redux/busService/action";
 
 const BusServiceCardPage = () => {
   const busList = useSelector((state) => state.busServiceReducer.busList);
@@ -17,7 +17,7 @@ const BusServiceCardPage = () => {
   // };
 
   React.useEffect(() => {
-    dispatch(getBusData());
+    dispatch(getBusData2());
   }, []);
   return (
     <div className={design.mainContainer}>

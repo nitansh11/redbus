@@ -10,7 +10,7 @@ const Payment = () => {
   const currentCustomer = useSelector(
     (state) => state.authReducer.currentCustomer
   );
-  console.log(currentCustomer);
+  console.log("Hire payment: ", currentCustomer);
   const currentBus = useSelector((state) => state.busServiceReducer.currentBus);
   console.log("Current Bus: ", currentBus);
   return (
