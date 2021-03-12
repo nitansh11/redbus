@@ -206,7 +206,7 @@ const Payment = () => {
               <StripeCheckout
                 stripeKey="pk_test_51D9ybxG1hGhZmBxsALjqi8YDqgi6SMu4jOLB0BRli0zOXaSFMZhaJRhL8NIsVuLqjqWUWL7L3e6kcgeTFTufIX1M00k24eV7ps"
                 token={makePayment}
-                name="Buy React"
+                name="RedBus Booking"
               >
                 <button className={Styles.Payment__stripe__button}>
                   Pay With Stripe
