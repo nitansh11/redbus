@@ -5,7 +5,42 @@ import { MdWatchLater } from "react-icons/md";
 import { MdAccountCircle } from "react-icons/md";
 import { MdDateRange } from "react-icons/md";
 import { VscLocation } from "react-icons/vsc";
+import StripeCheckout from "react-stripe-checkout";
+
 const Payment = () => {
+  const [product, setProduct] = React.useState({
+    name: "React from facebook",
+    price: 10,
+    productBy: "Facebook",
+  });
+
+  const makePayment = (token) => {
+    const body = {
+      token,
+      product,
+    };
+    const headers = {
+      "Content-Type": "application/json",
+    };
+    //fire a request to backend
+    return fetch("http://localhost:8000/v1/api/stripe-payments", {
+      method: "POST",
+      headers,
+      body: JSON.stringify(body),
+    })
+      .then((res) => {
+        console.log("RESPONSE REACT", res);
+        const { status } = res;
+        console.log("STATUS REACT", status);
+      })
+      .catch((err) => {
+        console.log("Error while making payment", err);
+        alert(
+          "Something went wrong while making payment! Check Internet connection!"
+        );
+      });
+  };
+
   return (
     <div>
       {/* <div className = {Styles.payment__main_header}>
@@ -84,8 +119,21 @@ const Payment = () => {
               Styles.payment__fullContainer_leftContainer_paymentInstruments
             }
           >
+            {/************************ Stripe Payemnt Start ******************************************/}
+            <div className={Styles.Payment__stripe}>
+              <StripeCheckout
+                stripeKey="pk_test_51D9ybxG1hGhZmBxsALjqi8YDqgi6SMu4jOLB0BRli0zOXaSFMZhaJRhL8NIsVuLqjqWUWL7L3e6kcgeTFTufIX1M00k24eV7ps"
+                token={makePayment}
+                name="Buy React"
+              >
+                <button className={Styles.Payment__stripe__button}>
+                  Pay With Stripe
+                </button>
+              </StripeCheckout>
+            </div>
+            {/************************ Stripe Payemnt End ******************************************/}
             <div className={Styles.choose_payment_heading}>
-              Choose Payment Method
+              Choose Other Payment Method
             </div>
             <div
               className={
