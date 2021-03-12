@@ -189,9 +189,9 @@ const LandingPage = () => {
       <Safety />
       <BusTracker />
       <Services />
-      <Awards/>
-      <GlobalPresence/>
-     
+      <Awards />
+      {/* <Awards /> */}
+      <GlobalPresence />
     </div>
   );
 };
