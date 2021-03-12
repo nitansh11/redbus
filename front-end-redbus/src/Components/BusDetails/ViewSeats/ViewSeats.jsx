@@ -8,18 +8,43 @@ import FiberManualRecordOutlinedIcon from "@material-ui/icons/FiberManualRecordO
 import Divider from "@material-ui/core/Divider";
 import { FormDrawer } from "./FormDrawer";
 import { SubRoutes } from "../SelectSubRoutes/SubRoutes";
+import { updateBookingDetails } from "../../../Redux/BookBus/action";
+import { useSelector, useDispatch } from "react-redux";
 
-const ViewSeats = () => {
+const ViewSeats = ({ filledSeats, seatPrice, routeDetails, busId }) => {
   const [selectedSeats, setSelectedSeats] = React.useState([]);
-  const alreadyBookedSeats = [1, 10, 13, 25, 35];
-
-  const BusType = 1;
+  const alreadyBookedSeats = filledSeats;
 
   const [boardAndDrop, setBoardAndDrop] = React.useState(false);
 
   const handleBoardAndDrop = () => {
     setBoardAndDrop(!boardAndDrop);
   };
+
+  let dispatch = useDispatch();
+
+  React.useEffect(() => {
+    const payload1 = {
+      key: "seats",
+      value: selectedSeats,
+    };
+
+    const payload2 = {
+      key: "fare",
+      value: selectedSeats.length * seatPrice,
+    };
+
+    dispatch(updateBookingDetails(payload1));
+    dispatch(updateBookingDetails(payload2));
+  }, [selectedSeats]);
+
+  React.useEffect(() => {
+    let busIdPayload = {
+      key: "busId",
+      value: busId.toString(),
+    };
+    dispatch(updateBookingDetails(busIdPayload));
+  }, []);
 
   const handleSelectedSeats = (seatNo) => {
     if (selectedSeats.includes(seatNo)) {
@@ -143,11 +168,12 @@ const ViewSeats = () => {
               <div>
                 <span style={{ fontSize: "16px", color: "#3e3e52" }}>
                   <FiberManualRecordIcon style={{ fontSize: "12px" }} />
-                  &nbsp;&nbsp; Naya More
+                  &nbsp;&nbsp; {routeDetails["departureLocation"]["name"]}
                 </span>
                 <br />{" "}
                 <span style={{ fontSize: "14px", color: "#7e7e8c" }}>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Naya More
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  {routeDetails["departureLocation"]["name"]}
                 </span>
               </div>
             </div>
@@ -162,11 +188,12 @@ const ViewSeats = () => {
               <div>
                 <span style={{ fontSize: "16px", color: "#3e3e52" }}>
                   <FiberManualRecordOutlinedIcon style={{ fontSize: "12px" }} />
-                  &nbsp;&nbsp; Sarkari Bus Stand
+                  &nbsp;&nbsp; {routeDetails["arrivalLocation"]["name"]}
                 </span>
                 <br></br>
                 <span style={{ fontSize: "14px", color: "#7e7e8c" }}>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sarkari Bus Stand
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  {routeDetails["arrivalLocation"]["name"]}
                 </span>
               </div>
             </div>
@@ -193,16 +220,7 @@ const ViewSeats = () => {
                 Taxes will be calculated during payment
               </span>
             </div>
-            <div>
-              {/* BusType 1.seater  2.Sleeper 3.AC  4.Non-Ac */}
-              {BusType === 1
-                ? `INR. ${selectedSeats.length * 50}`
-                : BusType === 2
-                ? `INR. ${selectedSeats.length * 100}`
-                : BusType === 3
-                ? `INR. ${selectedSeats.length * 125}`
-                : `INR. ${selectedSeats.length * 75}`}
-            </div>
+            <div>{selectedSeats.length * seatPrice}</div>
           </div>
           <div className={styles.mainContainer37}>
             <FormDrawer />
@@ -210,7 +228,10 @@ const ViewSeats = () => {
         </div>
       )}
       {!boardAndDrop && selectedSeats.length > 0 && (
-        <SubRoutes handleBoardAndDrop={handleBoardAndDrop} />
+        <SubRoutes
+          handleBoardAndDrop={handleBoardAndDrop}
+          routeDetails={routeDetails}
+        />
       )}
     </div>
   );

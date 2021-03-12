@@ -2,7 +2,7 @@ import React from "react";
 import { ViewSeats } from "../ViewSeats/ViewSeats";
 import styles from "./BottomTabs.module.css";
 
-export const BottomTabs = () => {
+export const BottomTabs = (props) => {
   const [tabsState, setTabsState] = React.useState([
     false,
     false,
@@ -44,7 +44,7 @@ export const BottomTabs = () => {
       {tabsState[3] && (
         <div className={styles.displayArea}>Booking Policies</div>
       )}
-      {tabsState[4] && <ViewSeats />}
+      {tabsState[4] && <ViewSeats {...props} />}
     </>
   );
 };
