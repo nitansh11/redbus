@@ -1,6 +1,8 @@
 import React from "react";
 import { ViewSeats } from "../ViewSeats/ViewSeats";
 import styles from "./BottomTabs.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { updateBookingDetails } from "../../../Redux/BookBus/action";
 
 export const BottomTabs = (props) => {
   const [tabsState, setTabsState] = React.useState([
@@ -23,6 +25,17 @@ export const BottomTabs = (props) => {
     setTabsState(newState);
   };
 
+  let dispatch = useDispatch();
+  const handleTabStateBus = (value) => {
+    const payload = {
+      key: "operatorName",
+      value: props.operatorName,
+    };
+
+    dispatch(updateBookingDetails(payload));
+    handleTabState(value);
+  };
+
   return (
     <>
       <div className={styles.mainBar}>
@@ -34,7 +47,7 @@ export const BottomTabs = (props) => {
         <div>|</div>
         <div onClick={() => handleTabState(3)}>Booking Policies</div>
         <div>|</div>
-        <div onClick={() => handleTabState(4)}>VIEW SEATS</div>
+        <div onClick={() => handleTabStateBus(4)}>VIEW SEATS</div>
       </div>
       {tabsState[0] && <div className={styles.displayArea}>Amenities</div>}
       {tabsState[1] && (

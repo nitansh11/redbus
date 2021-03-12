@@ -1,0 +1,16 @@
+.SingleTrip {
+  border: 1px solid green;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+.SingleTrip__image img {
+  width: 100%;
+  max-height: 250px;
+}
+.SingleTrip__details {
+  border: 1px solid red;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}

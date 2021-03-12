@@ -1,0 +1,14 @@
+[
+  {
+    "operatorName": "Operator10",
+    "busType": 4,
+    "departureTime": 20,
+    "rating": [9, 7, 5, 8, 4],
+    "totalSeats": 40,
+    "images": "https://s3-ap-southeast-1.amazonaws.com/rb-plus/BI/APP/IND/WM/2323/1087/GW/DL/6fNUIf.jpeg",
+    "routes": "6048b190b35ecf4988e921df",
+    "liveTracking": 1,
+    "reschedulable": 1,
+    "amenities": ["water-bottle", "charging-point"]
+  }
+]

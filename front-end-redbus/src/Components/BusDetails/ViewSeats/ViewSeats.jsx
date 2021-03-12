@@ -11,7 +11,14 @@ import { SubRoutes } from "../SelectSubRoutes/SubRoutes";
 import { updateBookingDetails } from "../../../Redux/BookBus/action";
 import { useSelector, useDispatch } from "react-redux";
 
-const ViewSeats = ({ filledSeats, seatPrice, routeDetails, busId }) => {
+const ViewSeats = ({
+  filledSeats,
+  seatPrice,
+  routeDetails,
+  busId,
+  busArrivalTime,
+  busDepartureTime,
+}) => {
   const [selectedSeats, setSelectedSeats] = React.useState([]);
   const alreadyBookedSeats = filledSeats;
 
@@ -231,6 +238,8 @@ const ViewSeats = ({ filledSeats, seatPrice, routeDetails, busId }) => {
         <SubRoutes
           handleBoardAndDrop={handleBoardAndDrop}
           routeDetails={routeDetails}
+          busArrivalTime={busArrivalTime}
+          busDepartureTime={busDepartureTime}
         />
       )}
     </div>

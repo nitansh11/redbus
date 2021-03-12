@@ -12,6 +12,7 @@ const App = () => {
     <div>
       <Navbar />
       <Routes />
+
       {/* <BusHire/> */}
       <SubFooter/>
       <BusHireFooter/>

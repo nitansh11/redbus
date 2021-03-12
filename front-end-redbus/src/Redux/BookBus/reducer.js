@@ -13,8 +13,11 @@ const initState = {
   matchedBuses: [],
   busIdWithSeatsObj: {},
 
+  operatorName: "",
   seats: [],
   passengerDetails: [],
+  email: "",
+  phoneNumber: "",
   fare: 0,
   busId: "",
   departureDetails: {

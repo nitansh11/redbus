@@ -1,6 +1,8 @@
 .LandingPage__mainBanner {
   height: 400px;
   background-image: url("https://st.redbus.in/Images/INDOFFER/COVID-19/heroimage2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   border: 0.1px solid #d84f57;
 }
 .LandingPage__form {

@@ -3,7 +3,12 @@ import styles from "./SubRoutes.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { updateBookingDetails } from "../../../Redux/BookBus/action";
 
-const SubRoutes = ({ handleBoardAndDrop, routeDetails }) => {
+const SubRoutes = ({
+  handleBoardAndDrop,
+  routeDetails,
+  busArrivalTime,
+  busDepartureTime,
+}) => {
   const [pointActive, setPointActive] = React.useState(true);
 
   //get boarding and destination point
@@ -57,7 +62,7 @@ const SubRoutes = ({ handleBoardAndDrop, routeDetails }) => {
       value: {
         city: routeDetails["departureLocation"].name,
         location: boardPoint,
-        time: routeDetails["duration"],
+        time: Number(busDepartureTime),
         date: newdate,
       },
     };
@@ -67,7 +72,7 @@ const SubRoutes = ({ handleBoardAndDrop, routeDetails }) => {
       value: {
         city: routeDetails["arrivalLocation"].name,
         location: destPoint,
-        time: routeDetails["duration"],
+        time: busArrivalTime,
         date: newdate,
       },
     };
