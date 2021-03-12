@@ -1,5 +1,16 @@
 import React from "react";
 import styles from "./Left.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { updateFilterDetails } from "../../Redux/FilterAndSort/action";
+import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
+import GpsFixedIcon from "@material-ui/icons/GpsFixed";
+import RestoreIcon from "@material-ui/icons/Restore";
+import WifiIcon from "@material-ui/icons/Wifi";
+import LocalDrinkIcon from "@material-ui/icons/LocalDrink";
+import InsertDriveFileIcon from "@material-ui/icons/InsertDriveFile";
+import SettingsInputHdmiIcon from "@material-ui/icons/SettingsInputHdmi";
+import LocalMoviesIcon from "@material-ui/icons/LocalMovies";
+
 const initState = {
   liveTracking: false,
   reschedulable: false,
@@ -34,12 +45,42 @@ const initState = {
 };
 const Left = () => {
   const [sideFilterValues, setSideFilterValues] = React.useState(initState);
+
+  //Filter and sort reducer
+  let dispatch = useDispatch();
+  const filterBusType = useSelector(
+    (state) => state.updateFilterDetailsReducer.busType
+  );
+
+  const filterDepartureTime = useSelector(
+    (state) => state.updateFilterDetailsReducer.departureTime
+  );
+
+  const filterArrivalTime = useSelector(
+    (state) => state.updateFilterDetailsReducer.arrivalTime
+  );
+
+  const filterLiveTracking = useSelector(
+    (state) => state.updateFilterDetailsReducer.liveTracking
+  );
+
+  const filterReschedulable = useSelector(
+    (state) => state.updateFilterDetailsReducer.reschedulable
+  );
+
   // handling live tracking filter
   const handleLiveTrackingClick = () => {
     setSideFilterValues({
       ...sideFilterValues,
       liveTracking: !sideFilterValues.liveTracking,
     });
+
+    const payload = {
+      key: "liveTracking",
+      value: !filterLiveTracking,
+    };
+
+    dispatch(updateFilterDetails(payload));
   };
 
   // handling reschedulable filter
@@ -48,6 +89,13 @@ const Left = () => {
       ...sideFilterValues,
       reschedulable: !sideFilterValues.reschedulable,
     });
+
+    const payload = {
+      key: "reschedulable",
+      value: !filterReschedulable,
+    };
+
+    dispatch(updateFilterDetails(payload));
   };
 
   // handle departure time filters
@@ -60,6 +108,12 @@ const Left = () => {
         [name]: e.target.checked,
       },
     });
+    const payload = {
+      key: "departureTime",
+      value: { ...filterDepartureTime, [name]: e.target.checked },
+    };
+
+    dispatch(updateFilterDetails(payload));
   };
 
   // handle arrival time filters
@@ -72,6 +126,13 @@ const Left = () => {
         [name]: e.target.checked,
       },
     });
+
+    const payload = {
+      key: "arrivalTime",
+      value: { ...filterArrivalTime, [name]: e.target.checked },
+    };
+    console.log(payload);
+    dispatch(updateFilterDetails(payload));
   };
 
   // handle bus type filters
@@ -84,20 +145,15 @@ const Left = () => {
         [name]: e.target.checked,
       },
     });
+
+    const payload = {
+      key: "busType",
+      value: { ...filterBusType, [name]: e.target.checked },
+    };
+
+    dispatch(updateFilterDetails(payload));
   };
 
-  //hnadle amenities change
-  const handleAmenitiesChange = (amenityname) => {
-    setSideFilterValues({
-      ...sideFilterValues,
-      amenities: {
-        ...sideFilterValues.amenities,
-        [amenityname]: !sideFilterValues.amenities[amenityname],
-      },
-    });
-  };
-
-  console.log(sideFilterValues);
   return (
     <div className={styles.Left}>
       {/* 1. Basic Filters */}
@@ -105,12 +161,36 @@ const Left = () => {
         <p>FILTERS</p>
         <ul>
           <li onClick={handleLiveTrackingClick}>
-            <i className="fa fa-map-marker" aria-hidden="true"></i>
-            Live Tracking (32)
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "flex-start",
+                alignItems: "center",
+              }}
+            >
+              <GpsFixedIcon />
+              &nbsp;&nbsp;
+              <div>Live Tracking&nbsp;&nbsp;</div>
+              {sideFilterValues.liveTracking && (
+                <CheckCircleOutlineIcon style={{ color: "green" }} />
+              )}
+            </div>
           </li>
           <li onClick={handleReschedulableClick}>
-            <i className="fa fa-map-marker" aria-hidden="true"></i>
-            Reschedulable (28)
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "flex-start",
+                alignItems: "center",
+              }}
+            >
+              <RestoreIcon />
+              &nbsp;&nbsp;
+              <div>Reschedulable&nbsp;&nbsp;</div>
+              {sideFilterValues.reschedulable && (
+                <CheckCircleOutlineIcon style={{ color: "green" }} />
+              )}
+            </div>
           </li>
         </ul>
       </div>
@@ -126,7 +206,7 @@ const Left = () => {
               checked={sideFilterValues.departureTime["before6am"]}
             />
             <i className="fa fa-map-marker" aria-hidden="true"></i>
-            <p>Before 6 am (0)</p>
+            <p>Before 6 am </p>
           </li>
           <li>
             <input
@@ -136,7 +216,7 @@ const Left = () => {
               checked={sideFilterValues.departureTime["6amto12pm"]}
             />
             <i className="fa fa-map-marker" aria-hidden="true"></i>
-            <p>6 am to 12 pm (5)</p>
+            <p>6 am to 12 pm </p>
           </li>
           <li>
             <input
@@ -146,7 +226,7 @@ const Left = () => {
               checked={sideFilterValues.departureTime["12pmto6pm"]}
             />
             <i className="fa fa-map-marker" aria-hidden="true"></i>
-            <p>12pm to 6 pm (2)</p>
+            <p>12pm to 6 pm </p>
           </li>
           <li>
             <input
@@ -156,7 +236,7 @@ const Left = () => {
               checked={sideFilterValues.departureTime["after6pm"]}
             />
             <i className="fa fa-map-marker" aria-hidden="true"></i>
-            <p>After 6 pm (3)</p>
+            <p>After 6 pm </p>
           </li>
         </ul>
       </div>
@@ -172,7 +252,7 @@ const Left = () => {
               checked={sideFilterValues.busType["seater"]}
             />
             <i className="fa fa-map-marker" aria-hidden="true"></i>
-            <p>SEATER (0)</p>
+            <p>SEATER </p>
           </li>
           <li>
             <input
@@ -182,7 +262,7 @@ const Left = () => {
               checked={sideFilterValues.busType["sleeper"]}
             />
             <i className="fa fa-map-marker" aria-hidden="true"></i>
-            <p>SLEEPER (0)</p>
+            <p>SLEEPER </p>
           </li>
           <li>
             <input
@@ -192,7 +272,7 @@ const Left = () => {
               checked={sideFilterValues.busType["ac"]}
             />
             <i className="fa fa-map-marker" aria-hidden="true"></i>
-            <p>AC (0)</p>
+            <p>AC</p>
           </li>
           <li>
             <input
@@ -202,7 +282,7 @@ const Left = () => {
               checked={sideFilterValues.busType["nonac"]}
             />
             <i className="fa fa-map-marker" aria-hidden="true"></i>
-            <p>NONAC (0)</p>
+            <p>NONAC</p>
           </li>
         </ul>
       </div>
@@ -219,7 +299,7 @@ const Left = () => {
               checked={sideFilterValues.arrivalTime["before6am"]}
             />
             <i className="fa fa-map-marker" aria-hidden="true"></i>
-            <p>Before 6 am (0)</p>
+            <p>Before 6 am</p>
           </li>
           <li>
             <input
@@ -229,7 +309,7 @@ const Left = () => {
               checked={sideFilterValues.arrivalTime["6amto12pm"]}
             />
             <i className="fa fa-map-marker" aria-hidden="true"></i>
-            <p>6 am to 12 pm (5)</p>
+            <p>6 am to 12 pm</p>
           </li>
           <li>
             <input
@@ -239,7 +319,7 @@ const Left = () => {
               checked={sideFilterValues.arrivalTime["12pmto6pm"]}
             />
             <i className="fa fa-map-marker" aria-hidden="true"></i>
-            <p>12pm to 6 pm (6)</p>
+            <p>12pm to 6 pm </p>
           </li>
           <li>
             <input
@@ -249,80 +329,35 @@ const Left = () => {
               checked={sideFilterValues.arrivalTime["after6pm"]}
             />
             <i className="fa fa-map-marker" aria-hidden="true"></i>
-            <p>After 6 pm (7)</p>
+            <p>After 6 pm</p>
           </li>
         </ul>
       </div>
-      {/* 5. Boarding Point Filters */}
-      <div className={styles.Left_filters}>
-        <p>BOARDING POINT</p>
-        <div className={styles.Left_filters__search}>
-          <i className="fa fa-search" aria-hidden="true"></i>
-          <input
-            type="text"
-            name="boardingPoint"
-            value={sideFilterValues.boardingPoint}
-            onChange={(e) => {
-              setSideFilterValues({
-                ...sideFilterValues,
-                boardingPoint: e.target.value,
-              });
-            }}
-          />
-        </div>
-      </div>
 
-      {/* 6. Dropping Point Filters */}
-      <div className={styles.Left_filters}>
-        <p>DROPPING POINT</p>
-        <div className={styles.Left_filters__search}>
-          <i className="fa fa-search" aria-hidden="true"></i>
-          <input
-            type="text"
-            name="droppingPoint"
-            value={sideFilterValues.droppingPoint}
-            onChange={(e) => {
-              setSideFilterValues({
-                ...sideFilterValues,
-                droppingPoint: e.target.value,
-              });
-            }}
-          />
-        </div>
-      </div>
-      {/* 7. Operator */}
-      <div className={styles.Left_filters}>
-        <p>OPERATOR</p>
-        <div className={styles.Left_filters__search}>
-          <i className="fa fa-search" aria-hidden="true"></i>
-          <input
-            type="text"
-            name="operator"
-            value={sideFilterValues.operator}
-            onChange={(e) => {
-              setSideFilterValues({
-                ...sideFilterValues,
-                operator: e.target.value,
-              });
-            }}
-          />
-        </div>
-      </div>
       {/* 8. Amenities */}
       <div className={styles.Left_filters}>
         <p>AMENITIES</p>
         <ul className={styles.Left_filters__amenities}>
-          <li onClick={() => handleAmenitiesChange("wifi")}>WiFi (7)</li>
-          <li onClick={() => handleAmenitiesChange("waterBottle")}>
-            Water Bottle (4)
+          <li style={{ display: "flex", alignItems: "center" }}>
+            <WifiIcon />
+            &nbsp;&nbsp; WiFi
           </li>
-          <li onClick={() => handleAmenitiesChange("blankets")}>
-            Blankets (2)
+          <li style={{ display: "flex", alignItems: "center" }}>
+            <LocalDrinkIcon />
+            &nbsp;&nbsp; Water Bottles
           </li>
-          <li onClick={() => handleAmenitiesChange("chargingPoint")}>
-            Charging Point (13)
+          <li style={{ display: "flex", alignItems: "center" }}>
+            <InsertDriveFileIcon />
+            &nbsp;&nbsp; Blankets
           </li>
-          <li onClick={() => handleAmenitiesChange("movie")}>Movie (22)</li>
+          <li style={{ display: "flex", alignItems: "center" }}>
+            <SettingsInputHdmiIcon />
+            &nbsp;&nbsp; Charging Point
+          </li>
+          <li style={{ display: "flex", alignItems: "center" }}>
+            <LocalMoviesIcon />
+            &nbsp;&nbsp; Movie
+          </li>
         </ul>
       </div>
     </div>
