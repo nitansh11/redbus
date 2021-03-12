@@ -187,7 +187,7 @@ const ViewSeats = ({
             <div
               style={{ fontSize: "16px", color: "#4a4a4a", fontWeight: "700" }}
             >
-              9:30
+              {busDepartureTime}:00
             </div>
           </div>
           <div className={styles.mainContainer33}>
@@ -207,7 +207,7 @@ const ViewSeats = ({
             <div
               style={{ fontSize: "16px", color: "#4a4a4a", fontWeight: "700" }}
             >
-              11:30
+              {busArrivalTime}:00
             </div>
           </div>
           <Divider />

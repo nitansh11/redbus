@@ -10,6 +10,12 @@ import LocalDrinkIcon from "@material-ui/icons/LocalDrink";
 import InsertDriveFileIcon from "@material-ui/icons/InsertDriveFile";
 import SettingsInputHdmiIcon from "@material-ui/icons/SettingsInputHdmi";
 import LocalMoviesIcon from "@material-ui/icons/LocalMovies";
+import AccessAlarmIcon from "@material-ui/icons/AccessAlarm";
+import AirlineSeatLegroomExtraIcon from "@material-ui/icons/AirlineSeatLegroomExtra";
+import DirectionsBusIcon from "@material-ui/icons/DirectionsBus";
+import WeekendIcon from "@material-ui/icons/Weekend";
+import AirlineSeatIndividualSuite from "@material-ui/icons/AirlineSeatIndividualSuite";
+import AvTimerIcon from "@material-ui/icons/AvTimer";
 
 const initState = {
   liveTracking: false,
@@ -198,44 +204,80 @@ const Left = () => {
       <div className={styles.Left_filters}>
         <p>DEPARTURE TIME</p>
         <ul>
-          <li>
+          <li
+            style={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              height: "30px",
+            }}
+          >
             <input
               type="checkbox"
               name="before6am"
               onChange={handleDepartureTimeChange}
               checked={sideFilterValues.departureTime["before6am"]}
             />
-            <i className="fa fa-map-marker" aria-hidden="true"></i>
+            &nbsp;&nbsp;
+            <AvTimerIcon />
+            &nbsp;&nbsp;
             <p>Before 6 am </p>
           </li>
-          <li>
+          <li
+            style={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              height: "30px",
+            }}
+          >
             <input
               type="checkbox"
               name="6amto12pm"
               onChange={handleDepartureTimeChange}
               checked={sideFilterValues.departureTime["6amto12pm"]}
             />
-            <i className="fa fa-map-marker" aria-hidden="true"></i>
+            &nbsp;&nbsp;
+            <AvTimerIcon />
+            &nbsp;&nbsp;
             <p>6 am to 12 pm </p>
           </li>
-          <li>
+          <li
+            style={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              height: "30px",
+            }}
+          >
             <input
               type="checkbox"
               name="12pmto6pm"
               onChange={handleDepartureTimeChange}
               checked={sideFilterValues.departureTime["12pmto6pm"]}
             />
-            <i className="fa fa-map-marker" aria-hidden="true"></i>
+            &nbsp;&nbsp;
+            <AccessAlarmIcon />
+            &nbsp;&nbsp;
             <p>12pm to 6 pm </p>
           </li>
-          <li>
+          <li
+            style={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              height: "10px",
+            }}
+          >
             <input
               type="checkbox"
               name="after6pm"
               onChange={handleDepartureTimeChange}
               checked={sideFilterValues.departureTime["after6pm"]}
             />
-            <i className="fa fa-map-marker" aria-hidden="true"></i>
+            &nbsp;&nbsp;
+            <AccessAlarmIcon />
+            &nbsp;&nbsp;
             <p>After 6 pm </p>
           </li>
         </ul>
@@ -244,45 +286,81 @@ const Left = () => {
       <div className={styles.Left_filters}>
         <p>BUS TYPES</p>
         <ul>
-          <li>
+          <li
+            style={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              height: "10px",
+            }}
+          >
             <input
               type="checkbox"
               name="seater"
               onChange={handleBusTypeChange}
               checked={sideFilterValues.busType["seater"]}
             />
-            <i className="fa fa-map-marker" aria-hidden="true"></i>
+            &nbsp;&nbsp;
+            <AirlineSeatLegroomExtraIcon />
+            &nbsp;&nbsp;
             <p>SEATER </p>
           </li>
-          <li>
+          <li
+            style={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              height: "10px",
+            }}
+          >
             <input
               type="checkbox"
               name="sleeper"
               onChange={handleBusTypeChange}
               checked={sideFilterValues.busType["sleeper"]}
             />
-            <i className="fa fa-map-marker" aria-hidden="true"></i>
+            &nbsp;&nbsp;
+            <AirlineSeatIndividualSuite />
+            &nbsp;&nbsp;
             <p>SLEEPER </p>
           </li>
-          <li>
+          <li
+            style={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              height: "10px",
+            }}
+          >
             <input
               type="checkbox"
               name="ac"
               onChange={handleBusTypeChange}
               checked={sideFilterValues.busType["ac"]}
             />
-            <i className="fa fa-map-marker" aria-hidden="true"></i>
+            &nbsp;&nbsp;
+            <WeekendIcon />
+            &nbsp;&nbsp;
             <p>AC</p>
           </li>
-          <li>
+          <li
+            style={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              height: "10px",
+            }}
+          >
             <input
               type="checkbox"
               name="nonac"
               onChange={handleBusTypeChange}
               checked={sideFilterValues.busType["nonac"]}
             />
-            <i className="fa fa-map-marker" aria-hidden="true"></i>
-            <p>NONAC</p>
+            &nbsp;&nbsp;
+            <DirectionsBusIcon />
+            &nbsp;&nbsp;
+            <p>NON - A/C</p>
           </li>
         </ul>
       </div>
@@ -291,44 +369,80 @@ const Left = () => {
       <div className={styles.Left_filters}>
         <p>ARRIVAL TIME</p>
         <ul>
-          <li>
+          <li
+            style={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              height: "30px",
+            }}
+          >
             <input
               type="checkbox"
               name="before6am"
               onChange={handleArrivalTimeChange}
               checked={sideFilterValues.arrivalTime["before6am"]}
             />
-            <i className="fa fa-map-marker" aria-hidden="true"></i>
+            &nbsp;&nbsp;
+            <AvTimerIcon />
+            &nbsp;&nbsp;
             <p>Before 6 am</p>
           </li>
-          <li>
+          <li
+            style={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              height: "30px",
+            }}
+          >
             <input
               type="checkbox"
               name="6amto12pm"
               onChange={handleArrivalTimeChange}
               checked={sideFilterValues.arrivalTime["6amto12pm"]}
             />
-            <i className="fa fa-map-marker" aria-hidden="true"></i>
+            &nbsp;&nbsp;
+            <AvTimerIcon />
+            &nbsp;&nbsp;
             <p>6 am to 12 pm</p>
           </li>
-          <li>
+          <li
+            style={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              height: "30px",
+            }}
+          >
             <input
               type="checkbox"
               name="12pmto6pm"
               onChange={handleArrivalTimeChange}
               checked={sideFilterValues.arrivalTime["12pmto6pm"]}
             />
-            <i className="fa fa-map-marker" aria-hidden="true"></i>
+            &nbsp;&nbsp;
+            <AccessAlarmIcon />
+            &nbsp;&nbsp;
             <p>12pm to 6 pm </p>
           </li>
-          <li>
+          <li
+            style={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              height: "30px",
+            }}
+          >
             <input
               type="checkbox"
               name="after6pm"
               onChange={handleArrivalTimeChange}
               checked={sideFilterValues.arrivalTime["after6pm"]}
             />
-            <i className="fa fa-map-marker" aria-hidden="true"></i>
+            &nbsp;&nbsp;
+            <AccessAlarmIcon />
+            &nbsp;&nbsp;
             <p>After 6 pm</p>
           </li>
         </ul>
