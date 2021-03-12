@@ -36,13 +36,7 @@ const BusBox = ({
       value: routeDetails["duration"],
     };
 
-    const payload2 = {
-      key: "operatorName",
-      value: operatorName,
-    };
-
     dispatch(updateBookingDetails(payload1));
-    dispatch(updateBookingDetails(payload2));
   }, []);
 
   var avgRating = 0;
@@ -201,6 +195,7 @@ const BusBox = ({
           busId={_id}
           busArrivalTime={busArrivalTime}
           busDepartureTime={busDepartureTime}
+          operatorName={operatorName}
         />
       </div>
     </div>
