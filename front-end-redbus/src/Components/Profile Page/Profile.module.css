@@ -1,113 +1,120 @@
-body{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }
-.ProfilePannel{
-    display: flex;
-    justify-content: flex-start;
-    margin : 0px;
+.ProfilePannel {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0px;
 }
-.profileName{
-    font-size: 16px;
-    font-weight: 800;
-    color: #000;
+.profileName {
+  font-size: 16px;
+  font-weight: 800;
+  color: #000;
 }
-.walletVerified{
-    background-color: #12f1cc;
-    width: auto;
-    padding-left: 5px;
-    padding-right: 5px;
-    font-size: 12px;
-    font-weight: 400;
-    color: #000;
+.walletVerified {
+  background-color: #12f1cc;
+  width: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
 }
-.leftPannel_eachListOption{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 5% 10%;
-   
+.leftPannel_eachListOption {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5% 10%;
 }
-.leftPannel{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.leftPannel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.line{
-    height: 1em;
-    width: 100%;
-    border-bottom: 0.5px solid rgb(222, 222, 222);
-    
+.line {
+  height: 1em;
+  width: 100%;
+  border-bottom: 0.5px solid rgb(222, 222, 222);
 }
-.seprator{
-    height: 100vh;
-    width: 1em;
-    border-right: 0.5px solid rgb(222, 222, 222);
+.seprator {
+  height: 100vh;
+  width: 1em;
+  border-right: 0.5px solid rgb(222, 222, 222);
 }
-.leftPart{
-    width: 15%;
-    
+.leftPart {
+  width: 15%;
 }
-.leftPannel_eachListItem{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 5% 10%;
-    
+.leftPannel_eachListItem {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5% 10%;
 }
 
-ul{
-    list-style: none;
+ul {
+  list-style: none;
 }
-.leftPannel_eachListItem_text{
-     margin-left: 20px;
-    font-weight: 600;
-    font-size: 14px;
-    color: #656161;
+.leftPannel_eachListItem_text {
+  margin-left: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #656161;
 }
-.rightPannel{
-    width: 70%;
-    
-    height: 100%;
-    padding: 20px 10px;
+.rightPannel {
+  width: 70%;
+
+  height: 100%;
+  padding: 20px 10px;
 }
-.profileHeading{
-    margin: 30px 0 17px 120px;
-    display: inline-block;
-    color: #737373;
-    font-size: 19px;
-    font-weight: 500;
+.profileHeading {
+  margin: 30px 0 17px 120px;
+  display: inline-block;
+  color: #737373;
+  font-size: 19px;
+  font-weight: 500;
 }
-.profilebox{
-    margin: 7px 0 15px 120px;
-    background-color: #fff;
-    width: 78%;
-    border-radius: .5em;
-    box-shadow: 0 0 10px #bdbcbc;
-    padding: 4% 8%;
+.profilebox {
+  margin: 7px 0 15px 120px;
+  background-color: #fff;
+  width: 78%;
+  border-radius: 0.5em;
+  box-shadow: 0 0 10px #bdbcbc;
+  padding: 4% 8%;
 }
-.userDetailHeading{
-    font-size: 12px;
-    color: #737373;
-    font-weight: 400;
-    padding-bottom: 2px;
-    text-transform: uppercase;
+.userDetailHeading {
+  font-size: 12px;
+  color: #737373;
+  font-weight: 400;
+  padding-bottom: 2px;
+  text-transform: uppercase;
 }
-.userDetailInfo{
-    font-size: 16px;
-    color: #676565;
-    font-weight: 900;
+.userDetailInfo {
+  font-size: 16px;
+  color: #676565;
+  font-weight: 900;
 }
-.contactDetailsHeading{
-    padding: 0px 0px;
-    color: #737373;
-    font-size: 19px;
-    text-align: center;
-    text-transform: uppercase;
+.contactDetailsHeading {
+  padding: 0px 0px;
+  color: #737373;
+  font-size: 19px;
+  text-align: center;
+  text-transform: uppercase;
 }
-.contactLine{
-    height: 1em;
-    width: 300px;
-    border-bottom: 0.5px solid rgb(222, 222, 222);
+.contactLine {
+  height: 1em;
+  width: 300px;
+  border-bottom: 0.5px solid rgb(222, 222, 222);
+}
+
+/* CSS */
+.leftPannel > li {
+  cursor: pointer;
+  width: 100%;
+  margin: 0;
+  margin-bottom: -14px;
+}
+.leftPannel > li:hover {
+  background-color: #ddd;
 }

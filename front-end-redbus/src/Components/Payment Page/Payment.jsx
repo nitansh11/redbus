@@ -6,14 +6,14 @@ import { MdAccountCircle } from "react-icons/md";
 import { MdDateRange } from "react-icons/md";
 import { VscLocation } from "react-icons/vsc";
 import StripeCheckout from "react-stripe-checkout";
-
+import { useHistory } from "react-router-dom";
 const Payment = () => {
   const [product, setProduct] = React.useState({
     name: "React from facebook",
     price: 10,
     productBy: "Facebook",
   });
-
+  const history = useHistory();
   const makePayment = (token) => {
     const body = {
       token,
@@ -32,6 +32,8 @@ const Payment = () => {
         console.log("RESPONSE REACT", res);
         const { status } = res;
         console.log("STATUS REACT", status);
+        console.log("redirecting:");
+        history.push("/my-profile");
       })
       .catch((err) => {
         console.log("Error while making payment", err);
