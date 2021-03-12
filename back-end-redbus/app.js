@@ -12,6 +12,7 @@ app.use(busRoutes);
 app.use(bookingRoutes);
 app.use(customerRoutes);
 app.use(routeRoutes);
+const busServiceRoutes = require("./routes/busservice");
 
 const connect = () => {
   return mongoose.connect(
