@@ -30,6 +30,12 @@ const authReducer = (state = initState, action) => {
     case actionTypes.ADD_CUSTOMER_MONGO_REQUEST:
       return { ...state, isLoading: true, error: false };
     case actionTypes.ADD_CUSTOMER_MONGO_SUCCESS:
+      console.log(typeof action.payload);
+
+      if (Array.isArray(action.payload)) {
+        console.log("Action payload auth: ");
+        return state;
+      }
       return {
         ...state,
         isLoading: false,

@@ -28,7 +28,7 @@ const getBusOnId = (payload) => {
   };
 };
 
-const getBusData = () => (dispatch) => {
+const getBusData2 = () => (dispatch) => {
   dispatch(getBusMongoRequest());
   axios
     .get("http://localhost:8000/v1/api/busservice/")
@@ -51,4 +51,4 @@ const getBusOnIdThunk = (id) => (dispatch) => {
     })
     .catch((err) => dispatch(getBusMongoFailure()));
 };
-export { getBusData, getBusOnIdThunk };
+export { getBusData2, getBusOnIdThunk };

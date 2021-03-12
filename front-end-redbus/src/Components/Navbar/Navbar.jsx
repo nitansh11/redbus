@@ -130,6 +130,9 @@ const Navbar = () => {
                     <GoogleLogin
                       clientId="493530183469-naj3i844vuh8ru5usav057k5kuabc3iq.apps.googleusercontent.com"
                       onSuccess={(response) => {
+                        console.log(
+                          "---------------------------CALLED-------------------------------"
+                        );
                         dispatch(loginSuccess(response));
                         dispatch(addCustomerMongo(response.profileObj));
                       }}
