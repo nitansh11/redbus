@@ -4,6 +4,7 @@ import Styles from './BusHire.module.css'
 import TripTypeContainer from './Trip Type Container/TripTypeContainer'
 import { FaCheckCircle} from "react-icons/fa";
 import FAQ from './FAQ Section/FAQ';
+import SubFooter from './Sub Footer Section/SubFooter';
 
 
 const BusHire = () => {
@@ -224,6 +225,8 @@ const BusHire = () => {
                </div>
                 {/* FAQs */}
                 <FAQ/>
+                {/* subFooter */}
+                <SubFooter/>
                 {/* tripTypeContainer */}
                 {active === "Type of trip" && <TripTypeContainer handleClick = {handleClick} active = {active}/>}
                 {/* busHireForm */}
