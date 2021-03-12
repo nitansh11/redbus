@@ -58,7 +58,9 @@ const Navbar = () => {
           <li>
             rPool<sup>New</sup>
           </li>
-          <li>BUS HIRE</li>
+          <li>
+            <Link to="/bus-hire">BUS HIRE</Link>
+          </li>
         </ul>
       </div>
 

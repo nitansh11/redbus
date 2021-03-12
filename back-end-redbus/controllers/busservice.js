@@ -1,6 +1,7 @@
 const BusServices = require("../models/busservice");
 module.exports.getBusService = async (req, res) => {
   const getData = await BusServices.find({});
+  console.log("get data:", getData);
   res.status(200).json({ data: getData });
 };
 
@@ -18,6 +19,7 @@ module.exports.deleteBusDetails = async (req, res) => {
 
 module.exports.eachBusDetail = async (req, res) => {
   const id = req.params.id;
+  console.log("id in eachBusDetail", id);
   const dataObj = await BusServices.findById(id);
   res.status(200).json(dataObj);
 };

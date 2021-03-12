@@ -9,6 +9,7 @@ import LandingPage from "../Components/LandingPage/LandingPage";
 import BusHire from "../Components/Bus hire Main Page/BusHire";
 import BusServiceCardPage from "../Components/BusServiceSection/BusServiceCard/BusServiceCardPage";
 import BusServiceDetailsPage from "../Components/BusServiceSection/BusServiceDetails/BusServiceDetailsPage";
+import BusServicePaymentPage from "../Components/BusServiceSection/BusServicePayment/BusServivePaymentPage";
 const Routes = () => {
   return (
     <>
@@ -34,8 +35,11 @@ const Routes = () => {
         <Route path="/bus-hire-card" exact>
           <BusServiceCardPage />
         </Route>
-        <Route path="/bus-hire-details" exact>
+        <Route path="/bus-hire-details/:id" exact>
           <BusServiceDetailsPage />
+        </Route>
+        <Route path="/payments-hire" exact>
+          <BusServicePaymentPage />
         </Route>
         <Route>
           <Error></Error>

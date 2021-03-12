@@ -8,7 +8,7 @@ import LocationOnIcon from "@material-ui/icons/LocationOn";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getBusOnIdThunk } from "../../../Redux/busService/action";
-
+import { Link } from "react-router-dom";
 const BusServiceDetailsPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ const BusServiceDetailsPage = () => {
     //     console.log(err);
     //     setLoading(false);
     //   });
-    dispatch(getBusOnIdThunk("604a335793d83931b75805ca"));
+    dispatch(getBusOnIdThunk(id));
   }, []);
   return isLoading ? (
     <div>...Loading...</div>
@@ -154,10 +154,10 @@ const BusServiceDetailsPage = () => {
                 letterSpacing: "1px",
                 fontSize: "18px",
                 marginBottom: "0",
+                cursor: "pointer",
               }}
             >
-              {" "}
-              Book For Rs.4,913
+              <Link to={`/payments-hire`}> Book For Rs.4,913</Link>
             </h4>
             <span
               style={{

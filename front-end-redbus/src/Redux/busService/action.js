@@ -33,11 +33,11 @@ const getBusData = () => (dispatch) => {
   axios
     .get("http://localhost:8000/v1/api/busservice/")
     .then((res) => {
-      console.log("rsponse from db");
+      console.log("rsponse from db", res);
       dispatch(getBusMongoSuccess(res.data.data));
     })
     .catch((err) => {
-      console.log(err);
+      console.log("error in bus data", err);
       dispatch(getBusMongoFailure());
     });
 };

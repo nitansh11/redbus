@@ -12,7 +12,6 @@ const App = () => {
     <div style={{ overflowX: "hidden" }}>
       <Navbar />
       <Routes />
-
       {/* <BusHire/> */}
       <SubFooter />
       <BusHireFooter />
