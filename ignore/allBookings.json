@@ -1,0 +1,128 @@
+[
+  {
+    "customerId": "6049aa08bf99621dbc8cd6de",
+    "passengerDetails": [
+      { "name": "Vidit Rastogi", "gender": "Male", "age": 26 },
+      { "name": "Vishal Rastogi", "gender": "Male", "age": 50 }
+    ],
+    "email": "viditr111@gmail.com",
+    "phoneNumber": "9876543210",
+    "fare": 2600,
+    "status": "upcoming",
+    "bookingDate": "2021-03-11",
+    "busId": "6049d3567501a24470b9a533",
+    "seats": [1, 3],
+    "departureDetails": {
+      "city": "Lucknow",
+      "location": "Sublocation 2 (Lucknow)",
+      "time": 2,
+      "date": "2021-03-17"
+    },
+    "arrivalDetails": {
+      "city": "Faizabad",
+      "location": "Sublocation 3 (Faizabad)",
+      "time": 10,
+      "date": "2021-03-17"
+    },
+    "duration": 8,
+    "isBusinessTravel": true,
+    "businessDetails": {
+      "gst": "ABCDEFGH",
+      "name": "Educorp.",
+      "address": "1154, Anupam Building, Mumbai",
+      "email": "support@educorp.com"
+    },
+    "isInsurance": true,
+    "isCovidDonated": true
+  },
+  {
+    "customerId": "6049b01cfd2722597786c3e0",
+    "passengerDetails": [
+      { "name": "Keshav Rajput", "gender": "Male", "age": 36 },
+      { "name": "Sunita Sahni", "gender": "Female", "age": 50 }
+    ],
+    "email": "keshav11@gmail.com",
+    "phoneNumber": "9897655320",
+    "fare": 4000,
+    "status": "upcoming",
+    "bookingDate": "2021-03-11",
+    "busId": "6049d3567501a24470b9a533",
+    "seats": [5, 7],
+    "departureDetails": {
+      "city": "Lucknow",
+      "location": "Sublocation 2 (Lucknow)",
+      "time": 2,
+      "date": "2021-03-17"
+    },
+    "arrivalDetails": {
+      "city": "Faizabad",
+      "location": "Sublocation 3 (Faizabad)",
+      "time": 10,
+      "date": "2021-03-17"
+    },
+    "duration": 8,
+    "isBusinessTravel": false,
+    "isInsurance": true,
+    "isCovidDonated": true
+  },
+  {
+    "customerId": "6049aa08bf99621dbc8cd6de",
+    "passengerDetails": [
+      { "name": "Keshav Rajput", "gender": "Male", "age": 36 },
+      { "name": "Sunita Sahni", "gender": "Female", "age": 50 }
+    ],
+    "email": "keshav11@gmail.com",
+    "phoneNumber": "9897655320",
+    "fare": 4000,
+    "status": "upcoming",
+    "bookingDate": "2021-03-11",
+    "busId": "6049b8a97501a24470b9a528",
+    "seats": [2, 4],
+    "departureDetails": {
+      "city": "Lucknow",
+      "location": "Sublocation 2 (Lucknow)",
+      "time": 2,
+      "date": "2021-03-17"
+    },
+    "arrivalDetails": {
+      "city": "Faizabad",
+      "location": "Sublocation 3 (Faizabad)",
+      "time": 10,
+      "date": "2021-03-17"
+    },
+    "duration": 8,
+    "isBusinessTravel": false,
+    "isInsurance": true,
+    "isCovidDonated": true
+  },
+  {
+    "customerId": "6049b01cfd2722597786c3e0",
+    "passengerDetails": [
+      { "name": "Keshav Rajput", "gender": "Male", "age": 36 },
+      { "name": "Sunita Sahni", "gender": "Female", "age": 50 }
+    ],
+    "email": "keshav11@gmail.com",
+    "phoneNumber": "9897655320",
+    "fare": 4000,
+    "status": "upcoming",
+    "bookingDate": "2021-03-11",
+    "busId": "6049b8a97501a24470b9a528",
+    "seats": [6, 8],
+    "departureDetails": {
+      "city": "Lucknow",
+      "location": "Sublocation 2 (Lucknow)",
+      "time": 2,
+      "date": "2021-03-17"
+    },
+    "arrivalDetails": {
+      "city": "Faizabad",
+      "location": "Sublocation 3 (Faizabad)",
+      "time": 10,
+      "date": "2021-03-17"
+    },
+    "duration": 8,
+    "isBusinessTravel": false,
+    "isInsurance": true,
+    "isCovidDonated": true
+  }
+]
