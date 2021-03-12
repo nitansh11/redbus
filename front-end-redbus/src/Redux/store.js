@@ -10,6 +10,7 @@ const rootReducer = combineReducers({
   busDetailsReducer,
   updateFilterDetailsReducer,
   routesReducer,
+  busServiceReducer
 });
 
 let composeEnhancers = compose;

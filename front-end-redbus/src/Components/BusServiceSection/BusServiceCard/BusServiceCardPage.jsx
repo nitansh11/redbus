@@ -3,32 +3,30 @@ import axios from "axios";
 import design from "./BusServiceCard.module.css";
 import { Link, useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
+import { useSelector, useDispatch } from "react-redux";
+import { getBusData } from "../../../Redux/busService/action";
 
 const BusServiceCardPage = () => {
-  const [result, setResult] = React.useState([]);
+  const busList = useSelector((state) => state.busServiceReducer.busList);
+  console.log(busList);
+  const dispatch = useDispatch();
 
   const history = useHistory();
-  const handleClick = (str) => {
-    history.push(str);
+  const handleClick = (id) => {
+    history.push(`/busPage/${id}`);
   };
 
   React.useEffect(() => {
-    axios
-      .get("http://localhost:8000/v1/api/busservice/")
-      .then((res) => {
-        setResult(res.data.data);
-        console.log(result);
-      })
-      .catch((err) => console.log(err));
+    dispatch(getBusData());
   }, []);
   return (
     <div className={design.mainContainer}>
       <div className={design.leftContainer}>
         <h1 style={{ textTransform: "none" }}>
-          We have {result.length !== 0 ? result.length : 0} quotation
+          We have {busList.length !== 0 ? busList.length : 0} quotation
         </h1>
         <div className={design.cardContainer}>
-          {result?.map((item) => {
+          {busList?.map((item) => {
             return (
               <div className={design.card}>
                 <div className={design.imgBox}>
@@ -53,10 +51,7 @@ const BusServiceCardPage = () => {
                 </div>
                 <div className={design.footerCard}>
                   {/* <Link to={`/busdetails/:${item._id}`}>view details</Link> */}
-                  <Button
-                    onClick={() => handleClick(`/busdetails/${item._id}`)}
-                    color="primary"
-                  >
+                  <Button onClick={() => handleClick(item._id)} color="primary">
                     view details
                   </Button>
                 </div>
