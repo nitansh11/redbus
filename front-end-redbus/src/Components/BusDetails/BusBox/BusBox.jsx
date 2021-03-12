@@ -11,6 +11,8 @@ import DirectionsBusIcon from "@material-ui/icons/DirectionsBus";
 import GpsFixedIcon from "@material-ui/icons/GpsFixed";
 import RestoreIcon from "@material-ui/icons/Restore";
 import { BottomTabs } from "../BottomTabs/BottomTabs";
+import { useSelector, useDispatch } from "react-redux";
+import { updateBookingDetails } from "../../../Redux/BookBus/action";
 
 const BusBox = ({
   _id,
@@ -26,6 +28,17 @@ const BusBox = ({
   filledSeats,
   routeDetails,
 }) => {
+  // capturing duration in redux store
+  let dispatch = useDispatch();
+  React.useEffect(() => {
+    const payload = {
+      key: "duration",
+      value: routeDetails["duration"],
+    };
+
+    dispatch(updateBookingDetails(payload));
+  }, []);
+
   var avgRating = 0;
   var totalReviews = 0;
   rating.forEach((item, index) => {

@@ -15,6 +15,8 @@ const initState = {
 
   seats: [],
   passengerDetails: [],
+  email: "",
+  phoneNumber: "",
   fare: 0,
   busId: "",
   departureDetails: {
