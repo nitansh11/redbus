@@ -1,0 +1,44 @@
+
+.globalPresenceContainer{
+    margin-bottom: 90px;
+   padding-bottom: 20px;
+    padding-top: 20px;
+    min-width: 1000px;
+    max-width: 1300px;
+    margin: 0 auto;
+    color: #4a4a4a;
+    font-size: 14px;
+    font-weight: 400;
+    max-height: 550px;
+   border-bottom: 1px solid #ccc;
+}
+.globalPresenceHeading{
+    font-weight: 800;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 80px;
+    line-height: 1.1em;
+    color: #4a4a4a;
+}
+.countryName{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    letter-spacing: 2.7px;
+    color: #737373;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.numbers{
+    color: #da4e52;
+    font-size: 46px;
+    font-weight: 400;
+}
+.para{
+    width: 208px;
+    text-align: center;
+    color: #4a4a4a;
+    font-size: 14px;
+}

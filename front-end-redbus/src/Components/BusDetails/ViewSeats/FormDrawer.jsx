@@ -31,7 +31,7 @@ export function FormDrawer() {
         open={formDrawerState}
         onClose={toggleDrawer(false)}
       >
-        <div style={{ width: "570px" }}>
+        <div style={{ width: "600px" }}>
           <BusBookingForm />
         </div>
       </Drawer>

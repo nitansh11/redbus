@@ -9,7 +9,7 @@ import Profile from "./Components/Profile Page/Profile";
 import Routes from "./Routes/Routes";
 const App = () => {
   return (
-    <div>
+    <div style={{ overflowX: "hidden" }}>
       <Navbar />
       <Routes />
 
