@@ -8,7 +8,7 @@ import { VscLocation } from "react-icons/vsc";
 import StripeCheckout from "react-stripe-checkout";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-
+import axios from "axios";
 const Payment = () => {
   const passSeatsArray = useSelector((state) => state.busDetailsReducer.seats);
   const passFare = useSelector((state) => state.busDetailsReducer.fare);
@@ -22,18 +22,74 @@ const Payment = () => {
   const currentCustomer = useSelector(
     (state) => state.authReducer.currentCustomer
   );
-
+  console.log("Current Customer is: ", currentCustomer);
   const operatorName = useSelector(
     (state) => state.busDetailsReducer.operatorName
   );
-
+  const passengerDetails = useSelector(
+    (state) => state.busDetailsReducer.passengerDetails
+  );
+  console.log("here passenger details:", passengerDetails);
+  const email = useSelector((state) => state.busDetailsReducer.email);
+  const fare = useSelector((state) => state.busDetailsReducer.fare);
+  const busId = useSelector((state) => state.busDetailsReducer.busId);
+  const phoneNumber = useSelector(
+    (state) => state.busDetailsReducer.phoneNumber
+  );
+  const departureDetails = useSelector(
+    (state) => state.busDetailsReducer.departureDetails
+  );
+  const arrivalDetails = useSelector(
+    (state) => state.busDetailsReducer.arrivalDetails
+  );
+  const duration = useSelector((state) => state.busDetailsReducer.duration);
+  const isBusinessTravel = useSelector(
+    (state) => state.busDetailsReducer.isBusinessTravel
+  );
+  const isInsurance = useSelector(
+    (state) => state.busDetailsReducer.isInsurance
+  );
+  const isCovidDonated = useSelector(
+    (state) => state.busDetailsReducer.isCovidDonated
+  );
   const [product, setProduct] = React.useState({
     name: "React from facebook",
     price: 10,
     productBy: "Facebook",
   });
   const history = useHistory();
-  const makePayment = (token) => {
+  const makePayment = async (token) => {
+    let myBooking = {};
+    // create booking object
+    myBooking.customerId = currentCustomer._id;
+    myBooking.passengerDetails = passengerDetails;
+    myBooking.email = email;
+    myBooking.phoneNumber = phoneNumber;
+    myBooking.fare = fare;
+    myBooking.status = "upcoming";
+    myBooking.busId = busId;
+    let date = new Date();
+    myBooking.bookingDate =
+      date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate();
+    myBooking.seats = passSeatsArray;
+    myBooking.departureDetails = departureDetails;
+    myBooking.arrivalDetails = arrivalDetails;
+    myBooking.duration = duration;
+    myBooking.isBusinessTravel = isBusinessTravel;
+    myBooking.isInsurance = isInsurance;
+    myBooking.isCovidDonated = isCovidDonated;
+    console.log("My booking is:", myBooking);
+
+    try {
+      let res = await axios.post(
+        "http://localhost:8000/v1/api/booking",
+        myBooking
+      );
+      console.log("Booking post response: ", res.data);
+    } catch (err) {
+      console.log("Error while adding booking to booking collection!", err);
+    }
+
     const body = {
       token,
       product,

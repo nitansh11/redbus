@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./SubRoutes.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { updateBookingDetails } from "../../../Redux/BookBus/action";
+import { useLocation } from "react-router-dom";
 
 const SubRoutes = ({
   handleBoardAndDrop,
@@ -44,18 +45,13 @@ const SubRoutes = ({
     setDestPoint(e.target.value);
   };
 
+  let { search } = useLocation();
+  const query = new URLSearchParams(search);
+  const date = query.get("date");
+
   let dispatch = useDispatch();
   const handleBoardAndDrop2 = () => {
-    var dateObj = new Date();
-    var month = dateObj.getUTCMonth() + 1;
-    var day = dateObj.getUTCDate();
-    var year = dateObj.getUTCFullYear();
-    var newdate;
-    if (month < 10) {
-      newdate = year + "-0" + month + "-" + day;
-    } else {
-      newdate = year + "-" + month + "-" + day;
-    }
+    var newdate = date;
 
     const payload1 = {
       key: "departureDetails",

@@ -30,7 +30,12 @@ const authReducer = (state = initState, action) => {
     case actionTypes.ADD_CUSTOMER_MONGO_REQUEST:
       return { ...state, isLoading: true, error: false };
     case actionTypes.ADD_CUSTOMER_MONGO_SUCCESS:
-      return { ...state, isLoading: false, error: false };
+      return {
+        ...state,
+        isLoading: false,
+        error: false,
+        currentCustomer: { ...state.currentCustomer, _id: action.payload },
+      };
     case actionTypes.ADD_CUSTOMER_MONGO_FAILURE:
       return { ...state, isLoading: false, error: true };
     default:

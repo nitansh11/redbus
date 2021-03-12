@@ -15,11 +15,10 @@ const bookingRoutes = require("./routes/booking");
 const customerRoutes = require("./routes/customer");
 const routeRoutes = require("./routes/route");
 
-app.post("/v1/api/stripe-payments", (req, res) => {
+app.post("/v1/api/stripe-payments", async (req, res) => {
   const { product, token } = req.body;
   console.log("PRODUCT", product);
   console.log("PRICE", product.poice);
-
   const idempontencyKey = uuidv4();
   return stripe.customers
     .create({
