@@ -59,14 +59,16 @@ const BusBox = ({
           <div>{busTypeName}</div>
         </div>
         <div className={styles.busBoxSection12}>
-          <div>07:20</div>
+          <div>{departureTime}:00</div>
           <div>{routeDetails["departureLocation"]["name"]}</div>
         </div>
         <div className={styles.busBoxSection13}>
           <div>{routeDetails["duration"]}&nbsp;h</div>
         </div>
         <div className={styles.busBoxSection14}>
-          <div>09:30</div>
+          <div>
+            {(Number(departureTime) + Number(routeDetails["duration"])) % 24}:00
+          </div>
           <div>{routeDetails["arrivalLocation"]["name"]}</div>
         </div>
         <div className={styles.busBoxSection15}>
@@ -145,18 +147,30 @@ const BusBox = ({
           </Tooltip>
         </div>
         <div className={styles.busBoxSection22}>
-          <div>
-            <GpsFixedIcon
-              style={{ fontWeight: "50", fontSize: "20px", marginRight: "6px" }}
-            />
-            <span>Live Tracking</span>
-          </div>
-          <div>
-            <RestoreIcon
-              style={{ fontWeight: "50", fontSize: "20px", marginRight: "6px" }}
-            />
-            <span>Reschedulable</span>
-          </div>
+          {liveTracking == 1 && (
+            <div>
+              <GpsFixedIcon
+                style={{
+                  fontWeight: "50",
+                  fontSize: "20px",
+                  marginRight: "6px",
+                }}
+              />
+              <span>Live Tracking</span>
+            </div>
+          )}
+          {reschedulable == 1 && (
+            <div>
+              <RestoreIcon
+                style={{
+                  fontWeight: "50",
+                  fontSize: "20px",
+                  marginRight: "6px",
+                }}
+              />
+              <span>Reschedulable</span>
+            </div>
+          )}
         </div>
       </div>
       <div className={styles.busBoxSection3}>

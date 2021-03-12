@@ -41,7 +41,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 8px;
 }
 
 .mainContainer1 > div:nth-child(1) {
@@ -62,6 +61,7 @@
   font-size: 12px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .mainContainer3 {
@@ -70,6 +70,7 @@
   font-size: 12px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .mainContainer4 {
@@ -78,6 +79,7 @@
   font-size: 12px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .mainContainer5 {
@@ -86,6 +88,7 @@
   font-size: 12px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .mainContainer6 {
@@ -94,6 +97,7 @@
   font-size: 12px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .mainContainer7 {
@@ -102,4 +106,5 @@
   font-size: 12px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }

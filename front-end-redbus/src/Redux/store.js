@@ -2,7 +2,13 @@ import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import { authReducer } from "./auth/authReducer";
 import { busDetailsReducer } from "./BookBus/reducer";
-const rootReducer = combineReducers({ authReducer, busDetailsReducer });
+import { updateFilterDetailsReducer } from "./FilterAndSort/reducer";
+
+const rootReducer = combineReducers({
+  authReducer,
+  busDetailsReducer,
+  updateFilterDetailsReducer,
+});
 
 let composeEnhancers = compose;
 
