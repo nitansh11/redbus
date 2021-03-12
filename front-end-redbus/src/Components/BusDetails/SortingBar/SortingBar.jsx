@@ -2,9 +2,23 @@ import React from "react";
 import styles from "./SortingBar.module.css";
 import Divider from "@material-ui/core/Divider";
 import SecurityIcon from "@material-ui/icons/Security";
+import { useSelector, useDispatch } from "react-redux";
+import { updateFilterDetails } from "../../../Redux/FilterAndSort/action";
 
 const SortingBar = () => {
-  var busesFound = 5;
+  const sortProperty = useSelector(
+    (state) => state.updateFilterDetailsReducer.sortingProperty
+  );
+
+  let dispatch = useDispatch();
+  const handleSortProperty = (value) => {
+    const payload = {
+      key: "sortingProperty",
+      value: value,
+    };
+
+    dispatch(updateFilterDetails(payload));
+  };
 
   return (
     <>
@@ -15,15 +29,45 @@ const SortingBar = () => {
       <Divider />
       <div className={styles.mainContainer}>
         <div className={styles.mainContainer1}>
-          <div>{busesFound}&nbsp;Buses Found</div>
+          <div>BUSES LIST</div>
           <div>SORT BY :</div>
         </div>
-        <div className={styles.mainContainer2}>Departure</div>
-        <div className={styles.mainContainer3}>Duration</div>
-        <div className={styles.mainContainer4}>Arrivals</div>
-        <div className={styles.mainContainer5}>Ratings</div>
-        <div className={styles.mainContainer6}>Fare</div>
-        <div className={styles.mainContainer7}>Seats Available</div>
+        <div
+          className={styles.mainContainer2}
+          onClick={() => handleSortProperty("departure")}
+        >
+          Departure
+        </div>
+        <div
+          className={styles.mainContainer3}
+          onClick={() => handleSortProperty("duration")}
+        >
+          Duration
+        </div>
+        <div
+          className={styles.mainContainer4}
+          onClick={() => handleSortProperty("arrivals")}
+        >
+          Arrivals
+        </div>
+        <div
+          className={styles.mainContainer5}
+          onClick={() => handleSortProperty("ratings")}
+        >
+          Ratings
+        </div>
+        <div
+          className={styles.mainContainer6}
+          onClick={() => handleSortProperty("fare")}
+        >
+          Fare
+        </div>
+        <div
+          className={styles.mainContainer7}
+          onClick={() => handleSortProperty("seatsAvailable")}
+        >
+          Seats Available
+        </div>
       </div>
     </>
   );

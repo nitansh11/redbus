@@ -49,6 +49,9 @@ const Navbar = () => {
         <img
           src="https://www.redbus.in/i/59538b35953097248522a65b4b79650e.png"
           alt="logo"
+          onClick={() => {
+            history.push("/");
+          }}
         />
         <ul className={styles.Navbar__listOne}>
           <li>Bus Tickets</li>

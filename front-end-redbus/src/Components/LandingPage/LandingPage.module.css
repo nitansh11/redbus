@@ -1,0 +1,60 @@
+.LandingPage__mainBanner {
+  height: 400px;
+  background-image: url("https://st.redbus.in/Images/INDOFFER/COVID-19/heroimage2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0.1px solid #d84f57;
+}
+.LandingPage__form {
+  margin: 0px auto;
+  margin-top: 150px;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  width: 80%;
+}
+.LandingPage__form > div {
+  width: 100%;
+}
+.LandingPage__form input,
+.LandingPage__form button {
+  height: 45px;
+}
+
+.LandingPage__form__arrival__input > input,
+.LandingPage__form__departure__input > input,
+.LandingPage__form__date > input,
+.LandingPage__form__button > button {
+  width: 100%;
+  padding: 5px;
+}
+
+.LandingPage__form__button > button {
+  max-width: 150px;
+  background-color: #d84f57;
+  color: white;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+.LandingPage__form__arrival__dropdown,
+.LandingPage__form__departure__dropdown {
+  padding: 10px 0;
+  background-color: white;
+  overflow-y: scroll;
+  height: 200px;
+}
+.LandingPage__form__arrival__dropdown li,
+.LandingPage__form__departure__dropdown li {
+  padding: 10px 5px;
+  padding-left: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+.LandingPage__form__arrival__dropdown li:hover,
+.LandingPage__form__departure__dropdown li:hover {
+  background-color: #ddd;
+  font-weight: bold;
+  color: #d84f57;
+}

@@ -5,12 +5,16 @@ import Error from "../Components/Error/Error";
 import Profile from "../Components/Profile Page/Profile";
 import Payment from "../Components/Payment Page/Payment";
 import BusBookingForm from "../Components/Bus Booking Form/BusBookingForm";
+import LandingPage from "../Components/LandingPage/LandingPage";
+import BusHire from "../Components/Bus hire Main Page/BusHire";
+import BusServiceCardPage from "../Components/BusServiceSection/BusServiceCard/BusServiceCardPage";
+import BusServiceDetailsPage from "../Components/BusServiceSection/BusServiceDetails/BusServiceDetailsPage";
 const Routes = () => {
   return (
     <>
       <Switch>
         <Route path="/" exact>
-          <h1>Homepage</h1>
+          <LandingPage />
         </Route>
         <Route path="/select-bus" exact>
           <SelectBus />
@@ -23,6 +27,15 @@ const Routes = () => {
         </Route>
         <Route path="/booking-form" exact>
           <BusBookingForm />
+        </Route>
+        <Route path="/bus-hire" exact>
+          <BusHire />
+        </Route>
+        <Route path="/bus-hire-card" exact>
+          <BusServiceCardPage />
+        </Route>
+        <Route path="/bus-hire-details" exact>
+          <BusServiceDetailsPage />
         </Route>
         <Route>
           <Error></Error>

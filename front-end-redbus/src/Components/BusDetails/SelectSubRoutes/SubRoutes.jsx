@@ -1,9 +1,17 @@
 import React from "react";
 import styles from "./SubRoutes.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { updateBookingDetails } from "../../../Redux/BookBus/action";
 
-const SubRoutes = () => {
-  const [pointActive, setPointActive] = React.useState(false);
+const SubRoutes = ({
+  handleBoardAndDrop,
+  routeDetails,
+  busArrivalTime,
+  busDepartureTime,
+}) => {
+  const [pointActive, setPointActive] = React.useState(true);
 
+  //get boarding and destination point
   const [boardPoint, setBoardPoint] = React.useState("");
   const [destPoint, setDestPoint] = React.useState("");
 
@@ -25,22 +33,8 @@ const SubRoutes = () => {
     boardingStyle = activeStyle;
   }
 
-  const boardingSubpoints = [
-    "Boarding Subpoint1",
-    "Boarding Subpoint2",
-    "Boarding Subpoint3",
-    "Boarding Subpoint4",
-    "Boarding Subpoint5",
-    "Boarding Subpoint6",
-  ];
-  const destinationSubpoints = [
-    "Destination Subpoint1",
-    "Destination Subpoint2",
-    "Destination Subpoint3",
-    "Destination Subpoint4",
-    "Destination Subpoint5",
-    "Destination Subpoint6",
-  ];
+  const boardingSubpoints = routeDetails["departureLocation"]["subLocations"];
+  const destinationSubpoints = routeDetails["arrivalLocation"]["subLocations"];
 
   const handleBoardChange = (e) => {
     setBoardPoint(e.target.value);
@@ -50,7 +44,44 @@ const SubRoutes = () => {
     setDestPoint(e.target.value);
   };
 
-  console.log(boardPoint, destPoint);
+  let dispatch = useDispatch();
+  const handleBoardAndDrop2 = () => {
+    var dateObj = new Date();
+    var month = dateObj.getUTCMonth() + 1;
+    var day = dateObj.getUTCDate();
+    var year = dateObj.getUTCFullYear();
+    var newdate;
+    if (month < 10) {
+      newdate = year + "-0" + month + "-" + day;
+    } else {
+      newdate = year + "-" + month + "-" + day;
+    }
+
+    const payload1 = {
+      key: "departureDetails",
+      value: {
+        city: routeDetails["departureLocation"].name,
+        location: boardPoint,
+        time: Number(busDepartureTime),
+        date: newdate,
+      },
+    };
+
+    const payload2 = {
+      key: "arrivalDetails",
+      value: {
+        city: routeDetails["arrivalLocation"].name,
+        location: destPoint,
+        time: busArrivalTime,
+        date: newdate,
+      },
+    };
+
+    dispatch(updateBookingDetails(payload1));
+    dispatch(updateBookingDetails(payload2));
+
+    handleBoardAndDrop();
+  };
 
   return (
     <div className={styles.mainContainer}>
@@ -137,7 +168,9 @@ const SubRoutes = () => {
           </div>
         )}
       </div>
-      <button className={styles.continueButton}>Continue</button>
+      <button className={styles.continueButton} onClick={handleBoardAndDrop2}>
+        Continue
+      </button>
     </div>
   );
 };

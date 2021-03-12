@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Safety.module.css";
+import { v4 as uuidv4 } from "uuid";
 const arr = [
   {
     heading: "Sanitized Bus ",
@@ -43,7 +44,7 @@ const Safety = () => {
         <div className={styles.lowerFlex}>
           {arr.map((item) => {
             return (
-              <div className={styles.lowerFlexItems}>
+              <div key={uuidv4()} className={styles.lowerFlexItems}>
                 <h3>{item.heading}</h3>
                 <p>{item.descriptions}</p>
               </div>

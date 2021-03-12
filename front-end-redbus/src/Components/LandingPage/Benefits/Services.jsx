@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Services.module.css";
+import { v4 as uuidv4 } from "uuid";
 const data = [
   {
     img: "https://s3.rdbuz.com/Images/safety/srp/safety.svg",
@@ -43,7 +44,7 @@ const Services = () => {
       <div className={styles.flexContainer}>
         {data.map((item) => {
           return (
-            <div className={styles.flexItems}>
+            <div key={uuidv4()} className={styles.flexItems}>
               <div className={styles.itemimg}>
                 <img src={item.img} alt="item" />
               </div>

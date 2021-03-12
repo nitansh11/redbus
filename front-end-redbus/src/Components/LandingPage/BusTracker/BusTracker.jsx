@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./BusTracker.module.css";
 import Button from "@material-ui/core/Button";
-
+import { v4 as uuidv4 } from "uuid";
 const data = [
   {
     type: "Buses",
@@ -46,7 +46,7 @@ const BusTracker = () => {
       <div className={styles.flexContainer}>
         {data.map((item) => {
           return (
-            <div className={styles.flexItems}>
+            <div key={uuidv4()} className={styles.flexItems}>
               <p>{item.type}</p>
               <h1>{item.number}</h1>
               <p>{item.details}</p>

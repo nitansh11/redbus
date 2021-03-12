@@ -1,5 +1,5 @@
-body{
-  font-family: 'Montserrat', sans-serif;
+body {
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 14px;
 }
@@ -30,25 +30,27 @@ body{
   margin: 0 10px;
   color: white;
 }
-.icons{
+.icons {
   font-size: 25px;
-  
 }
-.rightSide_header{
+.rightSide_header {
   display: inline-block;
   margin: 0 10px;
   color: white;
-  display:  flex;
+  display: flex;
   width: 350px;
   justify-content: space-evenly;
   align-items: center;
 }
-.leftSide_header{
+.leftSide_header {
   display: inline-block;
   margin: 0 10px;
   color: white;
-  display:  flex;
+  display: flex;
   width: 400px;
   justify-content: space-evenly;
   align-items: center;
+}
+.leftSide_header img {
+  cursor: pointer;
 }
