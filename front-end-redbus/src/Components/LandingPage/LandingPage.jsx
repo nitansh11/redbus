@@ -156,8 +156,24 @@ const LandingPage = () => {
           <div className={styles.LandingPage__form__button}>
             <button
               onClick={() => {
+                let departureTemp = departure;
+                let arrivalTemp = arrival;
+
+                // Sublocation 1 (Lucknow)
+                if (departureTemp.includes("(")) {
+                  departureTemp = departureTemp.substring(
+                    departureTemp.indexOf("(") + 1,
+                    departureTemp.indexOf(")")
+                  );
+                }
+                if (arrivalTemp.includes("(")) {
+                  arrivalTemp = arrivalTemp.substring(
+                    arrivalTemp.indexOf("(") + 1,
+                    arrivalTemp.indexOf(")")
+                  );
+                }
                 history.push(
-                  `/select-bus?departure=${departure}&arrival=${arrival}&date=${date}`
+                  `/select-bus?departure=${departureTemp}&arrival=${arrivalTemp}&date=${date}`
                 );
               }}
             >
