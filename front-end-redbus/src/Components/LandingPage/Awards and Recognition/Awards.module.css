@@ -1,0 +1,33 @@
+.borderSeprator{
+    border-bottom: 1px solid #ccc;
+}
+.awardsContainer{
+    margin-bottom: 70px;
+    margin-top: 30px;
+    padding: 0 20px;
+    min-width: 1000px;
+    max-width: 1300px;
+    margin: 0 auto;
+    color: #4a4a4a;
+    font-size: 14px;
+    font-weight: 400;
+}
+.awardHeading{
+    font-weight: 800;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 80px;
+    line-height: 1.1em;
+    color: #4a4a4a;
+}
+.awardsPara{
+    font-weight: 500 !important;
+    line-height: 25px !important;
+    width: 186px;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    margin-top: 34px;
+}
