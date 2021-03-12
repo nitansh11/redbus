@@ -4,8 +4,7 @@ import Styles from "./BusHire.module.css";
 import TripTypeContainer from "./Trip Type Container/TripTypeContainer";
 import { FaCheckCircle } from "react-icons/fa";
 import FAQ from "./FAQ Section/FAQ";
-import SubFooter from "./Sub Footer Section/SubFooter";
-import BusHireFooter from "./Bus Hire Footer Section/BusHireFooter";
+
 import BusHirePricing from "./Bus Hire Pricing/BusHirePricing";
 import { BsCircleFill } from "react-icons/bs";
 
