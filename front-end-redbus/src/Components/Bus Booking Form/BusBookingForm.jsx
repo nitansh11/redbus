@@ -156,14 +156,14 @@ const BusBookingForm = () => {
                     <input
                       className={Styles.radioButton}
                       type="radio"
-                      name="gender"
+                      name={"gender" + index}
                       value="Male"
                     />
                     <div className={Styles.form_radio_label}>Male</div>
                     <input
                       className={Styles.radioButton}
                       type="radio"
-                      name="gender"
+                      name={"gender" + index}
                       value="Female"
                     />
                     <div className={Styles.form_radio_label}>Female</div>
