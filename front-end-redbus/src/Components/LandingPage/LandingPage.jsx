@@ -10,6 +10,8 @@ import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getRoutes } from "../../Redux/routes/action";
 import Awards from "./Awards and Recognition/Awards";
+import GlobalPresence from "./Global Presence/GlobalPresence";
+
 const LandingPage = () => {
   const history = useHistory();
   const [departure, setDeparture] = React.useState("");
@@ -187,7 +189,9 @@ const LandingPage = () => {
       <Safety />
       <BusTracker />
       <Services />
-      <Awards/>
+      <Awards />
+      {/* <Awards /> */}
+      <GlobalPresence />
     </div>
   );
 };

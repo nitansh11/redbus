@@ -110,7 +110,9 @@ const Navbar = () => {
                 >
                   <MenuItem onClick={handleClose2}>My Trips</MenuItem>
                   <MenuItem onClick={handleClose2}>Wallet/Cards</MenuItem>
-                  <MenuItem onClick={handleClose2}>My Profile</MenuItem>
+                  <MenuItem onClick={handleClose2}>
+                    <Link to="/my-profile">My Profile</Link>
+                  </MenuItem>
                   <MenuItem onClick={handleClose2}>Wallet</MenuItem>
                   <MenuItem onClick={handleLogout}>SignOut</MenuItem>
                 </Menu>
