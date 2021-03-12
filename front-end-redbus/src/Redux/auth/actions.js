@@ -25,9 +25,10 @@ const addCustomerMongoRequest = () => {
     type: actionTypes.ADD_CUSTOMER_MONGO_REQUEST,
   };
 };
-const addCustomerMongoSuccess = () => {
+const addCustomerMongoSuccess = (id) => {
   return {
     type: actionTypes.ADD_CUSTOMER_MONGO_SUCCESS,
+    payload: id,
   };
 };
 const addCustomerMongoFailure = () => {
@@ -51,7 +52,7 @@ const addCustomerMongo = (profileObj) => {
         customer
       );
       console.log("response from db: ", res);
-      dispatch(addCustomerMongoSuccess(res));
+      dispatch(addCustomerMongoSuccess(res.data._id.toString()));
     } catch (err) {
       console.log("error", err);
       dispatch(addCustomerMongoFailure());
