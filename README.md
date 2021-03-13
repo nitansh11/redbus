@@ -34,10 +34,17 @@ In this project , we have tried to make a perfect clone of redbus.in.
       * Redux
       * React-redux
       * Redux-thunk
-      * Material Ui
+      * material-ui/core
+      * material-ui/icons
+      * material-ui/lab
       * uuid
       * React-dom
       * React-icons
+      * react-google-login
+      * react-icons
+      * react-modal
+      * react-scripts
+      * react-stripe-checkout
       
       
 ## How to use the product
@@ -71,6 +78,26 @@ In this project , we have tried to make a perfect clone of redbus.in.
   8. Now on this page you can see all your bookings.
   
   ![list_of_bookings](https://github.com/nitansh11/redbus/blob/master/Samples/ListOfBookings.PNG)
+  
+  9. Next feature that we have implemented is Bus Hire. Click on Bus Hire from the top bar. From this page, user can hire a bus for a round trip.
+  
+  ![bus hire landing page](https://github.com/nitansh11/redbus/blob/master/Samples/bushire1.png)
+  
+  10. On the Bus Hire landing page, click on Outstation, after that user will be asked to enter the few details.After entering those, click on proceed.
+
+  ![bus hire form page](https://github.com/nitansh11/redbus/blob/master/Samples/bushire2.png)
+  
+  11. Select a bus as per your choice and click on View Details to proceed.
+
+  ![bus select page](https://github.com/nitansh11/redbus/blob/master/Samples/bishire3.png)
+  
+  12.Click on Book, to book that particular vehicle and proceed for the payment.
+  
+  ![bus book page](https://github.com/nitansh11/redbus/blob/master/Samples/bushire4.png)
+  
+  13. On this page click on the button Pay with Stripe , here enter your email , card number as 4242 4242 4242 4242 , expiary date as 12/21 and cvv as 123 and click on the pay button , your bus has been booked :relaxed:
+  
+  ![payment page](https://github.com/nitansh11/redbus/blob/master/Samples/bushire5.png)
 
  
 ### End-notes
