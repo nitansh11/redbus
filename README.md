@@ -54,11 +54,11 @@ In this project , we have tried to make a perfect clone of redbus.in.
 
   ![Landing Page](https://github.com/nitansh11/redbus/blob/master/Samples/HomePage1.PNG)
 
- 2. Here you can see our landing page , If you are using this product for the first time , you are a new user and you can login by clicking on dropdown on the right side of      navbar.
+ 2. Here you can see our landing page , If you are using this product for the first time , you are a new user and you can login by clicking on dropdown on the right side of navbar and currently we are serving buses between Lucknow and Faizabad, so enter Lucknow in source and Faizabad in destination and select any date as per your choice.
 
   ![Sign up](https://github.com/nitansh11/redbus/blob/master/Samples/GoogleSignIn.PNG)
 
- 3. After successful login , now you can search for the the buses , enter the source location as Lucknow and destination location as Faizabad , select any date and click on the search bus button.
+ 3. This page contains the list of all the buses between source and destination.On this page, user can use filtering and sorting as per his requirement.
 
   ![list_of_buses](https://github.com/nitansh11/redbus/blob/master/Samples/listOfbuseswithfilters.PNG)
  
