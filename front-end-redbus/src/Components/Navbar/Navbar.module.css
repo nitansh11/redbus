@@ -10,6 +10,19 @@ body {
   align-items: center;
   padding: 5px 5%;
 }
+.Navbar li {
+  cursor: pointer;
+}
+.Navbar li:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.Navbar a {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
 .Navbar > * {
   display: inline-block;
 }

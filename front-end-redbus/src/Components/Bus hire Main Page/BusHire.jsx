@@ -7,10 +7,13 @@ import FAQ from "./FAQ Section/FAQ";
 
 import BusHirePricing from "./Bus Hire Pricing/BusHirePricing";
 import { BsCircleFill } from "react-icons/bs";
-
+import { useSelector, useDispatch } from "react-redux";
 const BusHire = () => {
   const [active, setActive] = React.useState("Type of trip");
-
+  const currentCustomer = useSelector(
+    (state) => state.authReducer.currentCustomer
+  );
+  console.log("BusHire: ", currentCustomer);
   const handleClick = () => {
     if (active === "Type of trip") {
       setActive("Bus Hire Form");

@@ -193,6 +193,9 @@ const Right = () => {
       <SortingBar />
       {isLoading && <div>Loading...</div>}
       {isError && <div>Something went wrong</div>}
+
+      {isSuccess && filteredMatchedBuses.length == 0 && <h1>No Bus Found.</h1>}
+
       {isSuccess &&
         filteredMatchedBuses.map((item) => {
           return (

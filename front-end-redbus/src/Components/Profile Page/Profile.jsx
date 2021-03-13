@@ -90,7 +90,9 @@ const Profile = () => {
                 }}
               >
                 <div className={Styles.userDetailHeading}>Your name</div>
-                <div className={Styles.userDetailInfo}>Archana singh</div>
+                <div className={Styles.userDetailInfo}>
+                  {currentCustomer ? currentCustomer.name : "User"}
+                </div>
               </div>
               <div
                 style={{
@@ -122,7 +124,9 @@ const Profile = () => {
                 }}
               >
                 <div className={Styles.userDetailHeading}>Gender</div>
-                <div className={Styles.userDetailInfo}>Female</div>
+                <div className={Styles.userDetailInfo}>
+                  {currentCustomer ? currentCustomer.gender : "-"}
+                </div>
               </div>
             </div>
             <div
@@ -155,7 +159,9 @@ const Profile = () => {
                 }}
               >
                 <div className={Styles.userDetailHeading}>email</div>
-                <div className={Styles.userDetailInfo}>dummy email</div>
+                <div className={Styles.userDetailInfo}>
+                  {currentCustomer ? currentCustomer.email : "-"}
+                </div>
               </div>
               <div
                 style={{
