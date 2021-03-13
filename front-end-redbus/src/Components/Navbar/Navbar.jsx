@@ -73,7 +73,7 @@ const Navbar = () => {
       </div>
       <ul className={styles.Navbar__listTwo}>
         <div className={styles.rightSide_header}>
-          <li onClick={() => setIsOpen(true)}>HELP</li>
+          {/* <li onClick={() => setIsOpen(true)}>HELP</li> */}
           <li onClick={() => setIsOpen(true)}>MANAGE BOOKING</li>
           <li>
             <div>
