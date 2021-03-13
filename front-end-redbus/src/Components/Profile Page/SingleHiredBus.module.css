@@ -1,0 +1,43 @@
+.SingleHiredBus {
+  border: 1px solid green;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 90%;
+  height: 700px;
+  margin: 20px auto;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 hsla(0, 0%, 75%, 0.5);
+  border: 1px solid #f0f1f2;
+  background-color: #fff;
+}
+.SingleHiredBus__image img {
+  width: 100%;
+  max-height: 250px;
+  border-radius: 8px;
+}
+.SingleHiredBus__busdetails {
+  line-height: 29px;
+
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  /* box-shadow: 0 4px 8px 0 hsla(0,0%,75%,.5); */
+  border: 1px solid silver;
+}
+.SingleHiredBus__persondetails {
+  line-height: 29px;
+  padding: 40px;
+  margin-left: 40px;
+  border-radius: 4px;
+  /* box-shadow: 0 4px 8px 0 hsla(0,0%,75%,.5); */
+  border: 1px solid silver;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}

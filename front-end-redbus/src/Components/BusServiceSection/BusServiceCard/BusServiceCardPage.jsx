@@ -5,7 +5,7 @@ import { Link, useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import { useSelector, useDispatch } from "react-redux";
 import { getBusData2 } from "../../../Redux/busService/action";
-
+import { useLocation } from "react-router-dom";
 const BusServiceCardPage = () => {
   const busList = useSelector((state) => state.busServiceReducer.busList);
   console.log(busList);
@@ -15,6 +15,13 @@ const BusServiceCardPage = () => {
   // const handleClick = (id) => {
   //   history.push(`/busPage/${id}`);
   // };
+  let { search } = useLocation();
+  const query = new URLSearchParams(search);
+  const pickUp = query.get("pickUp");
+  const drop = query.get("drop");
+  const pickUpDate = query.get("pickUpDate");
+  const dropDate = query.get("dropDate");
+  const totalPassengers = query.get("totalPassengers");
 
   React.useEffect(() => {
     dispatch(getBusData2());
@@ -52,7 +59,9 @@ const BusServiceCardPage = () => {
                 <div className={design.footerCard}>
                   {/* <Link to={`/busdetails/:${item._id}`}>view details</Link> */}
                   <Button color="primary">
-                    <Link to={`/bus-hire-details/${item._id}`}>
+                    <Link
+                      to={`/bus-hire-details/${item._id}?pickUp=${pickUp}&drop=${drop}&pickUpDate=${pickUpDate}&dropDate=${dropDate}&totalPassengers=${totalPassengers}`}
+                    >
                       View Details
                     </Link>
                   </Button>

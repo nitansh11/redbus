@@ -9,12 +9,24 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getBusOnIdThunk } from "../../../Redux/busService/action";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 const BusServiceDetailsPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const currentBus = useSelector((state) => state.busServiceReducer.currentBus);
   console.log(currentBus);
   const isLoading = useSelector((state) => state.busServiceReducer.isLoading);
+  const currentCustomer = useSelector(
+    (state) => state.authReducer.currentCustomer
+  );
+  let { search } = useLocation();
+  const query = new URLSearchParams(search);
+  const pickUp = query.get("pickUp");
+  const drop = query.get("drop");
+  const pickUpDate = query.get("pickUpDate");
+  const dropDate = query.get("dropDate");
+  const totalPassengers = query.get("totalPassengers");
+
   React.useEffect(() => {
     // setLoading(true);
     // axios
@@ -157,7 +169,15 @@ const BusServiceDetailsPage = () => {
                 cursor: "pointer",
               }}
             >
-              <Link to={`/payments-hire`}> Book For Rs.4,913</Link>
+              <Link
+                to={`/payments-hire?pickUp=${pickUp}&drop=${drop}&pickUpDate=${pickUpDate}&dropDate=${dropDate}&totalPassengers=${totalPassengers}&price=${
+                  currentBus ? currentBus.price : 50
+                }&email=${
+                  currentCustomer ? currentCustomer.email : "test@gmail.com"
+                }`}
+              >
+                Book For Rs.4,913
+              </Link>
             </h4>
             <span
               style={{

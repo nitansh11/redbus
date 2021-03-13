@@ -8,7 +8,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 5%;
+  padding: 0px 5%;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 .Navbar li {
   cursor: pointer;
@@ -24,14 +26,17 @@ body {
   color: white;
 }
 .Navbar > * {
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .Navbar__listOne {
   list-style: none;
-  margin: 0 20px;
-}
 
+  /* margin: 0 20px; */
+}
+.Navbar__listOne li {
+  font-weight: bolder;
+}
 .Navbar__listTwo {
   list-style: none;
   margin: 0 20px;

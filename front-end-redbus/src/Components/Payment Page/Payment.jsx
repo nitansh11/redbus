@@ -5,10 +5,11 @@ import { MdWatchLater } from "react-icons/md";
 import { MdAccountCircle } from "react-icons/md";
 import { MdDateRange } from "react-icons/md";
 import { VscLocation } from "react-icons/vsc";
-import StripeCheckout from "react-stripe-checkout";
-import { useHistory } from "react-router-dom";
+
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
+import StripeCheckout from "react-stripe-checkout";
 const Payment = () => {
   const passSeatsArray = useSelector((state) => state.busDetailsReducer.seats);
   const passFare = useSelector((state) => state.busDetailsReducer.fare);

@@ -6,13 +6,85 @@ import { MdAccountCircle } from "react-icons/md";
 import { MdDateRange } from "react-icons/md";
 import { VscLocation } from "react-icons/vsc";
 import { useSelector, useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
+import StripeCheckout from "react-stripe-checkout";
 const Payment = () => {
   const currentCustomer = useSelector(
     (state) => state.authReducer.currentCustomer
   );
-  console.log("Hire payment: ", currentCustomer);
+  let { search } = useLocation();
+  const query = new URLSearchParams(search);
+  const pickUp = query.get("pickUp");
+  const drop = query.get("drop");
+  const pickUpDate = query.get("pickUpDate");
+  const dropDate = query.get("dropDate");
+  const totalPassengers = query.get("totalPassengers");
+  const price = query.get("price");
+  const email = query.get("email");
+  // stripe make payment end
+  const bookingHireObj = {
+    pickUp,
+    drop,
+    pickUpDate,
+    dropDate,
+    totalPassengers,
+    email,
+    fare: price * 500,
+  };
+  // stripe make payment start
+  const [product, setProduct] = React.useState({
+    name: "React from facebook",
+    price: 10,
+    productBy: "Facebook",
+  });
+  const history = useHistory();
+  const makePayment = async (token) => {
+    try {
+      let res = await axios.post(
+        "http://localhost:8000/v1/api/bookingHire",
+        bookingHireObj
+      );
+      console.log("Booking Hire post response: ", res.data);
+    } catch (err) {
+      console.log(
+        "Error while adding booking hire to booking Hire collection!",
+        err
+      );
+    }
+
+    const body = {
+      token,
+      product,
+    };
+    const headers = {
+      "Content-Type": "application/json",
+    };
+    //fire a request to backend
+    return fetch("http://localhost:8000/v1/api/stripe-payments", {
+      method: "POST",
+      headers,
+      body: JSON.stringify(body),
+    })
+      .then((res) => {
+        console.log("RESPONSE REACT", res);
+        const { status } = res;
+        console.log("STATUS REACT", status);
+        console.log("redirecting:");
+        history.push("/my-profile");
+      })
+      .catch((err) => {
+        console.log("Error while making payment", err);
+        alert(
+          "Something went wrong while making payment! Check Internet connection!"
+        );
+      });
+  };
+
+  // console.log("Hire payment: ", currentCustomer);
   const currentBus = useSelector((state) => state.busServiceReducer.currentBus);
-  console.log("Current Bus: ", currentBus);
+  // console.log("Current Bus: ", currentBus);
   return (
     <div>
       {/* <div className = {Styles.payment__main_header}>
@@ -91,6 +163,19 @@ const Payment = () => {
               Styles.payment__fullContainer_leftContainer_paymentInstruments
             }
           >
+            {/************************ Stripe Payemnt Start ******************************************/}
+            <div className={Styles.Payment__stripe}>
+              <StripeCheckout
+                stripeKey="pk_test_51D9ybxG1hGhZmBxsALjqi8YDqgi6SMu4jOLB0BRli0zOXaSFMZhaJRhL8NIsVuLqjqWUWL7L3e6kcgeTFTufIX1M00k24eV7ps"
+                token={makePayment}
+                name="RedBus Booking"
+              >
+                <button className={Styles.Payment__stripe__button}>
+                  Pay With Stripe
+                </button>
+              </StripeCheckout>
+            </div>
+            {/************************ Stripe Payemnt End ******************************************/}
             <div className={Styles.choose_payment_heading}>
               Choose Payment Method
             </div>
@@ -283,14 +368,6 @@ const Payment = () => {
               Styles.payment__fullContainer_rightContainer_trip_container
             }
           >
-            <div className={Styles.travel_operator_info}>
-              <div className={Styles.travel_title}>National Travels</div>
-              <div className={Styles.travel_specification}>
-                Bharat Benz A/C Seeper
-              </div>
-            </div>
-            <div className={Styles.line}></div>
-
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <div
                 style={{
@@ -301,22 +378,51 @@ const Payment = () => {
               >
                 <MdDateRange className={Styles.icons} />
                 <div style={{ display: "flex", flexDirection: "column" }}>
-                  <div className={Styles.travel_specification}>Departure</div>
+                  <div className={Styles.travel_specification}>
+                    Pick Up Date
+                  </div>
                   <div style={{ display: "flex", width: "150px" }}>
-                    <div>12 Mar 2021</div>
-                    <div style={{ marginLeft: "10px" }}>5:30 pm</div>
+                    <div>{pickUpDate}</div>
                   </div>
                 </div>
               </div>
+            </div>
+            <div className={Styles.line}></div>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
               <div
                 style={{
                   display: "flex",
-                  flexDirection: "column",
-                  marginRight: "10px",
+                  justifyContent: "space-between",
+                  width: "200px",
                 }}
               >
-                <div>Seat</div>
-                <div>L7</div>
+                <MdDateRange className={Styles.icons} />
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <div className={Styles.travel_specification}>Return Date</div>
+                  <div style={{ display: "flex", width: "150px" }}>
+                    <div>{dropDate}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={Styles.line}></div>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  width: "200px",
+                }}
+              >
+                <MdDateRange className={Styles.icons} />
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <div className={Styles.travel_specification}>
+                    Total Passengers
+                  </div>
+                  <div style={{ display: "flex", width: "150px" }}>
+                    <div>{totalPassengers}</div>
+                  </div>
+                </div>
               </div>
             </div>
             <div className={Styles.line}></div>
@@ -331,23 +437,25 @@ const Payment = () => {
                 <VscLocation className={Styles.icons} />
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <div className={Styles.travel_specification}>
-                    Boarding Point
+                    Pick Up Location
                   </div>
-                  <div>{currentBus.source}</div>
-                  <div>Anand Rao Circle</div>
+                  <div>{pickUp}</div>
+                  <div>{pickUpDate}</div>
                 </div>
               </div>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <div className={Styles.travel_specification}>
-                  Dropping Point
+                  Dropping Location
                 </div>
-                <div>Mumbai</div>
-                <div>Karmot Signal</div>
+                <div>{drop}</div>
+                <div>{dropDate}</div>
               </div>
             </div>
             <div className={Styles.passangerInfo}>
               <MdAccountCircle className={Styles.icons} />
-              <div className={Styles.passangerName}>Nitansh Rastogi(21,M)</div>
+              <div className={Styles.passangerName}>
+                {currentCustomer ? currentCustomer.name : "Nitansh"}
+              </div>
             </div>
           </div>
           <div
@@ -371,8 +479,8 @@ const Payment = () => {
                 marginTop: "10px",
               }}
             >
-              <div className={Styles.travel_specification}>Onward fare</div>
-              <div className={Styles.travel_specification}>1330.35</div>
+              {/* <div className={Styles.travel_specification}>Onward fare</div>
+              <div className={Styles.travel_specification}>1330.35</div> */}
             </div>
             <div
               style={{
@@ -391,7 +499,7 @@ const Payment = () => {
                 className={Styles.travel_specification}
                 style={{ fontWeight: "bold" }}
               >
-                1330.35
+                {price * 500}
               </div>
             </div>
           </div>
