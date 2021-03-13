@@ -58,13 +58,13 @@ const SortingBar = () => {
         </div>
         <div
           className={styles.mainContainer6}
-          onClick={() => handleSortProperty("fare")}
+          // onClick={() => handleSortProperty("fare")}
         >
           Fare
         </div>
         <div
           className={styles.mainContainer7}
-          onClick={() => handleSortProperty("seatsAvailable")}
+          // onClick={() => handleSortProperty("seatsAvailable")}
         >
           Seats Available
         </div>
