@@ -4,7 +4,21 @@ import { FaRegDotCircle } from "react-icons/fa";
 import { HiLocationMarker } from "react-icons/hi";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
+let initState = {
+  pickUp: "",
+  drop: "",
+  totalPassengers: "",
+  email: "",
+  pickUpDate: "",
+  dropDate: "",
+};
 const BusHireForm = ({ handleClick }) => {
+  const [formValues, setFormValues] = React.useState(initState);
+
+  const handleChange = (e) => {
+    let { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
   return (
     <div>
       <div className={Styles.BusHireFormcontainer}>
@@ -29,6 +43,9 @@ const BusHireForm = ({ handleClick }) => {
                   className={Styles.inputBox}
                   type="text"
                   placeholder="Enter your Pickup location"
+                  value={formValues.pickUp}
+                  name="pickUp"
+                  onChange={(e) => handleChange(e)}
                 />
               </div>
               <div className={Styles.pickUpDestnationEachDiv}>
@@ -45,6 +62,9 @@ const BusHireForm = ({ handleClick }) => {
                   className={Styles.inputBox}
                   type="text"
                   placeholder="Enter your Destination "
+                  value={formValues.drop}
+                  name="drop"
+                  onChange={(e) => handleChange(e)}
                 />
               </div>
             </div>
@@ -59,7 +79,13 @@ const BusHireForm = ({ handleClick }) => {
                   }}
                 >
                   <div className={Styles.fromWhenHeading}>From When</div>
-                  <input className={Styles.inputBox} type="date" />
+                  <input
+                    className={Styles.inputBox}
+                    type="date"
+                    value={formValues.pickUpDate}
+                    name="pickUpDate"
+                    onChange={(e) => handleChange(e)}
+                  />
                 </div>
                 <div
                   style={{
@@ -70,7 +96,13 @@ const BusHireForm = ({ handleClick }) => {
                   }}
                 >
                   <div className={Styles.fromWhenHeading}>Till When</div>
-                  <input className={Styles.inputBox} type="date" />
+                  <input
+                    className={Styles.inputBox}
+                    type="date"
+                    value={formValues.dropDate}
+                    name="dropDate"
+                    onChange={(e) => handleChange(e)}
+                  />
                 </div>
               </div>
             </div>
@@ -80,9 +112,14 @@ const BusHireForm = ({ handleClick }) => {
                 className={Styles.inputBox}
                 type="number"
                 placeholder="Enter number of passangers"
+                value={formValues.totalPassengers}
+                name="totalPassengers"
+                onChange={(e) => handleChange(e)}
               />
             </div>
-            <Link to="/bus-hire-card">
+            <Link
+              to={`bus-hire-card?pickUp=${formValues.pickUp}&drop=${formValues.drop}&pickUpDate=${formValues.pickUpDate}&dropDate=${formValues.dropDate}&totalPassengers=${formValues.totalPassengers}`}
+            >
               <input
                 type="submit"
                 className={Styles.proceedDiv}

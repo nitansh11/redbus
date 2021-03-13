@@ -10,6 +10,7 @@ body {
   align-items: center;
   padding: 0px 5%;
   padding-top: 20px;
+  padding-bottom: 10px;
 }
 .Navbar li {
   cursor: pointer;

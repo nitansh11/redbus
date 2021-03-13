@@ -149,12 +149,7 @@ const Navbar = () => {
                   >
                     Wallet
                   </MenuItem>
-                  <MenuItem
-                    onClick={handleLogout}
-                    onClick={() => setIsOpen(true)}
-                  >
-                    SignOut
-                  </MenuItem>
+                  <MenuItem onClick={handleLogout}>SignOut</MenuItem>
                 </Menu>
               ) : (
                 <Menu

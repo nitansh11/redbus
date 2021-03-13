@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./SingleTrip.module.css";
+import styles from "./SingleHiredBus.module.css";
 import { BsCircleFill } from "react-icons/bs";
 
-const SingleTrip = ({ booking }) => {
+const SingleHiredBus = ({ booking }) => {
   console.log("Booking is : ", booking);
   console.log(booking.passengerDetails);
   let imageArr = [
@@ -148,8 +148,8 @@ const SingleTrip = ({ booking }) => {
     },
   ];
   return (
-    <div className={styles.SingleTrip}>
-      <div className={styles.SingleTrip__image}>
+    <div className={styles.SingleHiredBus}>
+      <div className={styles.SingleHiredBus__image}>
         <img
           src={imageArr[Math.floor(Math.random() * (18 - 0 + 1) + 0)].images}
           alt="bus"
@@ -157,7 +157,7 @@ const SingleTrip = ({ booking }) => {
       </div>
 
       <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-        <div className={styles.SingleTrip__busdetails}>
+        <div className={styles.SingleHiredBus__persondetails}>
           <div
             style={{
               color: "#d84e55",
@@ -168,71 +168,7 @@ const SingleTrip = ({ booking }) => {
               textAlign: "center",
             }}
           >
-            Bus Details
-          </div>
-          {/* <p><BsCircleFill style={{ marginRight: "20px", fontSize: "7px" ,color : "green"}} />Operator Name: National Travels</p>
-          <p><BsCircleFill style={{ marginRight: "20px", fontSize: "7px" ,color : "green"}} />Bus Type: Seater</p> */}
-          <p>
-            <BsCircleFill
-              style={{ marginRight: "20px", fontSize: "7px", color: "green" }}
-            />
-            Booking Date: {booking.bookingDate}{" "}
-          </p>
-          <p>
-            <BsCircleFill
-              style={{ marginRight: "20px", fontSize: "7px", color: "green" }}
-            />
-            Departure Location: {booking.departureDetails.city}
-          </p>
-          <p>
-            <BsCircleFill
-              style={{ marginRight: "20px", fontSize: "7px", color: "green" }}
-            />
-            Departure Time: {booking.departureDetails.time}:00 hrs
-          </p>
-          <p>
-            <BsCircleFill
-              style={{ marginRight: "20px", fontSize: "7px", color: "green" }}
-            />
-            Departure Date: {booking.departureDetails.date}
-          </p>
-          <p>
-            <BsCircleFill
-              style={{ marginRight: "20px", fontSize: "7px", color: "green" }}
-            />
-            Arrival Location: {booking.arrivalDetails.city}
-          </p>
-          <p>
-            <BsCircleFill
-              style={{ marginRight: "20px", fontSize: "7px", color: "green" }}
-            />
-            Arrival Time: {booking.arrivalDetails.time}:00 hrs
-          </p>
-          <p>
-            <BsCircleFill
-              style={{ marginRight: "20px", fontSize: "7px", color: "green" }}
-            />
-            Arrival Date:{booking.arrivalDetails.date}
-          </p>
-          <p>
-            <BsCircleFill
-              style={{ marginRight: "20px", fontSize: "7px", color: "green" }}
-            />
-            Total Fare: {booking.fare}
-          </p>
-        </div>
-        <div className={styles.SingleTrip__persondetails}>
-          <div
-            style={{
-              color: "#d84e55",
-              fontSize: "20px",
-              fontWeight: "700",
-              marginBottom: "10px",
-              marginTop: "10px",
-              textAlign: "center",
-            }}
-          >
-            Passenger Details
+            Hired Bus Details
           </div>
           <p>
             <BsCircleFill
@@ -244,48 +180,42 @@ const SingleTrip = ({ booking }) => {
             <BsCircleFill
               style={{ marginRight: "20px", fontSize: "7px", color: "green" }}
             />
-            Conatct Phone Number: {booking.phoneNumber}
+            Pick Up City: {booking.pickUp}
           </p>
-          <div className={styles.SingleTrip__customerDetails__passenger}>
-            {booking.passengerDetails.map((e) => (
-              <div key={e.id}>
-                <p>
-                  <BsCircleFill
-                    style={{
-                      marginRight: "20px",
-                      fontSize: "7px",
-                      color: "green",
-                    }}
-                  />
-                  Name: {e.name}
-                </p>
-                <p>
-                  <BsCircleFill
-                    style={{
-                      marginRight: "20px",
-                      fontSize: "7px",
-                      color: "green",
-                    }}
-                  />
-                  Gender: {e.gender}
-                </p>
-                <p>
-                  <BsCircleFill
-                    style={{
-                      marginRight: "20px",
-                      fontSize: "7px",
-                      color: "green",
-                    }}
-                  />
-                  Age: {e.age}
-                </p>
-              </div>
-            ))}
-          </div>
+          <p>
+            <BsCircleFill
+              style={{ marginRight: "20px", fontSize: "7px", color: "green" }}
+            />
+            Drop City: {booking.drop}
+          </p>
+          <p>
+            <BsCircleFill
+              style={{ marginRight: "20px", fontSize: "7px", color: "green" }}
+            />
+            Pick Up Date: {booking.pickUpDate}
+          </p>
+          <p>
+            <BsCircleFill
+              style={{ marginRight: "20px", fontSize: "7px", color: "green" }}
+            />
+            Drop Date: {booking.dropDate}
+          </p>
+          <p>
+            <BsCircleFill
+              style={{ marginRight: "20px", fontSize: "7px", color: "green" }}
+            />
+            Toal Passengers: {booking.totalPassengers}
+          </p>
+          <p>
+            <BsCircleFill
+              style={{ marginRight: "20px", fontSize: "7px", color: "green" }}
+            />
+            Total Fare: {booking.fare}
+          </p>
         </div>
       </div>
     </div>
   );
 };
 
-export default SingleTrip;
+export default SingleHiredBus;

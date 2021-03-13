@@ -24,9 +24,9 @@ const MyTrips = () => {
     if (allBookings.length === 0) {
       return <h1>No Bookings Found!</h1>;
     }
-    return allBookings.map((booking) => (
-      <SingleTrip key={uuidv4()} booking={booking} />
-    ));
+    return allBookings
+      .reverse()
+      .map((booking) => <SingleTrip key={uuidv4()} booking={booking} />);
   };
   return <div className={styles.MyTrips}>{renderTripBookings()}</div>;
 };

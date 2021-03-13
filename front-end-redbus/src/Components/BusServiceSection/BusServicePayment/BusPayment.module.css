@@ -5,6 +5,27 @@ body {
   font-size: 14px;
   font-weight: 400;
 }
+/* Stripe payment start */
+.Payment__stripe {
+  /* border: 1px solid red; */
+  margin-top: 50px;
+}
+.Payment__stripe button {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.Payment__stripe__button {
+  background-color: #d84f57;
+  color: white;
+  height: 50px;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+/* Stripe payment end */
 .payment__main_header {
   display: flex;
   justify-content: space-between;
