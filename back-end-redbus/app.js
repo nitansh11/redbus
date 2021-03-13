@@ -45,6 +45,8 @@ app.use(busRoutes);
 app.use(bookingRoutes);
 app.use(customerRoutes);
 app.use(routeRoutes);
+const bookingHireRoutes = require("./routes/bookinghire");
+app.use(bookingHireRoutes);
 
 const busServiceRoutes = require("./routes/busservice");
 app.use(busServiceRoutes);
