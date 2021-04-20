@@ -47,10 +47,10 @@ const Right = () => {
   } else {
     filteredMatchedBuses = filteredMatchedBuses.filter((item) => {
       return (
-        (checkBusType["seater"] === true && item.busType == 1) ||
-        (checkBusType["sleeper"] === true && item.busType == 2) ||
-        (checkBusType["ac"] === true && item.busType == 3) ||
-        (checkBusType["nonac"] === true && item.busType == 4)
+        (checkBusType["seater"] === true && item.busType === 1) ||
+        (checkBusType["sleeper"] === true && item.busType === 2) ||
+        (checkBusType["ac"] === true && item.busType === 3) ||
+        (checkBusType["nonac"] === true && item.busType === 4)
       );
     });
   }

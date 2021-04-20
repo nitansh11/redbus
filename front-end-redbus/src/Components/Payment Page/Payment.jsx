@@ -205,7 +205,7 @@ const Payment = () => {
             {/************************ Stripe Payemnt Start ******************************************/}
             <div className={Styles.Payment__stripe}>
               <StripeCheckout
-                stripeKey="pk_test_51D9ybxG1hGhZmBxsALjqi8YDqgi6SMu4jOLB0BRli0zOXaSFMZhaJRhL8NIsVuLqjqWUWL7L3e6kcgeTFTufIX1M00k24eV7ps"
+                stripeKey="pk_test_51IiFMtSGig8u12pPakqR8ahHxGPcc4JtGfprE9GYWjPpmYEenCdgtU1tfdDSBQlP1AjDpMV4lYJ9CwSTewPjSuC800MOdIAa3W"
                 token={makePayment}
                 name="RedBus Booking"
               >

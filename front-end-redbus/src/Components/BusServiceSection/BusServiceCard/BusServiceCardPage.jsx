@@ -48,18 +48,20 @@ const BusServiceCardPage = () => {
                       margin: "20px 8px 20px 0px",
                       color: "#d84f57",
                       textTransform: "none",
+                      lineHeight : "15px"
                     }}
                   >
-                    <span style={{ fontSize: "16px", color: "grey" }}>
-                      Staring Cost
+                    <span style={{ fontSize: "14px", color: "grey" }}>
+                      Starting Cost
                     </span>{" "}
-                    <br /> Rs.{item.total}
+                    <br /> 
+                    <span style={{ fontSize: "16px", color: "#d84e55",fontWeight : "700" }}>Rs.{item.total}</span>
                   </h1>
                 </div>
                 <div className={design.footerCard}>
                   {/* <Link to={`/busdetails/:${item._id}`}>view details</Link> */}
                   <Button color="primary">
-                    <Link
+                    <Link style = {{textDecoration : "none" , fontWeight : "700",color : "#1034d9"}}
                       to={`/bus-hire-details/${item._id}?pickUp=${pickUp}&drop=${drop}&pickUpDate=${pickUpDate}&dropDate=${dropDate}&totalPassengers=${totalPassengers}`}
                     >
                       View Details
@@ -72,7 +74,7 @@ const BusServiceCardPage = () => {
         </div>
       </div>
       <div className={design.rightContainer}>
-        <div className={design.blueContainer}>
+        {/* <div className={design.blueContainer}>
           <img
             style={{ display: "inline-block", marginRight: "16px" }}
             src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn3.iconfinder.com%2Fdata%2Ficons%2Fmoney-icons%2F100%2F1-512.png&f=1&nofb=1"
@@ -82,8 +84,8 @@ const BusServiceCardPage = () => {
           <p style={{ display: "inline-block" }}>
             Pay just 25% as advance to book
           </p>
-        </div>
-        <div className={design.blueContainer}>
+        </div> */}
+        {/* <div className={design.blueContainer}>
           <img
             style={{ display: "inline-block", marginRight: "16px" }}
             src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.4QKxNTpVlc7F3vqAPsb_NgHaHa%26pid%3DApi&f=1"
@@ -93,7 +95,7 @@ const BusServiceCardPage = () => {
           <p style={{ display: "inline-block" }}>
             Free Cancellation till 20 Mar 2021, 04:15 PM
           </p>
-        </div>
+        </div> */}
         <div className={design.safetyContainer}>
           <div className={design.BusimgBox}>
             <img
@@ -122,10 +124,8 @@ const BusServiceCardPage = () => {
         >
           <h3>Covid 19 travel guidelines</h3>
           <p>Check latest travel guidelines issued by State Governments</p>
-          <hr />
-          <p style={{ color: "blue", textAlign: "right", padding: "6px" }}>
-            Read Guidelines
-          </p>
+          <hr  />
+         
         </div>
       </div>
     </div>
