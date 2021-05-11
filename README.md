@@ -6,7 +6,7 @@ It connects bus travellers with a network of over 2500 bus operators, across Ind
 
 In this project , we have tried to make a perfect clone of redbus.in.
 
-**Demo of the product : **  https://github.com/nitansh11/redbus/blob/master/Samples/redbus%20Video.mp4
+## Demo of the product :  https://github.com/nitansh11/redbus/blob/master/Samples/redbus%20Video.mp4
 
 # Steps to install the project:
 
