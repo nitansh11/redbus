@@ -1,7 +1,7 @@
 import React from "react";
 import { ViewSeats } from "../ViewSeats/ViewSeats";
 import styles from "./BottomTabs.module.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updateBookingDetails } from "../../../Redux/BookBus/action";
 
 export const BottomTabs = (props) => {

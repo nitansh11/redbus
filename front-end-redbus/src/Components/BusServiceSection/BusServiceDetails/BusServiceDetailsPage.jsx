@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./BusServiceDetailsPage.module.css";
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import MusicNoteIcon from "@material-ui/icons/MusicNote";
 import BatteryCharging30Icon from "@material-ui/icons/BatteryCharging30";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
@@ -10,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getBusOnIdThunk } from "../../../Redux/busService/action";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+
 const BusServiceDetailsPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -28,34 +28,14 @@ const BusServiceDetailsPage = () => {
   const totalPassengers = query.get("totalPassengers");
 
   React.useEffect(() => {
-    // setLoading(true);
-    // axios
-    //   .get(`http://localhost:8000/v1/api/busservice/${id}`)
-    //   .then((res) => {
-    //     setResult(res.data);
-    //     setLoading(false);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //     setLoading(false);
-    //   });
     dispatch(getBusOnIdThunk(id));
-  }, []);
+  }, [id,dispatch]);
   return isLoading ? (
     <div>...Loading...</div>
   ) : (
     <div className={styles.detailsContainer}>
       <div className={styles.detailsLeftContainer}>
-        <h3
-          style={{
-            marginTop: "0",
-            paddingTop: "0",
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <ArrowBackIcon /> &nbsp; Back to Result
-        </h3>
+
         <div>
           <img
             src={currentBus.img}
@@ -126,9 +106,9 @@ const BusServiceDetailsPage = () => {
         </div>
       </div>
       <div className={styles.detailsRightContainer}>
-        <h2>{currentBus.vehicle}</h2>
+
         <div>
-          <h2>Choose A Package</h2>
+
           <p>
             Its better to choose extra KMS for moving within your destination
             city for sightseeing, shopping etc...{" "}
@@ -139,6 +119,8 @@ const BusServiceDetailsPage = () => {
               justifyContent: "space-between",
               flexWrap: "wrap",
               backgroundColor: "#F8F4F4",
+              marginTop: "30px",
+              padding: "10px"
             }}
             className={styles.redBoxkmparent}
           >
@@ -169,29 +151,18 @@ const BusServiceDetailsPage = () => {
                 cursor: "pointer",
               }}
             >
-              <Link
-                to={`/payments-hire?pickUp=${pickUp}&drop=${drop}&pickUpDate=${pickUpDate}&dropDate=${dropDate}&totalPassengers=${totalPassengers}&price=${
-                  currentBus ? currentBus.price : 50
-                }&email=${
-                  currentCustomer ? currentCustomer.email : "test@gmail.com"
-                }`}
+              <Link style={{ color: "white", textDecoration: "none" }}
+                to={`/payments-hire?pickUp=${pickUp}&drop=${drop}&pickUpDate=${pickUpDate}&dropDate=${dropDate}&totalPassengers=${totalPassengers}&price=${currentBus ? currentBus.price : 50
+                  }&email=${currentCustomer ? currentCustomer.email : "test@gmail.com"
+                  }`}
               >
                 Book For Rs.4,913
               </Link>
             </h4>
-            <span
-              style={{
-                textAlign: "center",
-                fontSize: "14px",
-                color: "#747070",
-              }}
-            >
-              Pay balance ₹ 18039.64 online by 19th Mar 2021 or to driver in
-              cash.
-            </span>
+
           </div>
           <div>
-            <h4>Fare breakup</h4>
+            <h4 style={{ marginTop: "20px", color: "#d84e55", fontSize: "16px", marginBottom: "10px" }}>Fare breakup</h4>
             <div className={styles.breakingPrices}>
               <li>
                 <p className={styles.greyp}>Base Fair</p>

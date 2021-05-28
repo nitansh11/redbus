@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Title.module.css";
 import ApartmentIcon from "@material-ui/icons/Apartment";
 import TodayIcon from "@material-ui/icons/Today";
-import SettingsEthernetIcon from "@material-ui/icons/SettingsEthernet";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getRoutes } from "../../../Redux/routes/action";
@@ -11,18 +10,18 @@ const Title = () => {
   const [departure, setDeparture] = React.useState("");
   const [arrival, setArrival] = React.useState("");
   const [date, setDate] = React.useState("");
-  const [
-    displayDepartureDropdown,
-    setDisplayDepartureDropdown,
-  ] = React.useState(false);
-  const [displayArrivalDropdown, setDisplayArrivalDropdown] = React.useState(
-    false
-  );
+  // const [
+  //   displayDepartureDropdown,
+  //   setDisplayDepartureDropdown,
+  // ] = React.useState(false);
+  // const [displayArrivalDropdown, setDisplayArrivalDropdown] = React.useState(
+  //   false
+  // );
   const dispatch = useDispatch();
 
   React.useEffect(() => {
     dispatch(getRoutes());
-  }, []);
+  }, [dispatch]);
 
   const routes = useSelector((state) => state.routesReducer.routes);
   console.log("Routes are:", routes);
@@ -98,21 +97,3 @@ const Title = () => {
 };
 
 export default Title;
-{
-  /* <div
-          style={{
-            borderRadius: "50%",
-            border: "1px solid grey",
-            height: "25px",
-            width: "25px",
-            position: "absolute",
-            left: "32%",
-            top: "15%",
-          }}
-        >
-          <SettingsEthernetIcon
-            color="disabled"
-            style={{ position: "absolute" }}
-          />
-        </div> */
-}

@@ -29,7 +29,7 @@ const Right = () => {
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(getBusDetails(departure, arrival, date));
-  }, []);
+  }, [arrival , date , departure ,dispatch]);
 
   var filteredMatchedBuses = [...matchedBuses];
 
@@ -118,7 +118,7 @@ const Right = () => {
 
   if (checkLiveTracking === true) {
     filteredMatchedBuses = filteredMatchedBuses.filter(
-      (item) => item.liveTracking == 1
+      (item) => item.liveTracking === 1
     );
   }
 
@@ -130,7 +130,7 @@ const Right = () => {
 
   if (checkReschedulable === true) {
     filteredMatchedBuses = filteredMatchedBuses.filter(
-      (item) => item.reschedulable == 1
+      (item) => item.reschedulable === 1
     );
   }
 
@@ -140,15 +140,15 @@ const Right = () => {
     (state) => state.updateFilterDetailsReducer.sortingProperty
   );
 
-  if (sortingProperty != "None") {
+  if (sortingProperty !== "None") {
     console.log(sortingProperty);
-    if (sortingProperty == "departure") {
+    if (sortingProperty === "departure") {
       filteredMatchedBuses.sort(
         (a, b) => Number(a.departureTime) - Number(b.departureTime)
       );
     }
 
-    if (sortingProperty == "arrivals") {
+    if (sortingProperty === "arrivals") {
       filteredMatchedBuses.sort((a, b) => {
         var arriveTime1 =
           (Number(a.departureTime) + Number(routeDetails["duration"])) % 24;
@@ -160,7 +160,7 @@ const Right = () => {
       });
     }
 
-    if (sortingProperty == "ratings") {
+    if (sortingProperty === "ratings") {
       filteredMatchedBuses.sort((a, b) => {
         var ratingArr1 = a["rating"];
         var ratingArr2 = b["rating"];
@@ -194,7 +194,7 @@ const Right = () => {
       {isLoading && <div>Loading...</div>}
       {isError && <div>Something went wrong</div>}
 
-      {isSuccess && filteredMatchedBuses.length == 0 && <h1>No Bus Found.</h1>}
+      {isSuccess && filteredMatchedBuses.length === 0 && <h1>No Bus Found.</h1>}
 
       {isSuccess &&
         filteredMatchedBuses.map((item) => {

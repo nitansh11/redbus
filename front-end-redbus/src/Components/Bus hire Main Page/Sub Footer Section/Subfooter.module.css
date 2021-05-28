@@ -1,45 +1,45 @@
-.subFootercontainer{
-    background-color: #e5e5e5;
-    display: flex;
-    justify-content: space-evenly;
-    padding:30px;
-    width: 100%;
+.subFootercontainer {
+  background-color: #e5e5e5;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 30px;
+  width: 100%;
 }
-.subFootercontainer_eachSection{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.subFootercontainer_eachSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.subFootercontainer_eachSection > h4{
-    font-weight: 900;
-    line-height: 1.26;
-    color: #3e3e52;
-    margin-bottom: 4px;
-    font-size: 12px;
-    height: 15px;
+.subFootercontainer_eachSection > h4 {
+  font-weight: 900;
+  line-height: 1.26;
+  color: #3e3e52;
+  margin-bottom: 4px;
+  font-size: 12px;
+  height: 15px;
 }
-.subFootercontainer_eachSection > p{
-    cursor: pointer;
-    padding-bottom: 10px;
-    color: #3e3e52;
-    margin-top: 8px;
-    font-size: 12px;
-    min-width: 40%;
-    font-weight: 500;
+.subFootercontainer_eachSection > p {
+  cursor: pointer;
+  padding-bottom: 10px;
+  color: #3e3e52;
+  margin-top: 8px;
+  font-size: 12px;
+  min-width: 40%;
+  font-weight: 500;
 }
-.subFootercontainer_alternateSection{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 16px;
+.subFootercontainer_alternateSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 16px;
 }
 
-.subFootercontainer_alternateSection > p{
-    cursor: pointer;
-    padding-bottom: 10px;
-    color: #3e3e52;
-    margin-top: 8px;
-    font-size: 12px;
-    min-width: 40%;
-    font-weight: 500;
+.subFootercontainer_alternateSection > p {
+  cursor: pointer;
+  padding-bottom: 10px;
+  color: #3e3e52;
+  margin-top: 8px;
+  font-size: 12px;
+  min-width: 40%;
+  font-weight: 500;
 }

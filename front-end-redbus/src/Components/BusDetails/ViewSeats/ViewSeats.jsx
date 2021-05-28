@@ -9,7 +9,7 @@ import Divider from "@material-ui/core/Divider";
 import { FormDrawer } from "./FormDrawer";
 import { SubRoutes } from "../SelectSubRoutes/SubRoutes";
 import { updateBookingDetails } from "../../../Redux/BookBus/action";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const ViewSeats = ({
   filledSeats,
@@ -43,7 +43,7 @@ const ViewSeats = ({
 
     dispatch(updateBookingDetails(payload1));
     dispatch(updateBookingDetails(payload2));
-  }, [selectedSeats]);
+  }, [selectedSeats, seatPrice, dispatch]);
 
   React.useEffect(() => {
     let busIdPayload = {
@@ -51,7 +51,7 @@ const ViewSeats = ({
       value: busId.toString(),
     };
     dispatch(updateBookingDetails(busIdPayload));
-  }, []);
+  }, [busId, dispatch]);
 
   const handleSelectedSeats = (seatNo) => {
     if (selectedSeats.includes(seatNo)) {

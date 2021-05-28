@@ -2,9 +2,7 @@ import React from "react";
 import Services from "./Benefits/Services";
 import BusTracker from "./BusTracker/BusTracker";
 import Coupon from "./CouponSection/Coupon";
-import Navbar from "./Navbar/Navbar";
 import Safety from "./SafetySection/Safety";
-import Title from "./Title/Title";
 import styles from "./LandingPage.module.css";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -30,7 +28,7 @@ const LandingPage = () => {
 
   React.useEffect(() => {
     dispatch(getRoutes());
-  }, []);
+  }, [dispatch]);
 
   const routes = useSelector((state) => state.routesReducer.routes);
   console.log("Routes are:", routes);

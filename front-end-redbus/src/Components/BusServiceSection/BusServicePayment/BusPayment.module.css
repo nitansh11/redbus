@@ -7,7 +7,6 @@ body {
 }
 /* Stripe payment start */
 .Payment__stripe {
-  /* border: 1px solid red; */
   margin-top: 50px;
 }
 .Payment__stripe button {

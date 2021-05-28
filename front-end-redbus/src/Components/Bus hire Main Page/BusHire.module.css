@@ -1,240 +1,239 @@
-body{
-    font-family: 'Montserrat', sans-serif;
+body {
+  font-family: "Montserrat", sans-serif;
+}
+.imageBanner {
+  width: 100%;
+  position: inherit;
+}
+.bannerElementDiv {
+  position: absolute;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  left: 15%;
+  top: 8%;
+}
+.bannerBusHireText {
+  font-size: 38px;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 32px;
+}
+.bannerBusHireSubText {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 8px;
+}
+.bookInEasyStepsdiv,
+.withBusHireYouCanGet,
+.VehicleYouCanGet,
+.whyBookWithBushire {
+  margin: 3% 7%;
+  display: flex;
+  flex-direction: column;
+}
+.bookInEasySteps_heading {
+  font-size: 24px;
+  font-weight: 800;
+  color: #3e3e52;
+}
+.bookInEaschStep {
+  margin-top: 2%;
+  border-radius: 5%;
+  background-color: #f9ecf2;
+  width: 37%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 30px;
+}
+.bookInEaschStepText {
+  font-size: 22px;
+  color: #3e3e52;
+  margin-left: 20px;
+}
+.BusHireFeatures {
+  background-color: #3e3e52;
+  width: 219px;
+  height: 214px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  background-color: #fff;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  box-sizing: border-box;
+}
+.BusHireEachFeature {
+  display: flex;
+  flex-direction: column;
+  padding: 2% 15%;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.BusHireEachFeatureText {
+  font-size: 16px;
+  font-weight: 900;
+  color: #3e3e52;
+  margin-top: 10px;
+}
+.rcommutediv {
+  width: 33%;
+  margin: 5% 7%;
+  padding: 12px 12px 8px;
+  border-radius: 2px;
+  background-color: #e6eeff;
+}
+.knowMoreText {
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: right;
+  color: #1034d9;
+  cursor: pointer;
+}
+.rcommuteText {
+  font-size: 14px;
+  font-weight: 700;
+  color: #3e3e52;
+}
+.rcommuteText_para {
+  margin-bottom: 8px;
+  font-size: 14px;
+  margin-top: 8px;
+  color: #3e3e52;
+}
+.tripTypecontainer {
+  box-shadow: 0 4px 8px 0 rgba(100, 100, 100, 0.5);
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  margin-top: 8px;
+  padding: 0;
+  box-sizing: border-box;
+  position: fixed;
+  right: 4%;
+  top: 6.5%;
+}
+.hireVehicleHeading {
+  background-color: #d84e55;
+  border-radius: 8px;
+  padding: 20px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+}
+.journeyTypeDiv {
+  cursor: pointer;
+  height: 116px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 hsla(0, 0%, 75%, 0.5);
+  border: 1px solid #f0f1f2;
+  background-color: #fff;
+  display: flex;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  cursor: pointer;
+  padding: 20px;
+  justify-content: space-between;
+}
+.journeyText {
+  color: #3e3e52;
+  font-size: 16px;
+  font-weight: 800;
+}
+.journeySubText {
+  color: #3e3e52;
+  font-size: 14px;
+  font-weight: 500;
+}
+.vehicleTypeImage {
+  margin: 30px 0px;
+  width: 700px;
+  height: 150px;
+  position: relative;
+}
+.vehicleText {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+}
+.vehicleText > h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #3e3e52;
+}
+.vehicleText > p {
+  font-size: 16px;
+  color: #3e3e52;
+  margin-top: 4px;
+}
+.whyBookWithBushire_firstFeature {
+  width: 462px;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  background: url("https://www.redbus.in/bushire/static/mwebv2/home/group%20(1).svg");
+  background-size: cover;
+  margin: 20px 0px;
+}
+.whyBookWithBushire_secondFeature {
+  width: 462px;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  background: url("https://www.redbus.in/bushire/static/mwebv2/home/group-2%20(1).svg");
+  background-size: cover;
+  margin: 20px 0px;
+}
+.whyBookWithBushire_thirdFeature {
+  width: 462px;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  background: url("https://www.redbus.in/bushire/static/mwebv2/home/group%20(2).svg");
+  background-size: cover;
+  margin: 20px 0px;
+  padding: 20px;
+}
+.whyBookWithBushire_insideFeature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
+  padding: 20px;
 }
-.imageBanner{
- width: 100%;
- position: inherit;
+.whyBookWithBushire_insideFeature_text {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 130px;
 }
-.bannerElementDiv{
-    position: absolute;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    left : 15%;
-    top : 8%
+.whyBookWithBushire_insideFeature_text > h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
 }
-.bannerBusHireText{
-    font-size: 38px;
-    font-weight: 700;
-    color: #fff;
-    margin-top: 32px;
+.hireuswhenever_paraSection {
+  font-size: 14px;
+  line-height: 1.57;
+  color: #3e3e52;
+  width: 40%;
+  margin-top: 20px;
 }
-.bannerBusHireSubText{
-    font-size: 22px;
-    font-weight: 600;
-    color: #fff;
-    margin-top: 8px;
+.list {
+  width: 40%;
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.87;
+  color: #3e3e52;
+  text-decoration: crimson;
 }
-.bookInEasyStepsdiv,.withBusHireYouCanGet,.VehicleYouCanGet,.whyBookWithBushire{
-    margin : 3% 7%;
-    display: flex;
-    flex-direction: column;
-}
-.bookInEasySteps_heading{
-    font-size: 24px;
-    font-weight: 800;
-    color: #3e3e52;
-}
-.bookInEaschStep{
-    margin-top: 2%;
-    border-radius: 5%;
-    background-color: #f9ecf2;
-    width: 37%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 30px;
-}
-.bookInEaschStepText{
-    font-size: 22px;
-    color: #3e3e52;
-    margin-left: 20px;
-}
-.BusHireFeatures{
-    background-color: #3e3e52;
-    width: 219px;
-    height: 214px;
-    border-radius: 8px;
-    border: 2px solid #ddd;
-    background-color: #fff;
-    margin-right: 24px;
-    margin-bottom: 24px;
-    margin-top: 24px;
-    box-sizing: border-box;
-}
-.BusHireEachFeature{
-    display: flex;
-    flex-direction: column;
-    padding: 2% 15%;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-.BusHireEachFeatureText{
-    font-size: 16px;
-    font-weight: 900;
-    color: #3e3e52;
-    margin-top: 10px;
-}
-.rcommutediv{
-    width: 33%;
-    margin : 5% 7%;
-    padding: 12px 12px 8px;
-    border-radius: 2px;
-    background-color: #e6eeff;
-}
-.knowMoreText{
-    margin-bottom: 4px;
-    font-size: 14px;
-    font-weight: 700;
-    text-align: right;
-    color: #1034d9;
-    cursor: pointer;
-}
-.rcommuteText{
-    font-size: 14px;
-    font-weight: 700;
-    color: #3e3e52;
-}
-.rcommuteText_para{
-    margin-bottom: 8px;
-    font-size: 14px;
-    margin-top: 8px;
-    color: #3e3e52;
-}
-.tripTypecontainer{
-    box-shadow: 0 4px 8px 0 rgba(100, 100, 100, 0.5);
-    display: flex;
-    width: 30%;
-    flex-direction: column;
-    margin-top: 8px;
-    padding: 0;
-    box-sizing: border-box;
-    position:fixed;
-    right : 4%;
-    top : 6.5%;
-   
-}
-.hireVehicleHeading{
-    background-color: #d84e55;
-    border-radius: 8px;
-    padding: 20px;
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1;
-    color: #fff;
-}
-.journeyTypeDiv{
-    cursor: pointer;
-    height: 116px;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px 0 hsla(0,0%,75%,.5);
-    border: 1px solid #f0f1f2;
-    background-color: #fff;
-    display: flex;
-    margin-top: 24px;
-    margin-bottom: 24px;
-    cursor: pointer;
-    padding: 20px;
-    justify-content: space-between;
-}
-.journeyText{
-    color: #3e3e52;
-    font-size: 16px;
-    font-weight: 800;
-}
-.journeySubText{
-    color: #3e3e52;
-    font-size: 14px;
-    font-weight: 500;
-}
-.vehicleTypeImage{
-    margin : 30px 0px;
-    width: 700px;
-    height : 150px;
-    position: relative;
-}
-.vehicleText{
-    position: absolute;
-    top : 10%;
-    left: 5%;
-}
-.vehicleText > h3{
-    font-size: 24px;
-    font-weight: 700;
-    color: #3e3e52;
-}
-.vehicleText > p{
-    font-size: 16px;
-    color: #3e3e52;
-    margin-top: 4px;
-}
-.whyBookWithBushire_firstFeature{
-    width: 462px;
-    height: 160px;
-    object-fit: contain;
-    margin-bottom: 24px;
-    border-radius: 8px;
-    background: url("https://www.redbus.in/bushire/static/mwebv2/home/group%20(1).svg");
-    background-size: cover;
-    margin : 20px 0px;
-}
-.whyBookWithBushire_secondFeature{
-    width: 462px;
-    height: 160px;
-    object-fit: contain;
-    margin-bottom: 24px;
-    border-radius: 8px;
-    background: url("https://www.redbus.in/bushire/static/mwebv2/home/group-2%20(1).svg");
-    background-size: cover;
-    margin : 20px 0px;
-}
-.whyBookWithBushire_thirdFeature{
-    width: 462px;
-    height: 160px;
-    object-fit: contain;
-    margin-bottom: 24px;
-    border-radius: 8px;
-    background: url("https://www.redbus.in/bushire/static/mwebv2/home/group%20(2).svg");
-    background-size: cover;
-    margin : 20px 0px;
-    padding: 20px;
-}
-.whyBookWithBushire_insideFeature{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    
-    padding: 20px;
-}
-.whyBookWithBushire_insideFeature_text{
-    color : white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 130px;
-   
-}
-.whyBookWithBushire_insideFeature_text> h3{
-    font-size: 24px;
-    font-weight: 700;
-    color: white;
-}
-.hireuswhenever_paraSection{
-    font-size: 14px;
-    line-height: 1.57;
-    color: #3e3e52;
-    width: 40%;
-    margin-top: 20px;
-}
-.list{
-    width: 40%;
-    margin-top: 20px;
-    font-size: 14px;
-    line-height: 1.87;
-    color: #3e3e52;
-    text-decoration: crimson;
-}
-

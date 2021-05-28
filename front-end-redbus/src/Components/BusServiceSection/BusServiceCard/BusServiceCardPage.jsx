@@ -1,17 +1,17 @@
 import React from "react";
-import axios from "axios";
 import design from "./BusServiceCard.module.css";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import { useSelector, useDispatch } from "react-redux";
 import { getBusData2 } from "../../../Redux/busService/action";
 import { useLocation } from "react-router-dom";
+
 const BusServiceCardPage = () => {
   const busList = useSelector((state) => state.busServiceReducer.busList);
   console.log(busList);
   const dispatch = useDispatch();
 
-  const history = useHistory();
+  //const history = useHistory();
   // const handleClick = (id) => {
   //   history.push(`/busPage/${id}`);
   // };
@@ -25,12 +25,12 @@ const BusServiceCardPage = () => {
 
   React.useEffect(() => {
     dispatch(getBusData2());
-  }, []);
+  }, [dispatch]);
   return (
     <div className={design.mainContainer}>
       <div className={design.leftContainer}>
-        <h1 style={{ textTransform: "none" }}>
-          We have {busList.length !== 0 ? busList.length : 0} quotation
+        <h1 style={{ textTransform: "none", marginTop : "30px" , marginBottom : "20px"}}>
+          We have {busList.length !== 0 ? busList.length : 0} quotations for you
         </h1>
         <div className={design.cardContainer}>
           {busList?.map((item) => {
@@ -48,20 +48,20 @@ const BusServiceCardPage = () => {
                       margin: "20px 8px 20px 0px",
                       color: "#d84f57",
                       textTransform: "none",
-                      lineHeight : "15px"
+                      lineHeight: "15px"
                     }}
                   >
                     <span style={{ fontSize: "14px", color: "grey" }}>
                       Starting Cost
                     </span>{" "}
-                    <br /> 
-                    <span style={{ fontSize: "16px", color: "#d84e55",fontWeight : "700" }}>Rs.{item.total}</span>
+                    <br />
+                    <span style={{ fontSize: "16px", color: "#d84e55", fontWeight: "700" }}>Rs.{item.total}</span>
                   </h1>
                 </div>
                 <div className={design.footerCard}>
                   {/* <Link to={`/busdetails/:${item._id}`}>view details</Link> */}
                   <Button color="primary">
-                    <Link style = {{textDecoration : "none" , fontWeight : "700",color : "#1034d9"}}
+                    <Link style={{ textDecoration: "none", fontWeight: "700", color: "#1034d9" }}
                       to={`/bus-hire-details/${item._id}?pickUp=${pickUp}&drop=${drop}&pickUpDate=${pickUpDate}&dropDate=${dropDate}&totalPassengers=${totalPassengers}`}
                     >
                       View Details
@@ -124,8 +124,8 @@ const BusServiceCardPage = () => {
         >
           <h3>Covid 19 travel guidelines</h3>
           <p>Check latest travel guidelines issued by State Governments</p>
-          <hr  />
-         
+          <hr />
+
         </div>
       </div>
     </div>

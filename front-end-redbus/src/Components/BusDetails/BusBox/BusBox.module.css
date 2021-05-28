@@ -7,7 +7,6 @@
   height: auto;
   border: 1px solid #ddd;
   margin-top: 20px;
-  /* margin-left: 20px; */
   padding: 10px 0 0;
   color: #4a4a4a;
   font-family: Montserrat;
@@ -40,7 +39,6 @@
 
 .busBoxSection1 > div {
   height: 100%;
-  /* border: 1px solid black; */
 }
 
 .busBoxSection11 {

@@ -2,7 +2,7 @@ import React from "react";
 import AirlineSeatReclineExtraIcon from "@material-ui/icons/AirlineSeatReclineExtra";
 import styles from "./SmallSeat.module.css";
 import Tooltip from "@material-ui/core/Tooltip";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const SmallSeat = ({
   seatNo,

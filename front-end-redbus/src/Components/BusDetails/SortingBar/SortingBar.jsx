@@ -2,13 +2,10 @@ import React from "react";
 import styles from "./SortingBar.module.css";
 import Divider from "@material-ui/core/Divider";
 import SecurityIcon from "@material-ui/icons/Security";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updateFilterDetails } from "../../../Redux/FilterAndSort/action";
 
 const SortingBar = () => {
-  const sortProperty = useSelector(
-    (state) => state.updateFilterDetailsReducer.sortingProperty
-  );
 
   let dispatch = useDispatch();
   const handleSortProperty = (value) => {
@@ -58,13 +55,13 @@ const SortingBar = () => {
         </div>
         <div
           className={styles.mainContainer6}
-          // onClick={() => handleSortProperty("fare")}
+        // onClick={() => handleSortProperty("fare")}
         >
           Fare
         </div>
         <div
           className={styles.mainContainer7}
-          // onClick={() => handleSortProperty("seatsAvailable")}
+        // onClick={() => handleSortProperty("seatsAvailable")}
         >
           Seats Available
         </div>

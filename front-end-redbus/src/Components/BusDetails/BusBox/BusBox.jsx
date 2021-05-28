@@ -11,7 +11,7 @@ import DirectionsBusIcon from "@material-ui/icons/DirectionsBus";
 import GpsFixedIcon from "@material-ui/icons/GpsFixed";
 import RestoreIcon from "@material-ui/icons/Restore";
 import { BottomTabs } from "../BottomTabs/BottomTabs";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updateBookingDetails } from "../../../Redux/BookBus/action";
 
 const BusBox = ({
@@ -20,11 +20,8 @@ const BusBox = ({
   operatorName,
   busType,
   departureTime,
-  images,
-  routes,
   liveTracking,
   reschedulable,
-  amenities,
   filledSeats,
   routeDetails,
 }) => {
@@ -37,7 +34,7 @@ const BusBox = ({
     };
 
     dispatch(updateBookingDetails(payload1));
-  }, []);
+  }, [routeDetails,dispatch]);
 
   var avgRating = 0;
   var totalReviews = 0;
@@ -50,13 +47,13 @@ const BusBox = ({
 
   var seatPrice = 0;
   var busTypeName = "";
-  if (busType == 1) {
+  if (busType === 1) {
     seatPrice = 50 * Math.floor(routeDetails["duration"] / 2);
     busTypeName = "Seater";
-  } else if (busType == 2) {
+  } else if (busType === 2) {
     seatPrice = 100 * Math.floor(routeDetails["duration"] / 2);
     busTypeName = "Sleeper";
-  } else if (busType == 3) {
+  } else if (busType === 3) {
     seatPrice = 125 * Math.floor(routeDetails["duration"] / 2);
     busTypeName = "A/C Seater";
   } else {
@@ -161,7 +158,7 @@ const BusBox = ({
           </Tooltip>
         </div>
         <div className={styles.busBoxSection22}>
-          {liveTracking == 1 && (
+          {liveTracking === 1 && (
             <div>
               <GpsFixedIcon
                 style={{
@@ -173,7 +170,7 @@ const BusBox = ({
               <span>Live Tracking</span>
             </div>
           )}
-          {reschedulable == 1 && (
+          {reschedulable === 1 && (
             <div>
               <RestoreIcon
                 style={{

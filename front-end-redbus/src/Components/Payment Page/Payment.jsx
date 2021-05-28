@@ -5,11 +5,11 @@ import { MdWatchLater } from "react-icons/md";
 import { MdAccountCircle } from "react-icons/md";
 import { MdDateRange } from "react-icons/md";
 import { VscLocation } from "react-icons/vsc";
-
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import StripeCheckout from "react-stripe-checkout";
+
 const Payment = () => {
   const passSeatsArray = useSelector((state) => state.busDetailsReducer.seats);
   const passFare = useSelector((state) => state.busDetailsReducer.fare);
@@ -53,7 +53,7 @@ const Payment = () => {
   const isCovidDonated = useSelector(
     (state) => state.busDetailsReducer.isCovidDonated
   );
-  const [product, setProduct] = React.useState({
+  const [product] = React.useState({
     name: "React from facebook",
     price: 10,
     productBy: "Facebook",
@@ -105,10 +105,10 @@ const Payment = () => {
       body: JSON.stringify(body),
     })
       .then((res) => {
-        console.log("RESPONSE REACT", res);
-        const { status } = res;
-        console.log("STATUS REACT", status);
-        console.log("redirecting:");
+        //console.log("RESPONSE REACT", res);
+        // const { status } = res;
+        //console.log("STATUS REACT", status);
+        //console.log("redirecting:");
         history.push("/my-profile");
       })
       .catch((err) => {

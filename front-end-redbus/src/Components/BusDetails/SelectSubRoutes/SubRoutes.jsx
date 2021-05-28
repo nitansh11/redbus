@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./SubRoutes.module.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updateBookingDetails } from "../../../Redux/BookBus/action";
 import { useLocation } from "react-router-dom";
 

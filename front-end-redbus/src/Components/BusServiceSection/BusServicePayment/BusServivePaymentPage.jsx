@@ -5,7 +5,7 @@ import { MdWatchLater } from "react-icons/md";
 import { MdAccountCircle } from "react-icons/md";
 import { MdDateRange } from "react-icons/md";
 import { VscLocation } from "react-icons/vsc";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
@@ -34,7 +34,7 @@ const Payment = () => {
     fare: price * 500,
   };
   // stripe make payment start
-  const [product, setProduct] = React.useState({
+  const [product] = React.useState({
     name: "React from facebook",
     price: 10,
     productBy: "Facebook",
@@ -82,16 +82,9 @@ const Payment = () => {
       });
   };
 
-  // console.log("Hire payment: ", currentCustomer);
-  const currentBus = useSelector((state) => state.busServiceReducer.currentBus);
-  // console.log("Current Bus: ", currentBus);
   return (
     <div>
-      {/* <div className = {Styles.payment__main_header}>
-                <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLJvP7mBtUk_CR85hCOUXbwSgeCe7NL8u0tA&usqp=CAU" alt = "red bus logo" height = "100px"/>
-                <MdAccountCircle className = {Styles.icons}/>
-            </div> */}
-      {/* Header */}
+
       <div className={Styles.payment__header}>
         <div
           style={{
@@ -479,8 +472,7 @@ const Payment = () => {
                 marginTop: "10px",
               }}
             >
-              {/* <div className={Styles.travel_specification}>Onward fare</div>
-              <div className={Styles.travel_specification}>1330.35</div> */}
+
             </div>
             <div
               style={{

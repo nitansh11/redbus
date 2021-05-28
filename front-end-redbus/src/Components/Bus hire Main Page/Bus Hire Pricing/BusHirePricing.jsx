@@ -5,13 +5,13 @@ import Styles from './BusHirePricing.module.css'
 const BusHirePricing = () => {
     return (
         <div>
-            <div className = {Styles.pricingBushire}>
-                <div className = {Styles.pricing_heading}>Pricing</div>
-                <div className = {Styles.pricing_paraSection}>
-                     By booking your vehicle via redBus, you knock out middlemen charges, and charges associated with bookings made in advance. redBus also provides packages for tourists in cities where the service is available.Charges for vehicles depend on the city in which they are hired. Starting base prices are mentioned below:
+            <div className={Styles.pricingBushire}>
+                <div className={Styles.pricing_heading}>Pricing</div>
+                <div className={Styles.pricing_paraSection}>
+                    By booking your vehicle via redBus, you knock out middlemen charges, and charges associated with bookings made in advance. redBus also provides packages for tourists in cities where the service is available.Charges for vehicles depend on the city in which they are hired. Starting base prices are mentioned below:
                 </div>
-                <div className = {Styles.pricing_tableSection}>
-                    <table  className = {Styles.tableSection}>
+                <div className={Styles.pricing_tableSection}>
+                    <table className={Styles.tableSection}>
                         <tr>
                             <th></th>
                             <th>12 Seater AC</th>

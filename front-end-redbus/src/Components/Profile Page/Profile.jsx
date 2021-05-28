@@ -82,10 +82,10 @@ const Profile = () => {
         </ul>
       </div>
       <div className={Styles.seprator}></div>
-      {selectedItem == "hiredBuses" ? <HiredBuses /> : null}
-      {selectedItem == "trips" ? <MyTrips /> : null}
-      {selectedItem == "wallet" ? "Wallet feature coming soon..." : null}
-      {selectedItem == "profile" ? (
+      {selectedItem === "hiredBuses" ? <HiredBuses /> : null}
+      {selectedItem === "trips" ? <MyTrips /> : null}
+      {selectedItem === "wallet" ? "Wallet feature coming soon..." : null}
+      {selectedItem === "profile" ? (
         <div className={Styles.rightPannel}>
           <span className={Styles.profileHeading}> My Profile</span>
           <div className={Styles.profilebox}>

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./MyTrips.module.css";
 import SingleTrip from "./SingleTrip";
 import axios from "axios";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 const MyTrips = () => {
   const [allBookings, setAllBookings] = React.useState([]);
@@ -10,15 +10,20 @@ const MyTrips = () => {
   const currentCustomer = useSelector(
     (state) => state.authReducer.currentCustomer
   );
-  React.useEffect(async () => {
+
+  React.useEffect(() => {
     if (currentCustomer) {
       let id = currentCustomer._id;
       console.log("current customer id: ", id);
-      let res = await axios.get(`http://localhost:8000/v1/api/booking/${id}`);
-      console.log("all bookings of this customer: ", res.data);
-      setAllBookings(res.data);
+      fetchData(id)
     }
   }, [currentCustomer]);
+
+  async function fetchData(id) {
+    let res = await axios.get(`http://localhost:8000/v1/api/booking/${id}`);
+    console.log("all bookings of this customer: ", res.data);
+    setAllBookings(res.data);
+  }
 
   const renderTripBookings = () => {
     if (allBookings.length === 0) {

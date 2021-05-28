@@ -25,9 +25,10 @@ const ComingSoonModal = ({ isOpen, setIsOpen }) => {
         }}
       >
         <img
-          src="https://5startuning.com/wp-content/uploads/Coming-Soon-Banner.png"
+          src="https://th.bing.com/th/id/OIP.u3Yv5aOx_gcwu1I_Q_xQbwHaEK?w=293&h=180&c=7&o=5&dpr=1.25&pid=1.7"
           alt="coming soon"
           style={{ width: "100%", borderRadius: "5px" }}
+          height = "290px"
         />
         <button
           style={{

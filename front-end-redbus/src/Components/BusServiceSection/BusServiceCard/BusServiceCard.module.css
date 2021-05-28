@@ -3,7 +3,7 @@
 }
 .mainContainer {
   display: flex;
-  background-color: #f0f1f2;
+  /* background-color: #f0f1f2; */
   justify-content: center;
 }
 .leftContainer {
@@ -51,13 +51,12 @@
 .blueContainer {
   display: flex;
   justify-content: space-between;
-  background-color: #e9f0ff;
+  /* background-color: #e9f0ff; */
   border: 1px solid rgb(37, 142, 184);
   margin-top: 40px;
   padding: 6px 3px 3px;
 }
-.link{
+.link {
   text-decoration: none;
   font-weight: 500;
-
 }
