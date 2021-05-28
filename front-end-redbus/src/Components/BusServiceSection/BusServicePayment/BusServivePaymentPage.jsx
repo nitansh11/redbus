@@ -1,7 +1,5 @@
 import React from "react";
 import Styles from "./BusPayment.module.css";
-import { BsArrowRight } from "react-icons/bs";
-import { MdWatchLater } from "react-icons/md";
 import { MdAccountCircle } from "react-icons/md";
 import { MdDateRange } from "react-icons/md";
 import { VscLocation } from "react-icons/vsc";
@@ -10,6 +8,7 @@ import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import StripeCheckout from "react-stripe-checkout";
+
 const Payment = () => {
   const currentCustomer = useSelector(
     (state) => state.authReducer.currentCustomer
@@ -84,31 +83,6 @@ const Payment = () => {
 
   return (
     <div>
-
-      <div className={Styles.payment__header}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-evenly",
-            width: "150px",
-          }}
-        >
-          <div>Banglore</div>
-          <BsArrowRight />
-          <div>Mumbai</div>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-evenly",
-            width: "250px",
-          }}
-        >
-          <div>Please pay within :</div>
-          <MdWatchLater />
-          <div>7:43 minutes</div>
-        </div>
-      </div>
       {/* Full Container */}
       <div className={Styles.payment__fullContainer}>
         {/* left Container */}
@@ -159,7 +133,7 @@ const Payment = () => {
             {/************************ Stripe Payemnt Start ******************************************/}
             <div className={Styles.Payment__stripe}>
               <StripeCheckout
-                stripeKey="pk_test_51D9ybxG1hGhZmBxsALjqi8YDqgi6SMu4jOLB0BRli0zOXaSFMZhaJRhL8NIsVuLqjqWUWL7L3e6kcgeTFTufIX1M00k24eV7ps"
+                stripeKey="pk_test_51IiFMtSGig8u12pPakqR8ahHxGPcc4JtGfprE9GYWjPpmYEenCdgtU1tfdDSBQlP1AjDpMV4lYJ9CwSTewPjSuC800MOdIAa3W"
                 token={makePayment}
                 name="RedBus Booking"
               >

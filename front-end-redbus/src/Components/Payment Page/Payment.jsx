@@ -1,7 +1,5 @@
 import React from "react";
 import Styles from "./Payment.module.css";
-import { BsArrowRight } from "react-icons/bs";
-import { MdWatchLater } from "react-icons/md";
 import { MdAccountCircle } from "react-icons/md";
 import { MdDateRange } from "react-icons/md";
 import { VscLocation } from "react-icons/vsc";
@@ -126,36 +124,7 @@ const Payment = () => {
 
   return (
     <div>
-      {/* <div className = {Styles.payment__main_header}>
-                <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLJvP7mBtUk_CR85hCOUXbwSgeCe7NL8u0tA&usqp=CAU" alt = "red bus logo" height = "100px"/>
-                <MdAccountCircle className = {Styles.icons}/>
-            </div> */}
-      {/* Header */}
-      <div className={Styles.payment__header}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-evenly",
-            width: "150px",
-          }}
-        >
-          <div>Banglore</div>
-          <BsArrowRight />
-          <div>Mumbai</div>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-evenly",
-            width: "250px",
-          }}
-        >
-          <div>Please pay within :</div>
-          <MdWatchLater />
-          <div>7:43 minutes</div>
-        </div>
-      </div>
-      {/* Full Container */}
+    {/* Full Container */}
       <div className={Styles.payment__fullContainer}>
         {/* left Container */}
         <div className={Styles.payment__fullContainer_leftContainer}>
