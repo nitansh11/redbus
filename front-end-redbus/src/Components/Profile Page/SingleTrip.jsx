@@ -170,14 +170,6 @@ const SingleTrip = ({ booking }) => {
           >
             Bus Details
           </div>
-          {/* <p><BsCircleFill style={{ marginRight: "20px", fontSize: "7px" ,color : "green"}} />Operator Name: National Travels</p>
-          <p><BsCircleFill style={{ marginRight: "20px", fontSize: "7px" ,color : "green"}} />Bus Type: Seater</p> */}
-          <p>
-            <BsCircleFill
-              style={{ marginRight: "20px", fontSize: "7px", color: "green" }}
-            />
-            Booking Date: {booking.bookingDate}{" "}
-          </p>
           <p>
             <BsCircleFill
               style={{ marginRight: "20px", fontSize: "7px", color: "green" }}

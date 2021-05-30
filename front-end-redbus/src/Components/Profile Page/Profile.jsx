@@ -114,7 +114,7 @@ const Profile = () => {
                 }}
               >
                 <div className={Styles.userDetailHeading}>Date of Birth</div>
-                <div className={Styles.userDetailInfo}>2017-04-04</div>
+                <div className={Styles.userDetailInfo}>1993-03-04</div>
               </div>
             </div>
             <div
