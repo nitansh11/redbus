@@ -1,7 +1,7 @@
 const BusServices = require("../models/busservice");
 module.exports.getBusService = async (req, res) => {
   const getData = await BusServices.find({});
-  console.log("get data:", getData);
+  //console.log("get data:", getData);
   res.status(200).json({ data: getData });
 };
 

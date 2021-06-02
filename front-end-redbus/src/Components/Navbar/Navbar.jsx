@@ -25,8 +25,7 @@ const Navbar = () => {
     (state) => state.authReducer.currentCustomer
   );
   const setIsOpen = (bool) => {
-    console.log("hey");
-    setIsModelOpen(bool);
+   setIsModelOpen(bool);
   };
   console.log("Here: ", isLoggedIn, currentCustomer);
   const history = useHistory();
@@ -41,10 +40,12 @@ const Navbar = () => {
     setAnchorEl2(event.currentTarget);
   };
   const handleClose = () => {
+    setIsOpen(true)
     setAnchorEl(null);
   };
 
   const handleClose2 = () => {
+    
     setAnchorEl2(null);
   };
 
@@ -120,13 +121,13 @@ const Navbar = () => {
                 >
                   <MenuItem
                     onClick={handleClose2}
-                    onClick={() => setIsOpen(true)}
+                    //onClick={() => setIsOpen(true)}
                   >
                     My Trips
                   </MenuItem>
                   <MenuItem
                     onClick={handleClose2}
-                    onClick={() => setIsOpen(true)}
+                    //onClick={() => setIsOpen(true)}
                   >
                     Wallet/Cards
                   </MenuItem>
@@ -145,7 +146,7 @@ const Navbar = () => {
                   </MenuItem>
                   <MenuItem
                     onClick={handleClose2}
-                    onClick={() => setIsOpen(true)}
+                    //onClick={() => setIsOpen(true)}
                   >
                     Wallet
                   </MenuItem>
