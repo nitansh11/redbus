@@ -32,6 +32,9 @@ In this project , we have tried to make a perfect clone of redbus.in.
   
   * React
   * CSS
+  * Express
+  * MongoDB
+  * Mongoose
   * Libraries used
       
       * Redux
