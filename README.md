@@ -68,7 +68,7 @@ In this project , we have tried to make a perfect clone of redbus.in.
  4. Here, you will get all the list of buses acoording to your location and you can also filter them as per your requirement.
 
  5. After this , you can click on the View Seat button to book the seats, and select the seats as per your requirement.
-   Note : You cant select the red seats , sine they are already booked.
+   Note : You cant select the red seats , since they are already booked.
   
    ![seet_booking](https://github.com/nitansh11/redbus/blob/master/Samples/seatBookUi.PNG)
  
