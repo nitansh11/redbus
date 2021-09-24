@@ -9,21 +9,55 @@ import { useDispatch, useSelector } from "react-redux";
 import { getRoutes } from "../../Redux/routes/action";
 import Awards from "./Awards and Recognition/Awards";
 import GlobalPresence from "./Global Presence/GlobalPresence";
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+import { makeStyles } from "@material-ui/core/styles";
+import RoutesModal from "./RoutesModal";
+
+const useStyles = makeStyles((theme) => ({
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+}));
 
 const LandingPage = () => {
+  //modal items
+  const classes = useStyles();
+  const [openModal, setOpenModal] = React.useState(false);
+
+  const handleOpenModal = () => {
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
+
+  var Routes = [
+    ["Lucknow", "Faizabad", 12],
+    ["Allahabad", "Lucknow", 1],
+    ["Lucknow", "Allahabad", 1],
+    ["Lucknow", "Delhi", 1],
+  ];
   const history = useHistory();
   const [departure, setDeparture] = React.useState("");
   const [arrival, setArrival] = React.useState("");
   const [date, setDate] = React.useState("");
   const [filteredSources, setFilteredSources] = React.useState([]);
   const [filteredDestinations, setFilteredDestinations] = React.useState([]);
-  const [
-    displayDepartureDropdown,
-    setDisplayDepartureDropdown,
-  ] = React.useState(false);
-  const [displayArrivalDropdown, setDisplayArrivalDropdown] = React.useState(
-    false
-  );
+  const [displayDepartureDropdown, setDisplayDepartureDropdown] =
+    React.useState(false);
+  const [displayArrivalDropdown, setDisplayArrivalDropdown] =
+    React.useState(false);
   const dispatch = useDispatch();
 
   React.useEffect(() => {
@@ -160,7 +194,6 @@ const LandingPage = () => {
                 let departureTemp = departure;
                 let arrivalTemp = arrival;
 
-                // Sublocation 1 (Lucknow)
                 if (departureTemp.includes("(")) {
                   departureTemp = departureTemp.substring(
                     departureTemp.indexOf("(") + 1,
@@ -173,15 +206,51 @@ const LandingPage = () => {
                     arrivalTemp.indexOf(")")
                   );
                 }
-                history.push(
-                  `/select-bus?departure=${departureTemp}&arrival=${arrivalTemp}&date=${date}`
-                );
+
+                var result = false;
+                for (var i = 0; i < Routes.length; i++) {
+                  if (
+                    Routes[i][0] == departureTemp &&
+                    Routes[i][1] == arrivalTemp
+                  ) {
+                    result = true;
+                  }
+                }
+                if (result == false) {
+                  handleOpenModal();
+                } else {
+                  history.push(
+                    `/select-bus?departure=${departureTemp}&arrival=${arrivalTemp}&date=${date}`
+                  );
+                }
               }}
             >
               Search Bus
             </button>
           </div>
         </div>
+      </div>
+      <div>
+        <Modal
+          aria-labelledby="transition-modal-title"
+          aria-describedby="transition-modal-description"
+          className={classes.modal}
+          open={openModal}
+          onClose={handleCloseModal}
+          closeAfterTransition
+          BackdropComponent={Backdrop}
+          BackdropProps={{
+            timeout: 500,
+          }}
+        >
+          <Fade in={openModal}>
+            <div className={classes.paper}>
+              <p id="transition-modal-description">
+                <RoutesModal />
+              </p>
+            </div>
+          </Fade>
+        </Modal>
       </div>
       <Coupon />
       <Safety />

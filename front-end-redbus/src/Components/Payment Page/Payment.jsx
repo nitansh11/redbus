@@ -57,6 +57,7 @@ const Payment = () => {
     productBy: "Facebook",
   });
   const history = useHistory();
+
   const makePayment = async (token) => {
     let myBooking = {};
     // create booking object
@@ -84,37 +85,39 @@ const Payment = () => {
         "http://localhost:8000/v1/api/booking",
         myBooking
       );
+      history.push("/my-profile");
       console.log("Booking post response: ", res.data);
     } catch (err) {
       console.log("Error while adding booking to booking collection!", err);
     }
 
-    const body = {
-      token,
-      product,
-    };
-    const headers = {
-      "Content-Type": "application/json",
-    };
-    //fire a request to backend
-    return fetch("http://localhost:8000/v1/api/stripe-payments", {
-      method: "POST",
-      headers,
-      body: JSON.stringify(body),
-    })
-      .then((res) => {
-        //console.log("RESPONSE REACT", res);
-        // const { status } = res;
-        //console.log("STATUS REACT", status);
-        //console.log("redirecting:");
-        history.push("/my-profile");
-      })
-      .catch((err) => {
-        console.log("Error while making payment", err);
-        alert(
-          "Something went wrong while making payment! Check Internet connection!"
-        );
-      });
+    // const body = {
+    //   token,
+    //   product,
+    // };
+    // const headers = {
+    //   "Content-Type": "application/json",
+    // };
+    // //fire a request to backend
+    // return fetch("http://localhost:8000/v1/api/stripe-payments", {
+    //   method: "POST",
+    //   headers,
+    //   body: JSON.stringify(body),
+    // })
+    //   .then((res) => {
+    //     //console.log("RESPONSE REACT", res);
+    //     // const { status } = res;
+    //     //console.log("STATUS REACT", status);
+    //     //console.log("redirecting:");
+    //     // history.push("/my-profile");
+    //     console.log("hii udit", res);
+    //   })
+    //   .catch((err) => {
+    //     console.log("Error while making payment", err);
+    //     alert(
+    //       "Something went wrong while making payment! Check Internet connection!"
+    //     );
+    //   });
   };
 
   var date = new Date();
@@ -124,7 +127,7 @@ const Payment = () => {
 
   return (
     <div>
-    {/* Full Container */}
+      {/* Full Container */}
       <div className={Styles.payment__fullContainer}>
         {/* left Container */}
         <div className={Styles.payment__fullContainer_leftContainer}>
@@ -174,7 +177,7 @@ const Payment = () => {
             {/************************ Stripe Payemnt Start ******************************************/}
             <div className={Styles.Payment__stripe}>
               <StripeCheckout
-                stripeKey="pk_test_51IiFMtSGig8u12pPakqR8ahHxGPcc4JtGfprE9GYWjPpmYEenCdgtU1tfdDSBQlP1AjDpMV4lYJ9CwSTewPjSuC800MOdIAa3W"
+                stripeKey="pk_test_51D9ybxG1hGhZmBxslwCy9OlHcJhpAqtbxdWrzyGfzTScoJ0RQEBJax7X2z8sE0MRAjl9KUn0R9Q0mz6x1ORmS2mg00IfXp80ED"
                 token={makePayment}
                 name="RedBus Booking"
               >

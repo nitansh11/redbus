@@ -133,7 +133,7 @@ const Payment = () => {
             {/************************ Stripe Payemnt Start ******************************************/}
             <div className={Styles.Payment__stripe}>
               <StripeCheckout
-                stripeKey="pk_test_51IiFMtSGig8u12pPakqR8ahHxGPcc4JtGfprE9GYWjPpmYEenCdgtU1tfdDSBQlP1AjDpMV4lYJ9CwSTewPjSuC800MOdIAa3W"
+                stripeKey="pk_test_51D9ybxG1hGhZmBxslwCy9OlHcJhpAqtbxdWrzyGfzTScoJ0RQEBJax7X2z8sE0MRAjl9KUn0R9Q0mz6x1ORmS2mg00IfXp80ED"
                 token={makePayment}
                 name="RedBus Booking"
               >
@@ -445,9 +445,7 @@ const Payment = () => {
                 justifyContent: "space-between",
                 marginTop: "10px",
               }}
-            >
-
-            </div>
+            ></div>
             <div
               style={{
                 display: "flex",
