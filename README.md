@@ -79,7 +79,7 @@ In this project , we have tried to make a perfect clone of redbus.in.
   
    ![stripe payment](https://github.com/nitansh11/redbus/blob/master/Samples/StripePayment.PNG)
 
- 7. On this page click on the button Pay with Stripe , here enter your email , card number as 4242 4242 4242 4242 , expiary date as 12/21 and cvc as 123 and click on the pay button , your seat has been booked :relaxed:
+ 7. On this page click on the button Pay with Stripe , here enter your email , card number as 4242 4242 4242 4242 , expiary date as 12/21 and cvv as 1234 and click on the pay button , your seat has been booked :relaxed:
 
   8. Now on this page you can see all your bookings.
   
@@ -101,7 +101,9 @@ In this project , we have tried to make a perfect clone of redbus.in.
   
   ![bus book page](https://github.com/nitansh11/redbus/blob/master/Samples/bushire4.png)
   
-  13. On this page click on the button Pay with Stripe , here enter your email , card number as 4242 4242 4242 4242 , expiary date as 12/21 and cvv as 123 and click on the pay button , your bus has been booked :relaxed:
+  13. On this page click on the button Pay with Stripe , here enter your email , card number as 4242 4242 4242 4242 , expiary date as 12/21 and 
+  
+  as 123 and click on the pay button , your bus has been booked :relaxed:
   
   ![payment page](https://github.com/nitansh11/redbus/blob/master/Samples/bushire5.png)
 
