@@ -63,8 +63,10 @@ const connect = () => {
   );
 };
 
+const port = process.env.PORT || 3020;
+let host = process.env.HOST;
 const start = async () => {
   await connect();
-  app.listen(8000, () => console.log("Listening at Port 8000"));
+  app.listen(port, host);
 };
 start();
