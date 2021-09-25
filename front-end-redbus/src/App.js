@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Routes from "./Routes/Routes";
 
 const App = () => {
+  console.log("jbd", process.env.REACT_APP_BACKEND_URL);
   return (
     <div style={{ overflowX: "hidden" }}>
       <Navbar />

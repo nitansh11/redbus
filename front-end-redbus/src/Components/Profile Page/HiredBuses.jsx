@@ -20,7 +20,7 @@ const HiredBuses = () => {
 
   async function fetchData(email) {
     let res = await axios.get(
-      `http://localhost:8000/v1/api/bookingHire/${email}`
+      `${process.env.REACT_APP_BACKEND_URL}/v1/api/bookingHire/${email}`
     );
     console.log("all bookings hire of this customer: ", res.data);
     setAllBookingsHire(res.data);

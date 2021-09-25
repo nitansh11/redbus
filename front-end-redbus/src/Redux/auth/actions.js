@@ -48,7 +48,7 @@ const addCustomerMongo = (profileObj) => {
         profilePicture: profileObj.imageUrl,
       };
       const res = await axios.post(
-        "http://localhost:8000/v1/api/customers",
+        `${process.env.REACT_APP_BACKEND_URL}/v1/api/customers`,
         customer
       );
       console.log("response from db: ", res);

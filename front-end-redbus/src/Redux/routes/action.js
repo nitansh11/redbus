@@ -21,7 +21,9 @@ const getRoutes = () => {
   return async (dispatch) => {
     dispatch(getRoutesRequest());
     try {
-      const res = await axios.get("http://localhost:8000/v1/api/routes");
+      const res = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/v1/api/routes`
+      );
       dispatch(getRoutesSuccess(res.data));
     } catch (err) {
       dispatch(getRoutesFailure());

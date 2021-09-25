@@ -42,9 +42,10 @@ const Payment = () => {
   const makePayment = async (token) => {
     try {
       let res = await axios.post(
-        "http://localhost:8000/v1/api/bookingHire",
+        `${process.env.REACT_APP_BACKEND_URL}/v1/api/bookingHire`,
         bookingHireObj
       );
+      history.push("/my-profile");
       console.log("Booking Hire post response: ", res.data);
     } catch (err) {
       console.log(
@@ -53,32 +54,35 @@ const Payment = () => {
       );
     }
 
-    const body = {
-      token,
-      product,
-    };
-    const headers = {
-      "Content-Type": "application/json",
-    };
-    //fire a request to backend
-    return fetch("http://localhost:8000/v1/api/stripe-payments", {
-      method: "POST",
-      headers,
-      body: JSON.stringify(body),
-    })
-      .then((res) => {
-        console.log("RESPONSE REACT", res);
-        const { status } = res;
-        console.log("STATUS REACT", status);
-        console.log("redirecting:");
-        history.push("/my-profile");
-      })
-      .catch((err) => {
-        console.log("Error while making payment", err);
-        alert(
-          "Something went wrong while making payment! Check Internet connection!"
-        );
-      });
+    // const body = {
+    //   token,
+    //   product,
+    // };
+    // const headers = {
+    //   "Content-Type": "application/json",
+    // };
+    // //fire a request to backend
+    // return fetch(
+    //   `${process.env.REACT_APP_BACKEND_URL}/v1/api/stripe-payments`,
+    //   {
+    //     method: "POST",
+    //     headers,
+    //     body: JSON.stringify(body),
+    //   }
+    // )
+    //   .then((res) => {
+    //     console.log("RESPONSE REACT", res);
+    //     const { status } = res;
+    //     console.log("STATUS REACT", status);
+    //     console.log("redirecting:");
+    //
+    //   })
+    //   .catch((err) => {
+    //     console.log("Error while making payment", err);
+    //     alert(
+    //       "Something went wrong while making payment! Check Internet connection!"
+    //     );
+    //   });
   };
 
   return (

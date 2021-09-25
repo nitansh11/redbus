@@ -15,12 +15,14 @@ const MyTrips = () => {
     if (currentCustomer) {
       let id = currentCustomer._id;
       console.log("current customer id: ", id);
-      fetchData(id)
+      fetchData(id);
     }
   }, [currentCustomer]);
 
   async function fetchData(id) {
-    let res = await axios.get(`http://localhost:8000/v1/api/booking/${id}`);
+    let res = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/v1/api/booking/${id}`
+    );
     console.log("all bookings of this customer: ", res.data);
     setAllBookings(res.data);
   }

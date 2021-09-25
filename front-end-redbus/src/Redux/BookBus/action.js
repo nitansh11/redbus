@@ -35,7 +35,9 @@ const busDetailsFail = () => {
 export const getBusDetails = (depart, arrival, date) => (dispatch) => {
   dispatch(busDetailsRequest());
   axios
-    .get(`http://localhost:8000/v1/api/routes/${depart}/${arrival}/${date}`)
+    .get(
+      `${process.env.REACT_APP_BACKEND_URL}/v1/api/routes/${depart}/${arrival}/${date}`
+    )
     .then((res) => dispatch(busDetailsSuccess(res.data)))
     .catch((err) => dispatch(busDetailsFail()));
 };

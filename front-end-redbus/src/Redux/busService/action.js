@@ -31,7 +31,7 @@ const getBusOnId = (payload) => {
 const getBusData2 = () => (dispatch) => {
   dispatch(getBusMongoRequest());
   axios
-    .get("http://localhost:8000/v1/api/busservice/")
+    .get(`${process.env.REACT_APP_BACKEND_URL}/v1/api/busservice/`)
     .then((res) => {
       console.log("rsponse from db", res);
       dispatch(getBusMongoSuccess(res.data.data));
@@ -44,7 +44,7 @@ const getBusData2 = () => (dispatch) => {
 const getBusOnIdThunk = (id) => (dispatch) => {
   dispatch(getBusMongoRequest());
   axios
-    .get(`http://localhost:8000/v1/api/busservice/${id}`)
+    .get(`${process.env.REACT_APP_BACKEND_URL}/v1/api/busservice/${id}`)
     .then((res) => {
       console.log("response for id");
       dispatch(getBusOnId(res.data));

@@ -82,7 +82,7 @@ const Payment = () => {
 
     try {
       let res = await axios.post(
-        "http://localhost:8000/v1/api/booking",
+        `${process.env.REACT_APP_BACKEND_URL}/v1/api/booking`,
         myBooking
       );
       history.push("/my-profile");
@@ -99,7 +99,7 @@ const Payment = () => {
     //   "Content-Type": "application/json",
     // };
     // //fire a request to backend
-    // return fetch("http://localhost:8000/v1/api/stripe-payments", {
+    // return fetch(`${process.env.REACT_APP_BACKEND_URL}/v1/api/stripe-payments`, {
     //   method: "POST",
     //   headers,
     //   body: JSON.stringify(body),
