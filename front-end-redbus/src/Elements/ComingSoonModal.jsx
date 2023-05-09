@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "react-modal";
 
 const ComingSoonModal = ({ isOpen, setIsOpen }) => {
+  // test comment
   return (
     <div>
       <Modal
@@ -28,7 +29,7 @@ const ComingSoonModal = ({ isOpen, setIsOpen }) => {
           src="https://th.bing.com/th/id/OIP.u3Yv5aOx_gcwu1I_Q_xQbwHaEK?w=293&h=180&c=7&o=5&dpr=1.25&pid=1.7"
           alt="coming soon"
           style={{ width: "100%", borderRadius: "5px" }}
-          height = "290px"
+          height="290px"
         />
         <button
           style={{
