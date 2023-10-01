@@ -52,8 +52,19 @@ const busServiceRoutes = require("./routes/busservice");
 app.use(busServiceRoutes);
 
 const connect = () => {
+  const db = mongoose.connection; // Get the mongoose connection object
+
+  // Listen to events on the mongoose connection
+  db.on('error', (error) => {
+    console.error('MongoDB connection error:', error);
+  });
+
+  db.once('open', () => {
+    console.log('MongoDB connection established.');
+  });
+
   return mongoose.connect(
-    "mongodb+srv://redbus_db_user_1:umJkhSujb8dZoc2a@redbuscnstructweek.bujg6.mongodb.net/redbus?retryWrites=true&w=majority",
+"mongodb+srv://redbus_db_user_1:umJkhSujb8dZoc2a@redbuscnstructweek.bujg6.mongodb.net/redbus?retryWrites=true&w=majority",
     {
       useCreateIndex: true,
       useNewUrlParser: true,
@@ -63,10 +74,12 @@ const connect = () => {
   );
 };
 
+
 const port = process.env.PORT || 3020;
 let host = process.env.HOST;
+
 const start = async () => {
-  await connect();
-  app.listen(port, host);
+  await connect().then(()=>console.log("Database connected")).catch((err)=>console.log(err));
+  app.listen(port, host, ()=>console.log("Server is running"));
 };
 start();
