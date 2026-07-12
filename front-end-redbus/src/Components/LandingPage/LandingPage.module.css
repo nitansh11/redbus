@@ -26,6 +26,8 @@
 .LandingPage__form__button > button {
   width: 100%;
   padding: 5px;
+  border: none;
+  border-radius: 7px;
 }
 
 .LandingPage__form__button > button {
@@ -37,6 +39,7 @@
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
+  border-radius: 7px;
 }
 .LandingPage__form__arrival__dropdown,
 .LandingPage__form__departure__dropdown {
